@@ -3,7 +3,8 @@
     <h2 class="section__header">{{ header }}</h2>
     <h3 class="section__sub-header">{{ subHeader }}</h3>
     <p class="section__intro">
-      <slot>Fallback text, need some intro text for this section.</slot>
+      <slot v-if="true" name="en"></slot>
+      <slot v-if="false" name="fr"></slot>
     </p>
   </div>
 </template>
