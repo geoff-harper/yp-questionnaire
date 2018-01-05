@@ -6,42 +6,42 @@
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="section__sub-header">Existing Online Presence</h3>
-      <InputCheckbox @change="updateFieldData" :inputParams="['presenceTypes', presenceTypesOptions, false]">
+      <InputCheckbox @change="emitFieldData" :inputParams="['presenceTypes', presenceTypesOptions, false]">
         What online platforms are you already on?
       </InputCheckbox>
     </div>
     <div v-show="fieldData.presenceTypes.indexOf('currentWebsite') !== -1" class="sub-section">
       <h3 class="section__sub-header">Current Website</h3>
-      <InputText @input="updateFieldData" :inputParams="['domainName', 0, false]">What is the domain name?</InputText>
-      <InputText @input="updateFieldData" :inputParams="['domainNameContinue', 0, false]">Would you like to continue using this domain?</InputText>
-      <InputText @input="updateFieldData" :inputParams="['upToDateInfo', 0, false]">Is the information on your website up to date?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['domainName', 0, false]">What is the domain name?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['domainNameContinue', 0, false]">Would you like to continue using this domain?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['upToDateInfo', 0, false]">Is the information on your website up to date?</InputText>
     </div>
     <div v-show="checkSocialVisibility" class="sub-section">
       <h3 class="section__sub-header">Social Media</h3>
       <p class="section__text">If possible, please provide URLs</p>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('facebook') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['facebook', 0, false]">Facebook</InputText>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('instagram') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['instagram', 0, false]">Instagram</InputText>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('twitter') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['twitter', 0, false]">Twitter</InputText>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('other') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['other1', 0, false]">Other</InputText>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('other') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['other2', 0, false]">Other</InputText>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('other') !== -1"
-        @input="updateFieldData"
+        @input="emitFieldData"
         :inputParams="['other3', 0, false]">Other</InputText>
     </div>
   </section>
@@ -60,22 +60,15 @@ export default {
     InputText,
     InputCheckbox
   },
+  props: {
+    fieldData: {
+      required: true,
+      type: Object
+    }
+  },
   data () {
     return {
-      fieldData: {
-        presenceTypes: [],
-        domainName: '',
-        domainNameContinue: '',
-        upToDateInfo: '',
-        facebook: '',
-        instagram: '',
-        twitter: '',
-        other1: '',
-        other2: '',
-        other3: ''
-      },
-      presenceTypesOptions: presenceTypesOptions,
-      errorPresent: false
+      presenceTypesOptions: presenceTypesOptions
     }
   },
   computed: {
@@ -85,9 +78,9 @@ export default {
     }
   },
   methods: {
-    updateFieldData (elem, val, errorPresent) {
-      this.fieldData[elem] = val
-      this.errorPresent = errorPresent
+    emitFieldData (elem, value, errorPresent) {
+      this.$emit('update', 'existingPresenceData', elem, value)
+      this.$emit('error', errorPresent)
     }
   }
 }

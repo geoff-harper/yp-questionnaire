@@ -41,7 +41,7 @@ export default {
       this.errorCheck()
       this.$emit('change', this.inputParams[0], this.checked, this.error)
     },
-    errorCheck (val) {
+    errorCheck () {
       if (this.checked.length === 0 && this.inputParams[2]) this.error = true
       else this.error = false
     }

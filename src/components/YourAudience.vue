@@ -6,15 +6,15 @@
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="section__sub-header">Demographic Info</h3>
-      <InputText @input="updateFieldData" :inputParams="['targetDemo', 1, false]">Who is your target demographic?</InputText>
-      <InputText @input="updateFieldData" :inputParams="['firstThing', 1, false]">What is the first thing you would like your potential clients to see when visiting your website?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['targetDemo', 1, true]">Who is your target demographic?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['firstThing', 1, false]">What is the first thing you would like your potential clients to see when visiting your website?</InputText>
     </div>
     <div class="sub-section">
       <h3 class="section__sub-header">Images and Content</h3>
-      <InputCheckbox @change="updateFieldData" :inputParams="['suppliedContent', suppliedContentTypes, false]">
+      <InputCheckbox @change="emitFieldData" :inputParams="['suppliedContent', suppliedContentTypes, false]">
         Will you be supplying us with some documents, images, logos?
       </InputCheckbox>
-      <InputText @input="updateFieldData" :inputParams="['stockImagesSubjects', 1, false]">What type of stock images would you like to see?</InputText>
+      <InputText @input="emitFieldData" :inputParams="['stockImagesSubjects', 1, false]">What type of stock images would you like to see?</InputText>
     </div>
   </section>
 </template>
@@ -32,22 +32,21 @@ export default {
     InputText,
     InputCheckbox
   },
+  props: {
+    fieldData: {
+      required: true,
+      type: Object
+    }
+  },
   data () {
     return {
-      fieldData: {
-        targetDemo: '',
-        firstThing: '',
-        suppliedContent: [],
-        stockImagesSubjects: ''
-      },
-      suppliedContentTypes: suppliedContentTypes,
-      errorPresent: false
+      suppliedContentTypes: suppliedContentTypes
     }
   },
   methods: {
-    updateFieldData (elem, val, errorPresent) {
-      this.fieldData[elem] = val
-      this.errorPresent = errorPresent
+    emitFieldData (elem, value, errorPresent) {
+      this.$emit('update', 'yourAudienceData', elem, value)
+      this.$emit('error', errorPresent)
     }
   }
 }

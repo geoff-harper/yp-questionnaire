@@ -7,7 +7,6 @@
       :id="inputParams[0]"
       :required="inputParams[2]"
       @input="emitText($event.target)"
-      @blur="errorCheck($event.target.value)"
       type="text">
     <textarea
       v-if="inputParams[1] === 1"
@@ -15,7 +14,6 @@
       :id="inputParams[0]"
       :required="inputParams[2]"
       @input="emitText($event.target)"
-      @blur="errorCheck($event.target.value)"
       cols="30"
       rows="10">
     </textarea>
@@ -47,11 +45,12 @@ export default {
   },
   methods: {
     emitText (elem) {
+      this.errorCheck(elem.value)
       this.$emit('input', elem.id, elem.value, this.error)
     },
     errorCheck (val) {
-      if (this.inputParams[2]) this.error = val.length === 0
-      else if (this.inputParams[3]) this.error = this.validateEmail(val)
+      if (this.inputParams[2]) this.error = (val.length === 0)
+      // else if (this.inputParams[3]) this.error = this.validateEmail(val)
       else this.error = false
     },
     validateEmail (email) {

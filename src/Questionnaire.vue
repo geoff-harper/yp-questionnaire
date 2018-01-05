@@ -2,9 +2,9 @@
   <main id="questionnaire">
     <TabNav :activeTab="activeTab" @navigate="handleNav" />
     <form class="questionnaire-form">
-      <BusinessDetails v-show="activeTab === 'businessDetails'" />
-      <ExistingPresence v-show="activeTab === 'existingPresence'" />
-      <YourAudience v-show="activeTab === 'yourAudience'" />
+      <BusinessDetails v-show="activeTab === 'businessDetails'" @update="handleData" @error="handleError" :fieldData="formData.businessDetailsData" />
+      <ExistingPresence v-show="activeTab === 'existingPresence'" @update="handleData" @error="handleError" :fieldData="formData.existingPresenceData" />
+      <YourAudience v-show="activeTab === 'yourAudience'" @update="handleData" @error="handleError" :fieldData="formData.yourAudienceData" />
       <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" />
     </form>
     <ButtonNav v-show="activeTab !== 'finishQuestionnaire'" :activeTab="activeTab" @navigate="handleNav" />
@@ -33,9 +33,42 @@ export default {
     return {
       activeTab: 'existingPresence',
       formData: {
-        businessDetailsData: {},
-        existingPresenceData: {},
-        yourAudienceData: {}
+        businessDetailsData: {
+          primaryContact: '',
+          displayedName: '',
+          displayedInfo: [],
+          mainPhone: '',
+          otherPhone: '',
+          email: '',
+          mainAddress: '',
+          otherAddress: '',
+          monday: '',
+          tuesday: '',
+          wednesday: '',
+          thursday: '',
+          friday: '',
+          saturday: '',
+          sunday: '',
+          otherInfo: ''
+        },
+        existingPresenceData: {
+          presenceTypes: [],
+          domainName: '',
+          domainNameContinue: '',
+          upToDateInfo: '',
+          facebook: '',
+          instagram: '',
+          twitter: '',
+          other1: '',
+          other2: '',
+          other3: ''
+        },
+        yourAudienceData: {
+          targetDemo: '',
+          firstThing: '',
+          suppliedContent: [],
+          stockImagesSubjects: ''
+        }
       },
       errorPresent: false
     }
@@ -45,6 +78,12 @@ export default {
       if (!this.errorPresent) {
         this.activeTab = tab
       }
+    },
+    handleData (section, sectionInput, inputVal) {
+      this.formData[section][sectionInput] = inputVal
+    },
+    handleError (errorPresent) {
+      this.errorPresent = errorPresent
     }
   }
 }
