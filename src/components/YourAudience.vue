@@ -23,7 +23,7 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
-import { suppliedContentTypes } from '../assets/audienceOptions.js'
+import { suppliedContentTypes } from '../assets/audienceOptions'
 
 export default {
   name: 'YourAudience',

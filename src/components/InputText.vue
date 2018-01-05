@@ -24,9 +24,10 @@
 </template>
 
 <script>
-// inputParams -> [inputName, inputType, inputRequired]
+// inputParams -> [inputName, inputType, inputRequired, emailValidate]
 // inputType -> 0 = text, 1 = textarea
 // inputRequired -> bool
+// emailValidate -> bool
 
 export default {
   name: 'InputText',
@@ -35,7 +36,7 @@ export default {
       required: true,
       type: Array,
       validator (value) {
-        return value.length === 3
+        return value.length >= 3
       }
     }
   },
@@ -49,8 +50,13 @@ export default {
       this.$emit('input', elem.id, elem.value, this.error)
     },
     errorCheck (val) {
-      if (val.length === 0 && this.inputParams[2]) this.error = true
+      if (this.inputParams[2]) this.error = val.length === 0
+      else if (this.inputParams[3]) this.error = this.validateEmail(val)
       else this.error = false
+    },
+    validateEmail (email) {
+      const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return reg.test(email.toLowerCase())
     }
   }
 }

@@ -1,7 +1,8 @@
 <template>
   <section id="business-details" class="business-details section">
     <IntroSubSection header="Business Details" subHeader="Advertiser Profile">
-      Congratulations on your new website product! The first step in our production process is to briefly gather some basic information regarding your business and your goals for your website. This information will help our web team to begin designing a personalized website that accurately reflects your business.
+      <span slot="en">Congratulations on your new website product! The first step in our production process is to briefly gather some basic information regarding your business and your goals for your website. This information will help our web team to begin designing a personalized website that accurately reflects your business.</span>
+      <span slot="fr">Le Congratulations on your new website product! The first step in our production process is to briefly gather some basic information regarding your business and your goals for your website. This information will help our web team to begin designing a personalized website that accurately reflects your business.</span>
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="section__sub-header">Business Info</h3>
@@ -10,7 +11,7 @@
       <InputCheckbox @change="updateFieldData" :inputParams="['displayedInfo', displayedMediums, false]">Contact information to be displayed on site</InputCheckbox>
       <InputText @input="updateFieldData" :inputParams="['mainPhone', 0, true]">Main phone number</InputText>
       <InputText @input="updateFieldData" :inputParams="['otherPhone', 1, false]">Additional phone numbers</InputText>
-      <InputText @input="updateFieldData" :inputParams="['email', 0, true]">Email</InputText>
+      <InputText @input="updateFieldData" :inputParams="['email', 0, true, true]">Email</InputText>
       <InputText @input="updateFieldData" :inputParams="['mainAddress', 0, true]">Main business address</InputText>
       <InputText @input="updateFieldData" :inputParams="['otherAddress', 1, false]">Additional addresses</InputText>
     </div>
@@ -34,7 +35,7 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
-import { displayedMediums } from '../assets/businessInfoOptions.js'
+import { displayedMediums } from '../assets/businessInfoOptions'
 
 export default {
   name: 'BusinessDetails',
