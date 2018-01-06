@@ -5,7 +5,7 @@
       <BusinessDetails v-show="activeTab === 'businessDetails'" @update="handleData" @error="handleError" :fieldData="formData.businessDetailsData" />
       <ExistingPresence v-show="activeTab === 'existingPresence'" @update="handleData" @error="handleError" :fieldData="formData.existingPresenceData" />
       <YourAudience v-show="activeTab === 'yourAudience'" @update="handleData" @error="handleError" :fieldData="formData.yourAudienceData" />
-      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" />
+      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" :formData="formData" />
     </form>
     <ButtonNav v-show="activeTab !== 'finishQuestionnaire'" :activeTab="activeTab" @navigate="handleNav" />
   </main>
@@ -31,7 +31,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'existingPresence',
+      activeTab: 'businessDetails',
       formData: {
         businessDetailsData: {
           primaryContact: '',
