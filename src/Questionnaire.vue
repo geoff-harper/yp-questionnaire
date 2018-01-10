@@ -1,11 +1,12 @@
 <template>
   <main id="questionnaire">
     <TabNav :activeTab="activeTab" @navigate="handleNav" />
-    <form class="questionnaire-form">
+    <form @submit.prevent="handleSubmit" class="questionnaire-form">
       <BusinessDetails v-show="activeTab === 'businessDetails'" @update="handleData" @error="handleError" :fieldData="formData.businessDetailsData" />
+      <ProductsServices v-show="activeTab === 'productsServices'" @update="handleData" @error="handleError" :fieldData="formData.productsServicesData" />
       <ExistingPresence v-show="activeTab === 'existingPresence'" @update="handleData" @error="handleError" :fieldData="formData.existingPresenceData" />
       <YourAudience v-show="activeTab === 'yourAudience'" @update="handleData" @error="handleError" :fieldData="formData.yourAudienceData" />
-      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" :formData="formData" />
+      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" @update="handleRep" :formData="formData" />
     </form>
     <ButtonNav v-show="activeTab !== 'finishQuestionnaire'" :activeTab="activeTab" @navigate="handleNav" />
   </main>
@@ -14,6 +15,7 @@
 <script>
 import TabNav from './components/TabNav'
 import BusinessDetails from './components/BusinessDetails'
+import ProductsServices from './components/ProductsServices'
 import ExistingPresence from './components/ExistingPresence'
 import YourAudience from './components/YourAudience'
 import FinishQuestionnaire from './components/FinishQuestionnaire'
@@ -24,6 +26,7 @@ export default {
   components: {
     TabNav,
     BusinessDetails,
+    ProductsServices,
     ExistingPresence,
     YourAudience,
     FinishQuestionnaire,
@@ -31,7 +34,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'businessDetails',
+      activeTab: 'productsServices',
       formData: {
         businessDetailsData: {
           primaryContact: '',
@@ -51,6 +54,7 @@ export default {
           sunday: '',
           otherInfo: ''
         },
+        productsServicesData: {},
         existingPresenceData: {
           presenceTypes: [],
           domainName: '',
@@ -68,7 +72,8 @@ export default {
           firstThing: '',
           suppliedContent: [],
           stockImagesSubjects: ''
-        }
+        },
+        rep: ''
       },
       errorPresent: false
     }
@@ -84,6 +89,25 @@ export default {
     },
     handleError (errorPresent) {
       this.errorPresent = errorPresent
+    },
+    handleRep (inputVal) {
+      this.formData.rep = inputVal
+    },
+    handleSubmit () {
+      const jsonString = JSON.stringify(this.formData)
+
+      // fetch('./php/mail.php', {
+      fetch('https://httpbin.org/post', {
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: jsonString
+      })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     }
   }
 }

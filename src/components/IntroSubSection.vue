@@ -21,9 +21,6 @@ export default {
       required: true,
       type: String
     }
-  },
-  data () {
-    return {}
   }
 }
 </script>

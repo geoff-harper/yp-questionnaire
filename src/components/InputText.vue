@@ -5,14 +5,14 @@
       v-if="inputParams[1] === 0"
       :name="inputParams[0]"
       :id="inputParams[0]"
-      :required="inputParams[2]"
+      :required="false"
       @input="emitText($event.target)"
       type="text">
     <textarea
       v-if="inputParams[1] === 1"
       :name="inputParams[0]"
       :id="inputParams[0]"
-      :required="inputParams[2]"
+      :required="false"
       @input="emitText($event.target)"
       cols="30"
       rows="10">
