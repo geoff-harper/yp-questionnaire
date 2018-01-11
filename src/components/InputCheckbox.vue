@@ -1,6 +1,6 @@
 <template>
   <fieldset>
-    <slot>Checkbox group label</slot>
+    <slot></slot>
     <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
       <input
         v-model="checked"
@@ -11,7 +11,7 @@
         type="checkbox">
       {{ checkboxText[1] }}
     </label>
-    <p v-show="error" class="form-field__error">Please fill in this field.</p>
+    <p v-if="error" class="form-field__error">Please fill in this field.</p>
   </fieldset>
 </template>
 

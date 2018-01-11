@@ -5,30 +5,25 @@
       <span slot="fr">TEMP: Parlons de votre public cible et des informations que vous voulez partager sur votre site web.</span>
     </IntroSubSection>
     <div class="sub-section">
-      <h3 class="section__sub-header">Products and Services</h3>
-      <!-- <InputCheckbox @change="emitFieldData" :inputParams="['presenceTypes', presenceTypesOptions, false]">
-        What online platforms are you already on?
-      </InputCheckbox>
-      <InputText
-        v-show="fieldData.presenceTypes.indexOf('facebook') !== -1"
-        @input="emitFieldData"
-        :inputParams="['facebook', 0, false]">Facebook</InputText> -->
+      <InputPanel
+        :title="productsServicesOptions.title"
+        :options="productsServicesOptions.options"
+        :nodes="productsServicesOptions.nodes"
+        :safe="'productsServices'"></InputPanel>
     </div>
   </section>
 </template>
 
 <script>
 import IntroSubSection from './IntroSubSection'
-import InputText from './InputText'
-import InputCheckbox from './InputCheckbox'
+import InputPanel from './InputPanel'
 import { productsServicesOptions } from '../assets/prodServicesOptions'
 
 export default {
   name: 'ProductsServices',
   components: {
     IntroSubSection,
-    InputText,
-    InputCheckbox
+    InputPanel
   },
   props: {
     fieldData: {

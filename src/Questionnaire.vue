@@ -54,7 +54,9 @@ export default {
           sunday: '',
           otherInfo: ''
         },
-        productsServicesData: {},
+        productsServicesData: {
+          selectedProdsServices: {}
+        },
         existingPresenceData: {
           presenceTypes: [],
           domainName: '',

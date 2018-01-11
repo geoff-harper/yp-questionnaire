@@ -1,7 +1,7 @@
 <template>
   <section id="existing-presence" class="existing-presence section">
     <IntroSubSection header="Existing Online Presence" subHeader="Existing Online Presence">
-      <span slot="en">TEMP: need some text for this section's intro</span>
+      <span slot="en">Not everyone has an existing website or Facebook page that we can review to help us gather information. Whether you’re active online or you’re not sure where your business may be found on the World Wide Web, any information you can provide will help us inform your future profile.</span>
       <span slot="fr">TEMP: Parlons de votre public cible et des informations que vous voulez partager sur votre site web.</span>
     </IntroSubSection>
     <div class="sub-section">
