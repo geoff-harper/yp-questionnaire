@@ -6,6 +6,7 @@
     </IntroSubSection>
     <div class="sub-section">
       <InputPanel
+        @update="emitFieldData"
         :title="productsServicesOptions.title"
         :options="productsServicesOptions.options"
         :nodes="productsServicesOptions.nodes"
@@ -33,13 +34,14 @@ export default {
   },
   data () {
     return {
-      productsServicesOptions: productsServicesOptions
+      productsServicesOptions: productsServicesOptions,
+      emittedData: {}
     }
   },
   methods: {
-    emitFieldData (elem, value, errorPresent) {
-      this.$emit('update', 'existingPresenceData', elem, value)
-      this.$emit('error', errorPresent)
+    emitFieldData (elem, value) {
+      this.emittedData[elem] = value[0]
+      this.$emit('update', 'productsServicesData', 'selectedProdsServices', this.emittedData)
     }
   }
 }

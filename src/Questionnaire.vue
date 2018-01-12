@@ -55,7 +55,7 @@ export default {
           otherInfo: ''
         },
         productsServicesData: {
-          selectedProdsServices: {}
+          selectedProdsServices: []
         },
         existingPresenceData: {
           presenceTypes: [],

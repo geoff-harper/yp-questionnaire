@@ -4,6 +4,7 @@
     <InputCheckbox @change="toggleChild" v-if="options" :inputParams="[safe, options, false]"></InputCheckbox>
     <InputPanel v-for="(node, i) in nodes" :key="i"
       v-show="checked.indexOf(options[i][0]) !== -1"
+      @update="emitChecked"
       :title="node.title"
       :options="node.options"
       :nodes="node.nodes"
@@ -41,6 +42,14 @@ export default {
   methods: {
     toggleChild (elem, value) {
       this.checked = value
+      this.emitChecked(elem, this.checked, true)
+    },
+    emitChecked (elem, value, nodeChanged) {
+      if (!this.nodes || nodeChanged) {
+        this.$emit('update', elem, [this.checked])
+      } else {
+        this.$emit('update', elem, [...value, this.checked])
+      }
     }
   }
 }
