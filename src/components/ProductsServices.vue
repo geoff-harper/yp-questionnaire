@@ -1,8 +1,7 @@
 <template>
-  <section id="existing-presence" class="existing-presence section">
-    <IntroSubSection header="Products and Services" subHeader="Products and Services">
-      <span slot="en">TEMP: need some text for this section's intro</span>
-      <span slot="fr">TEMP: Parlons de votre public cible et des informations que vous voulez partager sur votre site web.</span>
+  <section id="products-and-services" class="products-and-services section">
+    <IntroSubSection header="Products &amp; Services" subHeader="Products &amp; Services">
+      <p slot="en" class="sub-section__intro">We would like to know more about what you do. The following provides a range of industries we have created web products for in the past.</p>
     </IntroSubSection>
     <div class="sub-section">
       <InputPanel

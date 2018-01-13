@@ -65,9 +65,9 @@ module.exports = {
               }
             ]
           },
-          {
-            title: 'Auto Body Repairing & Painting'
-          },
+          // {
+          //   title: 'Auto Body Repairing & Painting'
+          // },
           {
             title: 'Automobile Parts & Supplies',
             options: [
@@ -394,8 +394,8 @@ module.exports = {
         ]
       },
       {
-        "title": "Commercial & Industrial Services",
-        "options": [
+        title: "Commercial & Industrial Services",
+        options: [
           ["craneServicesRental", "Crane Services & Rental"],
           ["janitorialService", "Janitorial Service"],
           ["machineShops", "Machine Shops"],
@@ -407,15 +407,15 @@ module.exports = {
           ["welding", "Welding"],
           ["windowCleaning", "Window Cleaning"]
         ],
-        "nodes": [{
-          "title": "Crane Services & Rental",
-          "options": [
+        nodes: [{
+          title: "Crane Services & Rental",
+          options: [
             ["craneService", "Crane Service"],
             ["craneRentals", "Crane Rentals"]
           ],
-          "nodes": [{
-            "title": "Crane Service",
-            "options": [
+          nodes: [{
+            title: "Crane Service",
+            options: [
               ["marineSalvage", "Marine Salvage"],
               ["heavyTransport", "Heavy Transport"],
               ["towingBarging", "Towing & Barging"],
@@ -427,8 +427,8 @@ module.exports = {
               ["forestry", "Forestry"]
             ]
           }, {
-            "title": "Crane Rentals",
-            "options": [
+            title: "Crane Rentals",
+            options: [
               ["mountedCrane", "Mounted Crane"],
               ["roughTerrainCrane", "Rough Terrain Crane"],
               ["sideLiftCrane", "Side Lift Crane"],
@@ -452,15 +452,15 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Janitorial Service",
-          "options": [
+          title: "Janitorial Service",
+          options: [
             ["clientsServiced", "Clients Serviced"],
             ["cleaningServices", "Cleaning Services"],
             ["additionalServices", "Additional Services"]
           ],
-          "nodes": [{
-            "title": "Clients Serviced",
-            "options": [
+          nodes: [{
+            title: "Clients Serviced",
+            options: [
               ["strataCondo", "Strata & Condo"],
               ["officeBuildings", "Office Buildings"],
               ["constructionSites", "Construction Sites"],
@@ -474,8 +474,8 @@ module.exports = {
               ["automotiveDealerships", "Automotive Dealerships"]
             ]
           }, {
-            "title": "Cleaning Services",
-            "options": [
+            title: "Cleaning Services",
+            options: [
               ["floorscarpetvinyltileetc", "Floors (carpet, vinyl, tile, etc.)"],
               ["windows", "Windows"],
               ["wallsCeiling", "Walls & Ceiling"],
@@ -486,8 +486,8 @@ module.exports = {
               ["parkingLots", "Parking Lots"]
             ]
           }, {
-            "title": "Additional Services",
-            "options": [
+            title: "Additional Services",
+            options: [
               ["postConstructionCleanup", "Post-Construction Cleanup"],
               ["ceramicTileSteamCleaning", "Ceramic Tile Steam Cleaning"],
               ["floorWaxing", "Floor Waxing"],
@@ -499,16 +499,16 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Machine Shops",
-          "options": [
+          title: "Machine Shops",
+          options: [
             ["cNCServices", "CNC Services"],
             ["finishingServices", "Finishing Services"],
             ["otherServices", "Other Services"],
             ["certifications", "Certifications"]
           ],
-          "nodes": [{
-            "title": "CNC Services",
-            "options": [
+          nodes: [{
+            title: "CNC Services",
+            options: [
               ["cNCProgramming", "CNC Programming"],
               ["productionMilling", "Production Milling"],
               ["5AxisMilling", "5 Axis Milling"],
@@ -519,16 +519,16 @@ module.exports = {
               ["threadingRethreading", "Threading/Re-threading"]
             ]
           }, {
-            "title": "Finishing Services",
-            "options": [
+            title: "Finishing Services",
+            options: [
               ["sanding", "Sanding"],
               ["polishing", "Polishing"],
               ["grinding", "Grinding"],
               ["tumbling", "Tumbling"]
             ]
           }, {
-            "title": "Other Services",
-            "options": [
+            title: "Other Services",
+            options: [
               ["aluminum", "Aluminum"],
               ["anodizing", "Anodizing"],
               ["brassBronzeCopper", "Brass, Bronze, Copper"],
@@ -556,30 +556,30 @@ module.exports = {
               ["welding", "Welding"]
             ]
           }, {
-            "title": "Certifications",
-            "options": [
+            title: "Certifications",
+            options: [
               ["iSO", "ISO"]
             ]
           }]
         }, {
-          "title": "Oil Field Services",
-          "options": [
+          title: "Oil Field Services",
+          options: [
             ["rigServices", "Rig Services"],
             ["bOPServices", "BOP Services"],
             ["pumperServices", "Pumper Services"],
             ["otherServices", "Other Services"]
           ],
-          "nodes": [{
-            "title": "Rig Services",
-            "options": [
+          nodes: [{
+            title: "Rig Services",
+            options: [
               ["rigMoving", "Rig Moving"],
               ["rigEquipmentRelocation", "Rig/Equipment Relocation"],
               ["installation", "Installation"],
               ["repairs", "Repairs"]
             ]
           }, {
-            "title": "BOP Services",
-            "options": [
+            title: "BOP Services",
+            options: [
               ["bOPTesting", "BOP Testing"],
               ["facilityGasPlantTesting", "Facility & Gas Plant Testing"],
               ["pipelineTesting", "Pipeline Testing"],
@@ -590,8 +590,8 @@ module.exports = {
               ["pressureto105000KPA", "Pressure to 105,000 KPA"]
             ]
           }, {
-            "title": "Pumper Services",
-            "options": [
+            title: "Pumper Services",
+            options: [
               ["completionPumping", "Completion Pumping"],
               ["coilTubingSupport", "Coil Tubing Support"],
               ["packerSetsLiners", "Packer Sets & Liners"],
@@ -601,8 +601,8 @@ module.exports = {
               ["pressureto105000KPA", "Pressure to 105,000 KPA"]
             ]
           }, {
-            "title": "Other Services",
-            "options": [
+            title: "Other Services",
+            options: [
               ["rentals", "Rentals"],
               ["truckingLogistics", "Trucking/Logistics"],
               ["waterWasteFluidTransfer", "Water & Waste Fluid Transfer"],
@@ -610,16 +610,16 @@ module.exports = {
             ]
           }, ]
         }, {
-          "title": "Printers",
-          "options": [
+          title: "Printers",
+          options: [
             ["services", "Services"],
             ["materialTypes", "Material Types"],
             ["products", "Products"],
             ["additionalServices", "Additional Services"]
           ],
-          "nodes": [{
-            "title": "Services",
-            "options": [
+          nodes: [{
+            title: "Services",
+            options: [
               ["digitalPrinting", "Digital Printing"],
               ["offsetPrinting", "Offset Printing"],
               ["photocopying", "Photocopying"],
@@ -632,8 +632,8 @@ module.exports = {
               ["binding", "Binding"]
             ]
           }, {
-            "title": "Material Types",
-            "options": [
+            title: "Material Types",
+            options: [
               ["paper", "Paper"],
               ["canvas", "Canvas"],
               ["corrugatedPlastic", "Corrugated Plastic"],
@@ -641,8 +641,8 @@ module.exports = {
               ["fabric", "Fabric"]
             ]
           }, {
-            "title": "Products",
-            "options": [
+            title: "Products",
+            options: [
               ["banners", "Banners"],
               ["businessCards", "Business Cards"],
               ["booklets", "Booklets"],
@@ -665,8 +665,8 @@ module.exports = {
               ["tickets", "Tickets"]
             ]
           }, {
-            "title": "Additional Services",
-            "options": [
+            title: "Additional Services",
+            options: [
               ["digitalFileTransfer", "Digital File Transfer"],
               ["cutting", "Cutting"],
               ["foilStamping", "Foil Stamping"],
@@ -681,15 +681,15 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Sand & Gravel",
-          "options": [
+          title: "Sand & Gravel",
+          options: [
             ["products", "Products"],
             ["commercialProducts", "Commercial Products"],
             ["services", "Services"]
           ],
-          "nodes": [{
-            "title": "Products",
-            "options": [
+          nodes: [{
+            title: "Products",
+            options: [
               ["barkMulch", "Bark Mulch"],
               ["crushedRock", "Crushed Rock"],
               ["decorativeRock", "Decorative Rock"],
@@ -706,8 +706,8 @@ module.exports = {
               ["torpedo", "Torpedo"]
             ]
           }, {
-            "title": "Commercial Products",
-            "options": [
+            title: "Commercial Products",
+            options: [
               ["armourRock", "Armour Rock"],
               ["quarriedProducts", "Quarried Products"],
               ["riverSand", "River Sand"],
@@ -715,8 +715,8 @@ module.exports = {
               ["ripRap", "Rip Rap"]
             ]
           }, {
-            "title": "Services",
-            "options": [
+            title: "Services",
+            options: [
               ["barges", "Barges"],
               ["conveyorBarges", "Conveyor Barges"],
               ["delivery", "Delivery"],
@@ -726,16 +726,16 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Signs",
-          "options": [
+          title: "Signs",
+          options: [
             ["customSigns", "Custom Signs"],
             ["vehicleSigns", "Vehicle Signs"],
             ["standsHolders", "Stands & Holders"],
             ["services", "Services"]
           ],
-          "nodes": [{
-            "title": "Custom Signs",
-            "options": [
+          nodes: [{
+            title: "Custom Signs",
+            options: [
               ["3DLettering", "3D Lettering"],
               ["awningCanopies", "Awning & Canopies"],
               ["banners", "Banners"],
@@ -751,22 +751,22 @@ module.exports = {
               ["sandblasterSigns", "Sandblaster Signs"]
             ]
           }, {
-            "title": "Vehicle Signs",
-            "options": [
+            title: "Vehicle Signs",
+            options: [
               ["magneticSigns", "Magnetic Signs"],
               ["vehicleWraps", "Vehicle Wraps"],
               ["vinylLettering", "Vinyl Lettering"]
             ]
           }, {
-            "title": "Stands & Holders",
-            "options": [
+            title: "Stands & Holders",
+            options: [
               ["bannerStands", "Banner Stands"],
               ["sidewalkSignsframesandwichboardetc", "Sidewalk Signs (frame, sandwich board, etc)"],
               ["signBrackets", "Sign Brackets"]
             ]
           }, {
-            "title": "Services",
-            "options": [
+            title: "Services",
+            options: [
               ["corporatePrintingbusinesscardsletterheadsetc", "Corporate Printing (business cards, letterheads, etc)"],
               ["graphicDesign", "Graphic Design"],
               ["screenPrinting", "Screen Printing"],
@@ -774,19 +774,21 @@ module.exports = {
               ["wideFormatPrinting", "Wide-Format Printing"]
             ]
           }]
-        }, {
-          "title": "Transport Service"
-        }, {
-          "title": "Welding",
-          "options": [
+        },
+        // {
+        //   title: "Transport Service"
+        // },
+        {
+          title: "Welding",
+          options: [
             ["weldingCuttingTypes", "Welding/Cutting Types"],
             ["materialTypes", "Material Types"],
             ["serviceLocations", "Service Locations"],
             ["cWBCertifications", "CWB Certifications"]
           ],
-          "nodes": [{
-            "title": "Welding/Cutting Types",
-            "options": [
+          nodes: [{
+            title: "Welding/Cutting Types",
+            options: [
               ["electroslagWelding", "Electroslag Welding"],
               ["fluxCoredArcWelding", "Flux-Cored Arc Welding (MIG)"],
               ["gasMetalArcWelding", "Gas Metal Arc Welding (MIG)"],
@@ -799,8 +801,8 @@ module.exports = {
               ["submergedArcWelding", "Submerged Arc Welding"]
             ]
           }, {
-            "title": "Material Types",
-            "options": [
+            title: "Material Types",
+            options: [
               ["alloyStructuralSteel", "Alloy/Structural Steel"],
               ["aluminumAluminumAlloys", "Aluminum/Aluminum Alloys"],
               ["castIron", "Cast Iron"],
@@ -817,8 +819,8 @@ module.exports = {
               ["toolDieSteel", "Tool & Die Steel"]
             ]
           }, {
-            "title": "Service Locations",
-            "options": [
+            title: "Service Locations",
+            options: [
               ["mobile", "Mobile"],
               ["inShop", "In-Shop"],
               ["openAir", "Open Air"],
@@ -827,8 +829,8 @@ module.exports = {
               ["vacuum", "Vacuum"]
             ]
           }, {
-            "title": "CWB Certifications",
-            "options": [
+            title: "CWB Certifications",
+            options: [
               ["cSAW471", "CSA W47.1 Fusion Welding of Steel Company"],
               ["cSAW472", "CSA W47.2 Fusion Welding of Aluminum Company"],
               ["cSAW186", "CSA W186 Welding of Reinforcing Bars Company"],
@@ -839,22 +841,22 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Window Cleaning",
-          "options": [
+          title: "Window Cleaning",
+          options: [
             ["typesofProperties", "Types of Properties"],
             ["surfacesCleaned", "Surfaces Cleaned"],
             ["additionalServices", "Additional Services"]
           ],
-          "nodes": [{
-            "title": "Types of Properties",
-            "options": [
+          nodes: [{
+            title: "Types of Properties",
+            options: [
               ["residential", "Residential"],
               ["commercial", "Commercial"],
               ["highRise", "High-Rise"]
             ]
           }, {
-            "title": "Surfaces Cleaned",
-            "options": [
+            title: "Surfaces Cleaned",
+            options: [
               ["exteriorWindows", "Exterior Windows"],
               ["interiorWindows", "Interior Windows"],
               ["skylights", "Skylights"],
@@ -862,8 +864,8 @@ module.exports = {
               ["windowFramesandSashes", "Window Frames and Sashes"]
             ]
           }, {
-            "title": "Additional Services",
-            "options": [
+            title: "Additional Services",
+            options: [
               ["gutterCleaning", "Gutter Cleaning"],
               ["pressureWashing", "Pressure Washing"],
               ["sidingCleaning", "Siding Cleaning"],
@@ -873,8 +875,8 @@ module.exports = {
           }]
         }]
       }, {
-        "title": "Contractors & Construction",
-        "options": [
+        title: "Contractors & Construction",
+        options: [
           ["buildingContractors", "Building Contractors"],
           ["concreteReadyMix", "Concrete - Ready Mix"],
           ["excavationContractors", "Excavation Contractors"],
@@ -886,23 +888,23 @@ module.exports = {
           ["pavingContractors", "Paving Contractors"],
           ["roofingContractors", "Roofing Contractors"]
         ],
-        "nodes": [{
-          "title": "Building Contractors",
-          "options": [
+        nodes: [{
+          title: "Building Contractors",
+          options: [
             ["planning", "Planning"],
             ["construction", "Construction"],
             ["contractingFor", "Contracting For"]
           ],
-          "nodes": [{
-            "title": "Planning",
-            "options": [
+          nodes: [{
+            title: "Planning",
+            options: [
               ["constructionManagement", "Construction Management"],
               ["negotiatingHiringSubContractors", "Negotiating/Hiring Sub-Contractors"],
               ["worksiteProjectSupervision", "Worksite & Project Supervision"]
             ]
           }, {
-            "title": "Construction",
-            "options": [
+            title: "Construction",
+            options: [
               ["foundationSetting", "Foundation Setting"],
               ["framing", "Framing"],
               ["roofing", "Roofing"],
@@ -914,8 +916,8 @@ module.exports = {
               ["buildingCodeUpgrades", "Building Code Upgrades"]
             ]
           }, {
-            "title": "Contracting For",
-            "options": [
+            title: "Contracting For",
+            options: [
               ["condosTownhouses", "Condos/Townhouses"],
               ["homes", "Homes"],
               ["prefabricatedBuildings", "Prefabricated Buildings"],
@@ -927,23 +929,23 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Concrete - Ready Mix",
-          "options": [
+          title: "Concrete - Ready Mix",
+          options: [
             ["areasofWork", "Areas of Work"],
             ["concreteProductsSupplied", "Concrete Products Supplied"],
             ["concreteServices", "Concrete Services"]
           ],
-          "nodes": [{
-            "title": "Areas of Work",
-            "options": [
+          nodes: [{
+            title: "Areas of Work",
+            options: [
               ["residential", "Residential"],
               ["commercial", "Commercial"],
               ["industrial", "Industrial"],
               ["municipal", "Municipal"]
             ]
           }, {
-            "title": "Concrete Products Supplied",
-            "options": [
+            title: "Concrete Products Supplied",
+            options: [
               ["walls", "Walls"],
               ["foundations", "Foundations"],
               ["slabs", "Slabs"],
@@ -957,8 +959,8 @@ module.exports = {
               ["colouredConcrete", "Coloured Concrete"]
             ]
           }, {
-            "title": "Concrete Services",
-            "options": [
+            title: "Concrete Services",
+            options: [
               ["newConcreteInstallations", "New Concrete Installations"],
               ["concreteRepairs", "Concrete Repairs"],
               ["concreteRemovals", "Concrete Removals"],
@@ -968,14 +970,14 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Excavation Contractors",
-          "options": [
+          title: "Excavation Contractors",
+          options: [
             ["services", "Services"],
             ["equipment", "Equipment"]
           ],
-          "nodes": [{
-            "title": "Services",
-            "options": [
+          nodes: [{
+            title: "Services",
+            options: [
               ["trenching", "Trenching"],
               ["backfilling", "Backfilling"],
               ["weepingTile", "Weeping Tile"],
@@ -989,8 +991,8 @@ module.exports = {
               ["sitePreparationClearing", "Site Preparation/Clearing"]
             ]
           }, {
-            "title": "Equipment",
-            "options": [
+            title: "Equipment",
+            options: [
               ["excavators", "Excavators"],
               ["longReachExcavators", "Long-Reach Excavators"],
               ["backhoe", "Backhoe"],
@@ -1000,23 +1002,23 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Foundation Contractors",
-          "options": [
+          title: "Foundation Contractors",
+          options: [
             ["clientsServiced", "Clients Serviced"],
             ["services", "Services"],
             ["typesofRepair", "Types of Repair"],
             ["repairProducts", "Repair Products"]
           ],
-          "nodes": [{
-            "title": "Clients Serviced",
-            "options": [
+          nodes: [{
+            title: "Clients Serviced",
+            options: [
               ["residential", "Residential"],
               ["commercial", "Commercial"],
               ["industrial", "Industrial"]
             ]
           }, {
-            "title": "Services",
-            "options": [
+            title: "Services",
+            options: [
               ["installation", "Installation"],
               ["repair", "Repair"],
               ["design", "Design"],
@@ -1028,8 +1030,8 @@ module.exports = {
               ["estimates", "Estimates"]
             ]
           }, {
-            "title": "Types of Repair",
-            "options": [
+            title: "Types of Repair",
+            options: [
               ["settlementSinking", "Settlement Sinking"],
               ["floorCrack", "Floor Crack"],
               ["wallCrack", "Wall Crack"],
@@ -1044,23 +1046,23 @@ module.exports = {
               ["underpinning", "Underpinning"]
             ]
           }, {
-            "title": "Repair Products",
-            "options": [
+            title: "Repair Products",
+            options: [
               ["crawlspaceJackPosts", "Crawlspace Jack Posts"],
               ["foundationPiers", "Foundation Piers"],
               ["concreteLevellingSystem", "Concrete Levelling System"]
             ]
           }]
         }, {
-          "title": "General Contractors",
-          "options": [
+          title: "General Contractors",
+          options: [
             ["planningDesign", "Planning & Design"],
             ["generalContractingFor", "General Contracting For"],
             ["additionalServices", "Additional Services"]
           ],
-          "nodes": [{
-            "title": "Planning & Design",
-            "options": [
+          nodes: [{
+            title: "Planning & Design",
+            options: [
               ["obtainPermits", "Obtain Permits"],
               ["designingFloorPlans", "Designing Floor Plans"],
               ["projectBudgeting", "Project Budgeting"],
@@ -1071,8 +1073,8 @@ module.exports = {
               ["constructionManagement", "Construction Management"]
             ]
           }, {
-            "title": "General Contracting for",
-            "options": [
+            title: "General Contracting for",
+            options: [
               ["condosTownhouses", "Condos/Townhouses"],
               ["homes", "Homes"],
               ["prefabricatedBuildings", "Prefabricated Buildings"],
@@ -1087,8 +1089,8 @@ module.exports = {
               ["remodeling", "Remodeling"]
             ]
           }, {
-            "title": "Additional Contracting Services",
-            "options": [
+            title: "Additional Contracting Services",
+            options: [
               ["renovationRemodelling", "Renovation/Remodelling"],
               ["drywalling", "Drywalling"],
               ["plumbing", "Plumbing"],
@@ -1103,16 +1105,16 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Insulation Contractors Cold & Heat",
-          "options": [
+          title: "Insulation Contractors Cold & Heat",
+          options: [
             ["insulation", "Insulation"],
             ["fireproofing", "Fireproofing"],
             ["clients", "Clients"],
             ["services", "Services"]
           ],
-          "nodes": [{
-            "title": "Insulation",
-            "options": [
+          nodes: [{
+            title: "Insulation",
+            options: [
               ["blownInFibreglass", "Blown-In Fibreglass"],
               ["fibreglassBatt", "Fibreglass Batt"],
               ["mineralWool", "Mineral Wool"],
@@ -1125,8 +1127,8 @@ module.exports = {
               ["soundProofing", "Sound Proofing"]
             ]
           }, {
-            "title": "Fireproofing",
-            "options": [
+            title: "Fireproofing",
+            options: [
               ["firestopping", "Firestopping"],
               ["airVapourSeal", "Air & Vapour Seal"],
               ["fireproofingInsulation", "Fireproofing Insulation"],
@@ -1134,16 +1136,16 @@ module.exports = {
               ["rOXULBatt", "ROXUL Batt"]
             ]
           }, {
-            "title": "Clients",
-            "options": [
+            title: "Clients",
+            options: [
               ["residential", "Residential"],
               ["commercial", "Commercial"],
               ["industrial", "Industrial"],
               ["agricultural", "Agricultural"]
             ]
           }, {
-            "title": "Services",
-            "options": [
+            title: "Services",
+            options: [
               ["newBuilds", "New Builds"],
               ["renovations", "Renovations"],
               ["retrofits", "Retrofits"],
@@ -1151,24 +1153,24 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Kitchen Cabinets",
-          "options": [
+          title: "Kitchen Cabinets",
+          options: [
             ["productsServices", "Products & Services"],
             ["relatedProducts", "Related Products"],
             ["cabinetDoorDrawerTypes", "Cabinet Door & Drawer Types"],
             ["materialTypes", "Material Types"]
           ],
-          "nodes": [{
-            "title": "Products & Services",
-            "options": [
+          nodes: [{
+            title: "Products & Services",
+            options: [
               ["customDesigns", "Custom Designs"],
               ["cabinetRepairs", "Cabinet Repairs"],
               ["kitchenCabinetry", "Kitchen Cabinetry"],
               ["cabinetHardwareAccessories", "Cabinet Hardware/Accessories"]
             ]
           }, {
-            "title": "Related Products",
-            "options": [
+            title: "Related Products",
+            options: [
               ["bathroomCabinetry", "Bathroom Cabinetry"],
               ["entertainmentUnits", "Entertainment Units"],
               ["laundryRoomCabinetry", "Laundry Room Cabinetry"],
@@ -1178,15 +1180,15 @@ module.exports = {
               ["livingRoomCabinetry", "Living Room Cabinetry"]
             ]
           }, {
-            "title": "Cabinet Door & Drawer Types",
-            "options": [
+            title: "Cabinet Door & Drawer Types",
+            options: [
               ["inset", "Inset"],
               ["partialOverlay", "Partial Overlay"],
               ["fullOverlayEuroStyle", "Full Overlay (Euro Style)"]
             ]
           }, {
-            "title": "Material Types",
-            "options": [
+            title: "Material Types",
+            options: [
               ["redOak", "Red Oak"],
               ["whiteOak", "White Oak"],
               ["maple", "Maple"],
@@ -1206,30 +1208,30 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Masonry & Brick Laying Contractors",
-          "options": [
+          title: "Masonry & Brick Laying Contractors",
+          options: [
             ["clientsServiced", "Clients Serviced"],
             ["services", "Services"],
             ["materials", "Materials"],
             ["interior", "Interior"],
             ["exterior", "Exterior"]
           ],
-          "nodes": [{
-            "title": "Clients Serviced",
-            "options": [
+          nodes: [{
+            title: "Clients Serviced",
+            options: [
               ["residential", "Residential"],
               ["commercial", "Commercial"]
             ]
           }, {
-            "title": "Services",
-            "options": [
+            title: "Services",
+            options: [
               ["renovations", "Renovations"],
               ["newConstruction", "New Construction"],
               ["customWork", "Custom Work"]
             ]
           }, {
-            "title": "Materials",
-            "options": [
+            title: "Materials",
+            options: [
               ["brick", "Brick"],
               ["culturedStone", "Cultured Stone"],
               ["naturalStone", "Natural Stone"],
@@ -1238,8 +1240,8 @@ module.exports = {
               ["terraCotta", "Terra Cotta"]
             ]
           }, {
-            "title": "Interior",
-            "options": [
+            title: "Interior",
+            options: [
               ["fireplaces", "Fireplaces"],
               ["woodStoves", "Wood Stoves"],
               ["woodfiredOvens", "Wood-fired Ovens"],
@@ -1247,8 +1249,8 @@ module.exports = {
               ["featureWalls", "Feature Walls"]
             ]
           }, {
-            "title": "Exterior",
-            "options": [
+            title: "Exterior",
+            options: [
               ["walkways", "Walkways"],
               ["fireplaces", "Fireplaces"],
               ["patios", "Patios"],
@@ -1270,16 +1272,16 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Paving Contractors",
-          "options": [
+          title: "Paving Contractors",
+          options: [
             ["asphalt", "Asphalt"],
             ["concrete", "Concrete"],
             ["otherServices", "Other Services"],
             ["application", "Application"]
           ],
-          "nodes": [{
-            "title": "Asphalt",
-            "options": [
+          nodes: [{
+            title: "Asphalt",
+            options: [
               ["paving", "Paving"],
               ["crackRepair", "Crack Repair"],
               ["patching", "Patching"],
@@ -1287,16 +1289,16 @@ module.exports = {
               ["sealcoating", "Sealcoating"]
             ]
           }, {
-            "title": "Concrete",
-            "options": [
+            title: "Concrete",
+            options: [
               ["paving", "Paving"],
               ["paverInstallation", "Paver Installation"],
               ["repairs", "Repairs"],
               ["resurfacing", "Resurfacing"]
             ]
           }, {
-            "title": "Other Services",
-            "options": [
+            title: "Other Services",
+            options: [
               ["excavation", "Excavation"],
               ["hardscaping", "Hardscaping"],
               ["grading", "Grading"],
@@ -1305,8 +1307,8 @@ module.exports = {
               ["linePainting", "Line Painting"]
             ]
           }, {
-            "title": "Application",
-            "options": [
+            title: "Application",
+            options: [
               ["residential", "Residential"],
               ["industrial", "Industrial"],
               ["commercial", "Commercial"],
@@ -1314,15 +1316,15 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Roofing Contractors",
-          "options": [
+          title: "Roofing Contractors",
+          options: [
             ["roofingServices", "Roofing Services"],
             ["commercialRoofing", "Commercial Roofing"],
             ["roofingMaterials", "Roofing Materials"]
           ],
-          "nodes": [{
-            "title": "Roofing Services",
-            "options": [
+          nodes: [{
+            title: "Roofing Services",
+            options: [
               ["residentialRoofing", "Residential Roofing"],
               ["commercialRoofing", "Commercial Roofing"],
               ["gutterRepairs", "Gutter Repairs"],
@@ -1334,15 +1336,15 @@ module.exports = {
               ["fasciaReplacement", "Fascia Replacement"]
             ]
           }, {
-            "title": "Commercial Roofing",
-            "options": [
+            title: "Commercial Roofing",
+            options: [
               ["tarGravelRoof", "Tar & Gravel Roof"],
               ["torchonRoof", "Torch on Roof"],
               ["metalRoof", "Metal Roof"]
             ]
           }, {
-            "title": "Roofing Materials",
-            "options": [
+            title: "Roofing Materials",
+            options: [
               ["clayTile", "Clay Tile"],
               ["slateTile", "Slate Tile"],
               ["concreteTile", "Concrete Tile"],
@@ -1350,30 +1352,31 @@ module.exports = {
               ["woodShinglesShakes", "Wood Shingles & Shakes"],
               ["plasticPolymer", "Plastic Polymer"],
               ["asphaltShingle", "Asphalt Shingle"],
-              ["tarGravel", "Tar & Gravel"],
-              ["", ""]
+              ["tarGravel", "Tar & Gravel"]
             ]
           }]
         }]
       }, {
-        "title": "Food Services",
-        "options": [
+        title: "Food Services",
+        options: [
           ["caterers", "Caterers"],
           ["pizza", "Pizza"],
           ["restaurant", "Restaurant"]
         ],
-        "nodes": [{
-          "title": "Caterers"
-        }, {
-          "title": "Pizza",
-          "options": [
+        nodes: [
+          // {
+          //   title: "Caterers"
+          // },
+        {
+          title: "Pizza",
+          options: [
             ["services", "Services"],
             ["pizzaToppings", "Pizza Toppings"],
             ["otherMenuItems", "Other Menu Items"]
           ],
-          "nodes": [{
-            "title": "Services",
-            "options": [
+          nodes: [{
+            title: "Services",
+            options: [
               ["delivery", "Delivery"],
               ["takeout", "Takeout"],
               ["dineIn", "Dine In"],
@@ -1384,8 +1387,8 @@ module.exports = {
               ["liveEntertainment", "Live Entertainment"]
             ]
           }, {
-            "title": "Pizza Toppings",
-            "options": [
+            title: "Pizza Toppings",
+            options: [
               ["plainCheese", "Plain Cheese"],
               ["pepperoni", "Pepperoni"],
               ["vegetarian", "Vegetarian"],
@@ -1397,8 +1400,8 @@ module.exports = {
               ["createYourOwnPizza", "Create-Your-Own Pizza"]
             ]
           }, {
-            "title": "Other Menu Items",
-            "options": [
+            title: "Other Menu Items",
+            options: [
               ["dips", "Dips"],
               ["chickenWings", "Chicken Wings"],
               ["chickenFingers", "Chicken Fingers"],
@@ -1413,16 +1416,16 @@ module.exports = {
             ]
           }]
         }, {
-          "title": "Restaurant",
-          "options": [
+          title: "Restaurant",
+          options: [
             ["services", "Services"],
             ["facilitiesAttractions", "Facilities/Attractions"],
             ["cuisine", "Cuisine"],
             ["specialDietaryOptions", "Special Dietary Options"]
           ],
-          "nodes": [{
-            "title": "Services",
-            "options": [
+          nodes: [{
+            title: "Services",
+            options: [
               ["breakfast", "Breakfast"],
               ["brunch", "Brunch"],
               ["dinner", "Dinner"],
@@ -1434,8 +1437,8 @@ module.exports = {
               ["groupMenu", "Group Menu"]
             ]
           }, {
-            "title": "Facilities/Attractions",
-            "options": [
+            title: "Facilities/Attractions",
+            options: [
               ["privatePartyRooms", "Private Party Rooms"],
               ["bar", "Bar"],
               ["diningLounge", "Dining Lounge"],
@@ -1444,8 +1447,8 @@ module.exports = {
               ["liveEntertainment", "Live Entertainment"]
             ]
           }, {
-            "title": "Cuisine",
-            "options": [
+            title: "Cuisine",
+            options: [
               ["british", "British"],
               ["americanDinner", "American Dinner"],
               ["americanSouth", "American South"],
@@ -1463,8 +1466,8 @@ module.exports = {
               ["caribbean", "Caribbean"]
             ]
           }, {
-            "title": "Special Dietary Options",
-            "options": [
+            title: "Special Dietary Options",
+            options: [
               ["glutenFree", "Gluten Free"],
               ["vegetarian", "Vegetarian"],
               ["vegan", "Vegan"],
@@ -1474,8 +1477,8 @@ module.exports = {
           }]
         }]
       }, {
-        "title": "Health, Beauty & Well Being",
-        "options": [
+        title: "Health, Beauty & Well Being",
+        options: [
           ["acupuncturists", "Acupuncturists"],
           ["beautySalons", "Beauty Salons"],
           ["chiropractorsDC", "Chiropractors D.C"],
@@ -1493,15 +1496,15 @@ module.exports = {
           ["podiatrists", "Podiatrists"],
           ["psychologists", "Psychologists"]
         ],
-        "nodes": [{
-            "title": "Acupuncturists",
-            "options": [
+        nodes: [{
+            title: "Acupuncturists",
+            options: [
               ["acupunctureTreatments", "Acupuncture Treatments"],
               ["relatedServices", "Related Services"]
             ],
-            "nodes": [{
-              "title": "Acupuncture Treatments",
-              "options": [
+            nodes: [{
+              title: "Acupuncture Treatments",
+              options: [
                 ["cosmeticAcupuncture", "Cosmetic Acupuncture"],
                 ["fertilityAcupuncture", "Fertility Acupuncture"],
                 ["acupunctureforPain", "Acupuncture for Pain (Headaches, injuries, digestion)"],
@@ -1509,8 +1512,8 @@ module.exports = {
                 ["acupunctureforMentalConditions", "Acupuncture for Mental Conditions (Depression, Anxiety)"]
               ]
             }, {
-              "title": "Related Services",
-              "options": [
+              title: "Related Services",
+              options: [
                 ["reflexology", "Reflexology"],
                 ["acupressure", "Acupressure"],
                 ["naturopathy", "Naturopathy"],
@@ -1518,14 +1521,14 @@ module.exports = {
               ]
             }]
           }, {
-            "title": "Beauty Salons",
-            "options": [
+            title: "Beauty Salons",
+            options: [
               ["hairServices", "Hair Services"],
               ["otherServices", "Other Salon, Esthetic, and Spa Services"]
             ],
-            "nodes": [{
-              "title": "Hair Services",
-              "options": [
+            nodes: [{
+              title: "Hair Services",
+              options: [
                 ["styling", "Styling"],
                 ["colouring", "Colouring"],
                 ["conditioningTreatments", "Conditioning Treatments"],
@@ -1535,8 +1538,8 @@ module.exports = {
                 ["extensions", "Extensions"]
               ]
             }, {
-              "title": "Other Salon, Esthetic, and Spa Services",
-              "options": [
+              title: "Other Salon, Esthetic, and Spa Services",
+              options: [
                 ["makeupApplication", "Makeup Application"],
                 ["permanentMakeup", "Permanent Makeup"],
                 ["sunlessTanning", "Sunless Tanning"],
@@ -1551,8 +1554,8 @@ module.exports = {
               ]
             }]
           }, {
-            "title": "Chiropractors D.C",
-            "options": [
+            title: "Chiropractors D.C",
+            options: [
               ["adjustments", "Adjustments"],
               ["customOrthotics", "Custom Orthotics"],
               ["massageServices", "Massage Services"],
@@ -1561,9 +1564,9 @@ module.exports = {
               ["movementAssessments", "Movement Assessments"],
               ["additionalServices", "Additional Services"]
             ],
-            "nodes": [{
-              "title": "Adjustments",
-              "options": [
+            nodes: [{
+              title: "Adjustments",
+              options: [
                 ["directThrustTechnique", "Direct Thrust Technique"],
                 ["spinalMobilization", "Spinal Mobilization"],
                 ["articulatory", "Articulatory"],
@@ -1573,40 +1576,40 @@ module.exports = {
                 ["websterTechnique", "Webster Technique"]
               ]
             }, {
-              "title": "Custom Orthotics",
-              "options": [
+              title: "Custom Orthotics",
+              options: [
                 ["functionalOrthotics", "Functional Orthotics"],
                 ["accommodativeOrthotics", "Accommodative Orthotics"]
               ]
             }, {
-              "title": "Massage Services",
-              "options": [
+              title: "Massage Services",
+              options: [
                 ["activeReleaseTechniques", "Active Release Techniques"],
                 ["registeredMassageTherapy", "Registered Massage Therapy"]
               ]
             }, {
-              "title": "Electrotherapy",
-              "options": [
+              title: "Electrotherapy",
+              options: [
                 ["galvanicStimulation", "Galvanic Stimulation (GS)"],
                 ["tENS", "Radiofrequency Rhizotomy Nerve Stimulation (TENS)"],
                 ["interferentialCurrent", "Interferential Current (IFC)"]
               ]
             }, {
-              "title": "Tooled Friction Massage",
-              "options": [
+              title: "Tooled Friction Massage",
+              options: [
                 ["grastonTechnique", "Graston Technique (IASTM)"],
                 ["soundAssistedSoftTissueMobilization", "Sound Assisted Soft Tissue Mobilization (Subset of IASTM)"],
                 ["aSTYM", "ASTYM"]
               ]
             }, {
-              "title": "Movement Assessments",
-              "options": [
+              title: "Movement Assessments",
+              options: [
                 ["selectiveFunctionalMovementAssessment", "Selective Functional Movement Assessment"],
                 ["functionalScreen", "Functional Screen"]
               ]
             }, {
-              "title": "Additional Services",
-              "options": [
+              title: "Additional Services",
+              options: [
                 ["acupuncture", "Acupuncture"],
                 ["kinesioTaping", "Kinesio Taping"],
                 ["lowLevelLaserTherapy", "Low-Level Laser Therapy"],
@@ -1614,16 +1617,16 @@ module.exports = {
               ]
             }]
           }, {
-            "title": "Dentists",
-            "options": [
+            title: "Dentists",
+            options: [
               ["generalDentistry", "General Dentistry"],
               ["cosmeticDentistry", "Cosmetic Dentistry"],
               ["restorativeDentistry", "Restorative Dentistry"],
               ["specializedTreatments", "Specialized Treatments"]
             ],
-            "nodes": [{
-              "title": "General Dentistry",
-              "options": [
+            nodes: [{
+              title: "General Dentistry",
+              options: [
                 ["oralExamination", "Oral Examination"],
                 ["oralCancerExamination", "Oral Cancer Examination"],
                 ["periodontalExamination", "Periodontal Examination"],
@@ -1635,8 +1638,8 @@ module.exports = {
                 ["pediatricDentistry", "Pediatric Dentistry"]
               ]
             }, {
-              "title": "Cosmetic Dentistry",
-              "options": [
+              title: "Cosmetic Dentistry",
+              options: [
                 ["veneers", "Veneers"],
                 ["bonding", "Bonding"],
                 ["whitening", "Whitening"],
@@ -1644,8 +1647,8 @@ module.exports = {
                 ["invisalign", "Invisalign"]
               ]
             }, {
-              "title": "Restorative Dentistry",
-              "options": [
+              title: "Restorative Dentistry",
+              options: [
                 ["crowns", "Crowns"],
                 ["bridges", "Bridges"],
                 ["implants", "Implants"],
@@ -1656,22 +1659,22 @@ module.exports = {
                 ["onlays", "Onlays"]
               ]
             }, {
-              "title": "Specialized Treatments",
-              "options": [
+              title: "Specialized Treatments",
+              options: [
                 ["periodontalTreatment", "Periodontal Treatment (gum surgery)"],
                 ["wisdomTeethRemoval", "Wisdom Teeth Removal"]
               ]
             }]
           }, {
-            "title": "Denturists",
-            "options": [
+            title: "Denturists",
+            options: [
               ["typesofDentures", "Types of Dentures"],
               ["relatedServices", "Related Services"],
               ["dentureMaintenance", "Denture Maintenance"]
             ],
-            "nodes": [{
-              "title": "Types of Dentures",
-              "options": [
+            nodes: [{
+              title: "Types of Dentures",
+              options: [
                 ["completeDentures", "Complete Dentures"],
                 ["partialDentures", "Partial Dentures"],
                 ["implantRetainedDentures", "Implant-Retained Dentures"],
@@ -1681,15 +1684,15 @@ module.exports = {
                 ["standardDentures", "Standard Dentures"]
               ]
             }, {
-              "title": "Related Services",
-              "options": [
+              title: "Related Services",
+              options: [
                 ["sportsMouthGuards", "Sports Mouth Guards"],
                 ["bruxismGuards", "Bruxism Guards"],
                 ["antiSnoringMouthpieces", "Anti-Snoring Mouthpieces"]
               ]
             }, {
-              "title": "Denture Maintenance",
-              "options": [
+              title: "Denture Maintenance",
+              options: [
                 ["relines", "Relines"],
                 ["rebases", "Rebases"],
                 ["softLiner", "Soft Liner"],
@@ -1698,15 +1701,15 @@ module.exports = {
               ]
             }]
           }, {
-            "title": "Estheticians",
-            "options": [
+            title: "Estheticians",
+            options: [
               ["servicesTreatments", "Services/Treatments"],
               ["hairRemovalServices", "Hair Removal Services"],
               ["hairRemovalAreas", "Hair Removal Areas"]
             ],
-            "nodes": [{
-                "title": "Services/Treatments",
-                "options": [
+            nodes: [{
+                title: "Services/Treatments",
+                options: [
                   ["microdermabrasion", "Microdermabrasion"],
                   ["chemicalPeels", "Chemical Peels"],
                   ["laserResurfacing", "Laser Resurfacing"],
@@ -1724,8 +1727,8 @@ module.exports = {
                   ["sprayTans", "Spray Tans"]
                 ]
               }, {
-                "title": "Hair Removal Services",
-                "options": [
+                title: "Hair Removal Services",
+                options: [
                   ["waxing", "Waxing"],
                   ["threading", "Threading"],
                   ["chemical", "Chemical"],
@@ -1734,8 +1737,8 @@ module.exports = {
                 ]
               },
               {
-                "title": "Hair Removal Areas",
-                "options": [
+                title: "Hair Removal Areas",
+                options: [
                   ["legs", "Legs"],
                   ["arms", "Arms"],
                   ["armpit", "Armpit"],
@@ -1746,23 +1749,23 @@ module.exports = {
               }
             ]
           }, {
-            "title": "Hearing Aids",
-            "options": [
+            title: "Hearing Aids",
+            options: [
               ["products", "Products"],
               ["services", "Services"],
               ["styles", "Styles"],
               ["brands", "Brands"]
             ],
-            "nodes": [{
-              "title": "Products",
-              "options": [
+            nodes: [{
+              title: "Products",
+              options: [
                 ["hearingAids", "Hearing Aids"],
                 ["hearingProtection", "Hearing Protection"],
                 ["customEarpieces", "Custom Earpieces"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["hearingTests", "Hearing Tests"],
                 ["consultations", "Consultations"],
                 ["fittings", "Fittings"],
@@ -1772,8 +1775,8 @@ module.exports = {
                 ["financing", "Financing"]
               ]
             }, {
-              "title": "Styles",
-              "options": [
+              title: "Styles",
+              options: [
                 ["intheCanalITC", "In the Canal (ITC)"],
                 ["intheEarITE", "In the Ear (ITE)"],
                 ["completelyintheCanalCIC", "Completely in the Canal (CIC)"],
@@ -1783,8 +1786,8 @@ module.exports = {
                 ["custom", "Custom"]
               ]
             }, {
-              "title": "Brands",
-              "options": [
+              title: "Brands",
+              options: [
                 ["acoustica", "Acoustica"],
                 ["siemens", "Siemens"],
                 ["phonak", "Phonak"],
@@ -1797,8 +1800,8 @@ module.exports = {
               ]
             }]
           }, {
-            "title": "Marriage, Family, & Individual Counsellors",
-            "options": [
+            title: "Marriage, Family, & Individual Counsellors",
+            options: [
               ["anxiety", "Anxiety"],
               ["depression", "Depression"],
               ["addiction", "Addiction"],
@@ -1818,14 +1821,14 @@ module.exports = {
               ["sexualAbuse", "Sexual Abuse"]
             ]
           }, {
-            "title": "Massage Therapists",
-            "options": [
+            title: "Massage Therapists",
+            options: [
               ["massageTreatments", "Massage Treatments"],
               ["relatedServices", "Related Services"]
             ],
-            "nodes": [{
-              "title": "Massage Treatments",
-              "options": [
+            nodes: [{
+              title: "Massage Treatments",
+              options: [
                 ["deepTissueMassage", "Deep Tissue Massage"],
                 ["lymphaticDrainageMassage", "Lymphatic Drainage Massage"],
                 ["prenatalMassage", "Pre-natal Massage"],
@@ -1845,8 +1848,8 @@ module.exports = {
                 ["myofascialRelease", "Myofascial Release"]
               ]
             }, {
-              "title": "Related Services",
-              "options": [
+              title: "Related Services",
+              options: [
                 ["acupuncture", "Acupuncture"],
                 ["chriropractic", "Chriropractic"],
                 ["herbology", "Herbology"],
@@ -1858,14 +1861,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Naturopaths",
-            "options": [
+            title: "Naturopaths",
+            options: [
               ["treatments", "Treatments"],
               ["servicesPrograms", "Services/Programs"]
             ],
-            "nodes": [{
-              "title": "Treatments",
-              "options": [
+            nodes: [{
+              title: "Treatments",
+              options: [
                 ["clinicalNutritionDiet", "Clinical Nutrition (Diet)"],
                 ["lifestyleCounselling", "Lifestyle Counselling"],
                 ["botanicalMedicineherbalism", "Botanical Medicine (herbalism)"],
@@ -1885,8 +1888,8 @@ module.exports = {
                 ["iVTherapy", "IV Therapy"]
               ]
             }, {
-              "title": "Services/Programs",
-              "options": [
+              title: "Services/Programs",
+              options: [
                 ["painSportsManagement", "Pain & Sports Management"],
                 ["cardiovascularMetabolicPrograms", "Cardiovascular & Metabolic Programs"],
                 ["weightLoss", "Weight Loss"],
@@ -1899,14 +1902,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Opticians - Dispensing",
-            "options": [
+            title: "Opticians - Dispensing",
+            options: [
               ["services", "Services"],
               ["products", "Products"]
             ],
-            "nodes": [{
-              "title": "Services",
-              "options": [
+            nodes: [{
+              title: "Services",
+              options: [
                 ["consultations", "Consultations"],
                 ["takingFaceMeasurements", "Taking Face Measurements"],
                 ["advisingCustomersonIdealEyeglassFramesandLensTreatments", "Advising Customers on Ideal Eyeglass Frames and Lens Treatments"],
@@ -1916,8 +1919,8 @@ module.exports = {
                 ["customEyewear", "Custom Eyewear"]
               ]
             }, {
-              "title": "Products",
-              "options": [
+              title: "Products",
+              options: [
                 ["frames", "Frames"],
                 ["prescriptionLenses", "Prescription Lenses"],
                 ["contacts", "Contacts"],
@@ -1927,22 +1930,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Optometrists",
-            "options": [
+            title: "Optometrists",
+            options: [
               ["services", "Services"],
               ["products", "Products"]
             ],
-            "nodes": [{
-              "title": "Services",
-              "options": [
+            nodes: [{
+              title: "Services",
+              options: [
                 ["eyeExams", "Eye Exams"],
                 ["orthokeratology", "Orthokeratology"],
                 ["emergencyEyeCare", "Emergency Eye Care"],
                 ["ocularHealthEvaluations", "Ocular Health Evaluations"]
               ]
             }, {
-              "title": "Products",
-              "options": [
+              title: "Products",
+              options: [
                 ["prescriptionGlasses", "Prescription Glasses"],
                 ["prescriptionSunglasses", "Prescription Sunglasses"],
                 ["contactLenses", "Contact Lenses"],
@@ -1951,14 +1954,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Pharmacies",
-            "options": [
+            title: "Pharmacies",
+            options: [
               ["products", "Products"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Products",
-              "options": [
+            nodes: [{
+              title: "Products",
+              options: [
                 ["compressionStockings", "Compression Stockings"],
                 ["walkersandCanes", "Walkers and Canes"],
                 ["crutches", "Crutches"],
@@ -1982,8 +1985,8 @@ module.exports = {
                 ["oralDentalCare", "Oral/Dental Care"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["bloodPressureTests", "Blood Pressure Tests"],
                 ["prescriptionCompounding", "Prescription Compounding"],
                 ["complianceBlisterPackaging", "Compliance/Blister Packaging"],
@@ -1996,14 +1999,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Physiotherapists",
-            "options": [
+            title: "Physiotherapists",
+            options: [
               ["conditionsTreated", "Conditions Treated"],
               ["typesofTreatments", "Types of Treatments"]
             ],
-            "nodes": [{
-              "title": "Conditions Treated",
-              "options": [
+            nodes: [{
+              title: "Conditions Treated",
+              options: [
                 ["cardiorespiratory", "Cardiorespiratory"],
                 ["cancer", "Cancer, Palliative Care and Lymphoma"],
                 ["womensHealth", "Incontinence and Women's Health"],
@@ -2015,8 +2018,8 @@ module.exports = {
                 ["sports", "Sports"]
               ]
             }, {
-              "title": "Types of Treatments",
-              "options": [
+              title: "Types of Treatments",
+              options: [
                 ["bowenTechnique", "Bowen Technique"],
                 ["dryNeeding", "Dry Needing"],
                 ["exercisePrograms", "Exercise Programs"],
@@ -2035,21 +2038,21 @@ module.exports = {
             }]
           },
           {
-            "title": "Podiatrists",
-            "options": [
+            title: "Podiatrists",
+            options: [
               ["biomechanicalAssessment", "Biomechanical Assessment"],
               ["treatments", "Treatments"],
               ["footSurgery", "Foot Surgery"]
             ],
-            "nodes": [{
-              "title": "Biomechanical Assessment",
-              "options": [
+            nodes: [{
+              title: "Biomechanical Assessment",
+              options: [
                 ["staticassessments", "Static assessments (screening, anatomical exams, posture/flexibility exams)"],
                 ["dynamicassessments", "Dynamic assessments (muscle testing, gait and pressure plate analysis)"]
               ]
             }, {
-              "title": "Treatments",
-              "options": [
+              title: "Treatments",
+              options: [
                 ["providingExerciseRegiments", "Providing Exercise Regiments"],
                 ["shoes", "Shoes (recommendations, clinic footwear sales)"],
                 ["orthotics", "Orthotics (custom, pre-fab)"],
@@ -2058,8 +2061,8 @@ module.exports = {
                 ["laserTherapy", "Laser Therapy"]
               ]
             }, {
-              "title": "Foot Surgery",
-              "options": [
+              title: "Foot Surgery",
+              options: [
                 ["nailSurgury", "Nail Surgury"],
                 ["electrosurgery", "Electrosurgery"],
                 ["bunionSurgery", "Bunion Surgery"],
@@ -2072,24 +2075,24 @@ module.exports = {
             }]
           },
           {
-            "title": "Psychologists",
-            "options": [
+            title: "Psychologists",
+            options: [
               ["patients", "Patients"],
               ["counsellingorTherapy", "Counselling or Therapy"],
               ["typesofTherapies", "Types of Therapies"],
               ["educationalAssessments", "Educational Assessments"]
             ],
-            "nodes": [{
-              "title": "Patients",
-              "options": [
+            nodes: [{
+              title: "Patients",
+              options: [
                 ["children", "Children"],
                 ["teenagers", "Teenagers"],
                 ["adults", "Adults"],
                 ["seniors", "Seniors"]
               ]
             }, {
-              "title": "Counselling or Therapy",
-              "options": [
+              title: "Counselling or Therapy",
+              options: [
                 ["griefLoss", "Grief/Loss"],
                 ["relationship", "Relationship"],
                 ["depression", "Depression"],
@@ -2100,8 +2103,8 @@ module.exports = {
                 ["postTraumaticStressDisorder", "Post-Traumatic Stress Disorder (PTSD)"]
               ]
             }, {
-              "title": "Types of Therapies",
-              "options": [
+              title: "Types of Therapies",
+              options: [
                 ["psychotherapy", "Psychotherapy"],
                 ["cognitiveBehaviourTherapy", "Cognitive Behaviour Therapy"],
                 ["groupTherapy", "Group Therapy"],
@@ -2109,15 +2112,17 @@ module.exports = {
                 ["corporateTherapy", "Corporate Therapy"],
                 ["parentingTherapy", "Parenting Therapy"]
               ]
-            }, {
-              "title": "Educational Assessments"
-            }]
+            },
+            // {
+            //   title: "Educational Assessments"
+            // }
+          ]
           }
         ]
       },
       {
-        "title": "Home & Maintenance",
-        "options": [
+        title: "Home & Maintenance",
+        options: [
           ["airConditioningContractors", "Air Conditioning Contractors"],
           ["appliancesMajorSalesService", "Appliances - Major Sales & Service"],
           ["appliancesRepairService", "Appliances Repair & Service"],
@@ -2152,9 +2157,9 @@ module.exports = {
           ["waterDrillingService", "Water Drilling & Service"],
           ["windows", "Windows"]
         ],
-        "nodes": [{
-            "title": "Air Conditioning Contractors",
-            "options": [
+        nodes: [{
+            title: "Air Conditioning Contractors",
+            options: [
               ["furnaces", "Furnaces"],
               ["furnaceTypes", "Furnace Types"],
               ["hotWaterHeater", "Hot Water Heater"],
@@ -2170,33 +2175,33 @@ module.exports = {
               ["airConditioners", "Air Conditioners"],
               ["typesofAirConditioners", "Types of Air Conditioners"]
             ],
-            "nodes": [{
-              "title": "Furnaces",
-              "options": [
+            nodes: [{
+              title: "Furnaces",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Furnace Types",
-              "options": [
+              title: "Furnace Types",
+              options: [
                 ["electricFurnace", "Electric Furnace"],
                 ["naturalGasFurnace", "Natural Gas Furnace"],
                 ["propaneFurnace", "Propane Furnace"],
                 ["oilFurnace", "Oil Furnace"]
               ]
             }, {
-              "title": "Hot Water Heater",
-              "options": [
+              title: "Hot Water Heater",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Hot Water Heater Types",
-              "options": [
+              title: "Hot Water Heater Types",
+              options: [
                 ["storageTankWaterHeater", "Storage Tank Water Heater"],
                 ["tanklessdWaterHeater", "Tankless (On-Demand) Water Heater"],
                 ["heatPumpWaterHeater", "Heat Pump (Hybrid) Water Heater"],
@@ -2204,78 +2209,78 @@ module.exports = {
                 ["condensingWaterHeater", "Condensing Water Heater"]
               ]
             }, {
-              "title": "Boiler/Radiator",
-              "options": [
+              title: "Boiler/Radiator",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Boiler/Radiator Types",
-              "options": [
+              title: "Boiler/Radiator Types",
+              options: [
                 ["combinationBoilers", "Combination Boilers"],
                 ["regularBoilers", "Regular Boilers"],
                 ["systemBoilers", "System Boilers"]
               ]
             }, {
-              "title": "Heat Pumps",
-              "options": [
+              title: "Heat Pumps",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Heat Pumps Types",
-              "options": [
+              title: "Heat Pumps Types",
+              options: [
                 ["ductedHeatPump", "Ducted Heat Pump (Air Source)"],
                 ["ductlessHeatPump", "Ductless (Mini-Split) Heat Pump"],
                 ["geothermalHeatPump", "Geothermal Heat Pump"],
                 ["absorptionHeatPump", "Absorption Heat Pump"]
               ]
             }, {
-              "title": "Radiant Floor Heating",
-              "options": [
+              title: "Radiant Floor Heating",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Radiant Floor Heating Types",
-              "options": [
+              title: "Radiant Floor Heating Types",
+              options: [
                 ["airHeatingRadiantFloors", "Air-Heating Radiant Floors"],
                 ["electricRadiantFloors", "Electric Radiant Floors"],
                 ["hydronicRadiantFloors", "Hydronic Radiant Floors"]
               ]
             }, {
-              "title": "Fireplaces",
-              "options": [
+              title: "Fireplaces",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Fireplaces Types",
-              "options": [
+              title: "Fireplaces Types",
+              options: [
                 ["woodBurningFireplaces", "Wood Burning Fireplaces"],
                 ["gasBurningFireplaces", "Gas Burning Fireplaces"],
                 ["electricFireplaces", "Electric Fireplaces"],
                 ["ethanolFireplaces", "Ethanol Fireplaces"]
               ]
             }, {
-              "title": "Air Conditioners",
-              "options": [
+              title: "Air Conditioners",
+              options: [
                 ["installation", "Installation"],
                 ["repairs", "Repairs"],
                 ["maintenanceInspection", "Maintenance/Inspection"],
                 ["sales", "Sales"]
               ]
             }, {
-              "title": "Types of Air Conditioners",
-              "options": [
+              title: "Types of Air Conditioners",
+              options: [
                 ["splitSystems", "Split Systems (Central Air)"],
                 ["packagedSystems", "Packaged Systems (Central Air)"],
                 ["ductlessMiniSplitSystems", "Ductless Mini-Split Systems"],
@@ -2285,22 +2290,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Appliances - Major Sales & Service",
-            "options": [
+            title: "Appliances - Major Sales & Service",
+            options: [
               ["services", "Services"],
               ["products", "Products"]
             ],
-            "nodes": [{
-              "title": "Services",
-              "options": [
+            nodes: [{
+              title: "Services",
+              options: [
                 ["sales", "Sales"],
                 ["repairs", "Repairs"],
                 ["inspectionMaintenance", "Inspection/Maintenance"],
                 ["gasFitting", "Gas Fitting"]
               ]
             }, {
-              "title": "Products",
-              "options": [
+              title: "Products",
+              options: [
                 ["refrigerators", "Refrigerators"],
                 ["freezers", "Freezers"],
                 ["gasRanges", "Gas Ranges"],
@@ -2315,15 +2320,15 @@ module.exports = {
             }]
           },
           {
-            "title": "Appliances Repair & Service",
-            "options": [
+            title: "Appliances Repair & Service",
+            options: [
               ["services", "Services"],
               ["brands", "Brands"],
               ["products", "Products"]
             ],
-            "nodes": [{
-              "title": "Services",
-              "options": [
+            nodes: [{
+              title: "Services",
+              options: [
                 ["inHomeRepairs", "In-Home Repairs"],
                 ["inShopRepairs", "In-Shop Repairs"],
                 ["warranties", "Warranties"],
@@ -2334,8 +2339,8 @@ module.exports = {
                 ["financing", "Financing"]
               ]
             }, {
-              "title": "Brands",
-              "options": [
+              title: "Brands",
+              options: [
                 ["whirlpool", "Whirlpool"],
                 ["samsung", "Samsung"],
                 ["maytag", "Maytag"],
@@ -2350,8 +2355,8 @@ module.exports = {
                 ["wolf", "Wolf"]
               ]
             }, {
-              "title": "Products",
-              "options": [
+              title: "Products",
+              options: [
                 ["new", "New"],
                 ["reconditioned", "Reconditioned"],
                 ["gasAppliances", "Gas Appliances"],
@@ -2381,16 +2386,16 @@ module.exports = {
             }]
           },
           {
-            "title": "Blinds & Window Shades",
-            "options": [
+            title: "Blinds & Window Shades",
+            options: [
               ["blinds", "Blinds"],
               ["shades", "Shades"],
               ["drapery", "Drapery"],
               ["otherServices", "Other Services"]
             ],
-            "nodes": [{
-              "title": "Blinds",
-              "options": [
+            nodes: [{
+              title: "Blinds",
+              options: [
                 ["woodBlinds", "Wood Blinds"],
                 ["fauxWoodBlinds", "Faux Wood Blinds"],
                 ["aluminumBlinds", "Aluminum Blinds"],
@@ -2399,8 +2404,8 @@ module.exports = {
                 ["panelTrackBlinds", "Panel Track Blinds"]
               ]
             }, {
-              "title": "Shades",
-              "options": [
+              title: "Shades",
+              options: [
                 ["cellularShades", "Cellular Shades"],
                 ["rollerShades", "Roller Shades"],
                 ["lightFiltering", "Light Filtering"],
@@ -2414,16 +2419,16 @@ module.exports = {
                 ["outdoorShades", "Outdoor Shades"]
               ]
             }, {
-              "title": "Drapery",
-              "options": [
+              title: "Drapery",
+              options: [
                 ["customDrapes", "Custom Drapes"],
                 ["draperyHardware", "Drapery Hardware"],
                 ["valancesCornices", "Valances & Cornices"],
                 ["fabric", "Fabric"]
               ]
             }, {
-              "title": "Other Services",
-              "options": [
+              title: "Other Services",
+              options: [
                 ["freeSwatches", "Free Swatches"],
                 ["showroom", "Showroom"],
                 ["motorizedBlindsandShades", "Motorized Blinds and Shades"],
@@ -2434,22 +2439,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Carpet & Rug Cleaners",
-            "options": [
+            title: "Carpet & Rug Cleaners",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["services", "Services"],
               ["additionalServices", "Additional Services"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["steamCleaning", "Steam Cleaning"],
                 ["shampooTreatments", "Shampoo Treatments"],
                 ["bonnetCleaningPadCleaning", "Bonnet Cleaning/ Pad Cleaning"],
@@ -2459,8 +2464,8 @@ module.exports = {
                 ["pickUpDeliveryofAreaRugs", "Pick Up & Delivery of Area Rugs"]
               ]
             }, {
-              "title": "Additional Services",
-              "options": [
+              title: "Additional Services",
+              options: [
                 ["upholsteryCleaning", "Upholstery Cleaning"],
                 ["tileGroutCleaning", "Tile & Grout Cleaning"],
                 ["airDuctCleaning", "Air Duct Cleaning"],
@@ -2471,8 +2476,8 @@ module.exports = {
             }]
           },
           {
-            "title": "Carpet & Rug Dealers",
-            "options": [
+            title: "Carpet & Rug Dealers",
+            options: [
               ["serviceTypes", "Service Types"],
               ["carpetTypes", "Carpet Types"],
               ["carpetMaterials", "Carpet Materials"],
@@ -2483,15 +2488,15 @@ module.exports = {
               ["accessories", "Accessories"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Service Types",
-              "options": [
+            nodes: [{
+              title: "Service Types",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"]
               ]
             }, {
-              "title": "Carpet Types",
-              "options": [
+              title: "Carpet Types",
+              options: [
                 ["cutPile", "Cut Pile"],
                 ["plush", "Plush"],
                 ["frieze", "Frieze"],
@@ -2499,8 +2504,8 @@ module.exports = {
                 ["berber", "Berber"]
               ]
             }, {
-              "title": "Carpet Materials",
-              "options": [
+              title: "Carpet Materials",
+              options: [
                 ["polyester", "Polyester"],
                 ["nylon", "Nylon"],
                 ["wool", "Wool"],
@@ -2510,15 +2515,15 @@ module.exports = {
                 ["recycledFibre", "Recycled Fibre"]
               ]
             }, {
-              "title": "Carpet Origin",
-              "options": [
+              title: "Carpet Origin",
+              options: [
                 ["uSA", "USA"],
                 ["canada", "Canada"],
                 ["europe", "Europe"]
               ]
             }, {
-              "title": "Rug Types",
-              "options": [
+              title: "Rug Types",
+              options: [
                 ["rug", "Rug"],
                 ["kilim", "Kilim"],
                 ["jajim", "Jajim"],
@@ -2527,8 +2532,8 @@ module.exports = {
                 ["tapestry", "Tapestry"]
               ]
             }, {
-              "title": "Rug Materials",
-              "options": [
+              title: "Rug Materials",
+              options: [
                 ["wool", "Wool"],
                 ["silk", "Silk"],
                 ["cotton", "Cotton"],
@@ -2536,8 +2541,8 @@ module.exports = {
                 ["blend", "Blend"]
               ]
             }, {
-              "title": "Rug Origin",
-              "options": [
+              title: "Rug Origin",
+              options: [
                 ["persia", "Persia"],
                 ["nepal", "Nepal"],
                 ["india", "India"],
@@ -2547,8 +2552,8 @@ module.exports = {
                 ["turkey", "Turkey"]
               ]
             }, {
-              "title": "Accessories",
-              "options": [
+              title: "Accessories",
+              options: [
                 ["bedCover", "Bed Cover"],
                 ["chenille", "Chenille"],
                 ["pillows", "Pillows"],
@@ -2557,8 +2562,8 @@ module.exports = {
                 ["wallHanging", "Wall Hanging"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["carpetInstallation", "Carpet Installation"],
                 ["carpetRemovalDisposal", "Carpet Removal & Disposal"],
                 ["delivery", "Delivery"],
@@ -2569,15 +2574,15 @@ module.exports = {
             }]
           },
           {
-            "title": "Cleaning Services Residential, Commercial & Industrial",
-            "options": [
+            title: "Cleaning Services Residential, Commercial & Industrial",
+            options: [
               ["facilities", "Facilities"],
               ["ecoFriendlyCleaning", "Eco-Friendly Cleaning"],
               ["cleaningServices", "Cleaning Services"]
             ],
-            "nodes": [{
-              "title": "Facilities",
-              "options": [
+            nodes: [{
+              title: "Facilities",
+              options: [
                 ["residentialHomeApartment", "Residential (Home, Apartment)"],
                 ["officeBuilding", "Office Building"],
                 ["strata", "Strata"],
@@ -2591,8 +2596,8 @@ module.exports = {
                 ["hazmatCleanup", "Hazmat Cleanup"]
               ]
             }, {
-              "title": "Eco-Friendly Cleaning",
-              "options": [
+              title: "Eco-Friendly Cleaning",
+              options: [
                 ["ecoFriendlyCleaningProducts", "Eco-Friendly Cleaning Products"],
                 ["ecologoCertifiedProducts", "Ecologo Certified Products"],
                 ["greenSealCertifiedProducts", "Green Seal Certified Products"],
@@ -2601,8 +2606,8 @@ module.exports = {
                 ["ecoFriendlyCleaningPractices", "Eco-Friendly Cleaning Practices"]
               ]
             }, {
-              "title": "Cleaning Services",
-              "options": [
+              title: "Cleaning Services",
+              options: [
                 ["scheduledCleaning", "Scheduled Cleaning"],
                 ["oneTimeCleaning", "One-Time Cleaning"],
                 ["moveInOut", "Move In/Out"],
@@ -2626,19 +2631,19 @@ module.exports = {
             }]
           },
           {
-            "title": "Doors & Windows"
+            title: "Doors & Windows"
           },
           {
-            "title": "Doors - Overhead",
-            "options": [
+            title: "Doors - Overhead",
+            options: [
               ["overheadDoors", "Overhead Doors"],
               ["overheadDoorOperators", "Overhead Door Operators"],
               ["overheadDoorRemotes", "Overhead Door Remotes"],
               ["wallControlStations", "Wall Control Stations"]
             ],
-            "nodes": [{
-              "title": "Overhead Doors",
-              "options": [
+            nodes: [{
+              title: "Overhead Doors",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["sales", "Sales"],
@@ -2646,8 +2651,8 @@ module.exports = {
                 ["repairsMaintenance", "Repairs/Maintenance"]
               ]
             }, {
-              "title": "Overhead Door Operators",
-              "options": [
+              title: "Overhead Door Operators",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["sales", "Sales"],
@@ -2655,15 +2660,15 @@ module.exports = {
                 ["repairsMaintenance", "Repairs/Maintenance"]
               ]
             }, {
-              "title": "Overhead Door Remotes",
-              "options": [
+              title: "Overhead Door Remotes",
+              options: [
                 ["sales", "Sales"],
                 ["installation", "Installation"],
                 ["repairsMaintenance", "Repairs/Maintenance"]
               ]
             }, {
-              "title": "Wall Control Stations",
-              "options": [
+              title: "Wall Control Stations",
+              options: [
                 ["sales", "Sales"],
                 ["installation", "Installation"],
                 ["repairsMaintenance", "Repairs/Maintenance"]
@@ -2671,24 +2676,24 @@ module.exports = {
             }]
           },
           {
-            "title": "Eavestroughing",
-            "options": [
+            title: "Eavestroughing",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["installationRepairMaintenance", "Installation, Repair, Maintenance"],
               ["eavestroughMaterials", "Eavestrough Materials"],
               ["typesofEavestroughs", "Types of Eavestroughs"],
               ["additionalServices", "Additional Services"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Installation, Repair, Maintenance",
-              "options": [
+              title: "Installation, Repair, Maintenance",
+              options: [
                 ["fascia", "Fascia"],
                 ["soffit", "Soffit"],
                 ["eavestroughs", "Eavestroughs"],
@@ -2699,16 +2704,16 @@ module.exports = {
                 ["snowStopsSnowGuards", "Snow Stops/Snow Guards"]
               ]
             }, {
-              "title": "Eavestrough Materials",
-              "options": [
+              title: "Eavestrough Materials",
+              options: [
                 ["aluminum", "Aluminum"],
                 ["vinyl", "Vinyl"],
                 ["steel", "Steel"],
                 ["copper", "Copper"]
               ]
             }, {
-              "title": "Types of Eavestroughs",
-              "options": [
+              title: "Types of Eavestroughs",
+              options: [
                 ["continuousSeamless", "Continuous/Seamless"],
                 ["custom", "Custom"],
                 ["5Wide", "5\" Wide"],
@@ -2717,25 +2722,25 @@ module.exports = {
                 ["8Wide", "8\" Wide"]
               ]
             }, {
-              "title": "Additional Services",
-              "options": [
+              title: "Additional Services",
+              options: [
                 ["gutterCleaning", "Gutter Cleaning"],
                 ["freeEstimates", "Free Estimates"]
               ]
             }]
           },
           {
-            "title": "Electric Contractors",
-            "options": [
+            title: "Electric Contractors",
+            options: [
               ["residentialElectrical", "Residential Electrical"],
               ["commercialElectrical", "Commercial Electrical"],
               ["industrialElectrical", "Industrial Electrical"],
               ["institutionalElectrical", "Institutional Electrical"],
               ["otherElectricalServices", "Other Electrical Services"],
             ],
-            "nodes": [{
-              "title": "Residential Electrical",
-              "options": [
+            nodes: [{
+              title: "Residential Electrical",
+              options: [
                 ["indoorLighting", "Indoor Lighting"],
                 ["outdoorLighting", "Outdoor Lighting"],
                 ["inspections", "Inspections"],
@@ -2748,16 +2753,16 @@ module.exports = {
                 ["groundFaultInterruptCircuits", "Ground Fault Interrupt Circuits"]
               ]
             }, {
-              "title": "Commercial Electrical",
-              "options": [
+              title: "Commercial Electrical",
+              options: [
                 ["outdoorParkingLighting", "Outdoor/Parking Lighting"],
                 ["indoorLighting", "Indoor Lighting"],
                 ["panelUpgrades", "Panel Upgrades"],
                 ["motorControlInstallation", "Motor Control Installation"]
               ]
             }, {
-              "title": "Industrial Electrical",
-              "options": [
+              title: "Industrial Electrical",
+              options: [
                 ["machineInstallationWiring", "Machine Installation/Wiring"],
                 ["plantExpansionRelocation", "Plant Expansion/Relocation"],
                 ["programmableLogicControllers", "Programmable Logic Controllers"],
@@ -2766,39 +2771,39 @@ module.exports = {
                 ["infraredScans", "Infrared Scans"]
               ]
             }, {
-              "title": "Institutional Electrical",
-              "options": [
+              title: "Institutional Electrical",
+              options: [
                 ["wiringInstallationUpgrades", "Wiring Installation/Upgrades"],
                 ["lighting", "Lighting"],
                 ["backupPowerSystems", "Backup Power Systems"],
                 ["electricalPanelsSwitchboards", "Electrical Panels/Switchboards"]
               ]
             }, {
-              "title": "Other Electrical Services",
-              "options": [
+              title: "Other Electrical Services",
+              options: [
                 ["lightingProtection", "Lighting Protection"],
                 ["24EmergencyService", "24 Emergency Service"]
               ]
             }]
           },
           {
-            "title": "Fences",
-            "options": [
+            title: "Fences",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["products", "Products"],
               ["relatedProductsServices", "Related Products/Services"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Products",
-              "options": [
+              title: "Products",
+              options: [
                 ["woodFencing", "Wood Fencing"],
                 ["metalFencing", "Metal Fencing"],
                 ["chainLinkFencing", "Chain Link Fencing"],
@@ -2806,8 +2811,8 @@ module.exports = {
                 ["vinylFencing", "Vinyl Fencing"]
               ]
             }, {
-              "title": "Related Products/Services",
-              "options": [
+              title: "Related Products/Services",
+              options: [
                 ["retainingWalls", "Retaining Walls"],
                 ["decks", "Decks"],
                 ["landscaping", "Landscaping"],
@@ -2815,8 +2820,8 @@ module.exports = {
                 ["gates", "Gates"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["installation", "Installation"],
                 ["repair", "Repair"],
                 ["preFabricatedFences", "Pre-Fabricated Fences"],
@@ -2825,22 +2830,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Floor Laying, Refinishing, Resurfacing",
-            "options": [
+            title: "Floor Laying, Refinishing, Resurfacing",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["typesofFlooring", "Types of Flooring"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Types of Flooring",
-              "options": [
+              title: "Types of Flooring",
+              options: [
                 ["hardwood", "Hardwood"],
                 ["tile", "Tile"],
                 ["carpet", "Carpet"],
@@ -2852,8 +2857,8 @@ module.exports = {
                 ["vinyl", "Vinyl"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["floorLeveling", "Floor Leveling"],
                 ["carpetRemoval", "Carpet Removal"],
                 ["flooringRepairs", "Flooring Repairs"],
@@ -2867,14 +2872,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Garbage Collection",
-            "options": [
+            title: "Garbage Collection",
+            options: [
               ["services", "Services"],
               ["areasofService", "Areas of Service"]
             ],
-            "nodes": [{
-              "title": "Services",
-              "options": [
+            nodes: [{
+              title: "Services",
+              options: [
                 ["recycling", "Recycling"],
                 ["scrapMetalRecycling", "Scrap Metal Recycling"],
                 ["electronicsRecycling", "Electronics Recycling"],
@@ -2890,8 +2895,8 @@ module.exports = {
                 ["constructionWasteRemoval", "Construction Waste Removal"]
               ]
             }, {
-              "title": "Areas of Service",
-              "options": [
+              title: "Areas of Service",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"],
@@ -2900,22 +2905,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Glass - Float, Plate, Windows & Doors Etc.",
-            "options": [
+            title: "Glass - Float, Plate, Windows & Doors Etc.",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["glassServicesFor", "Glass Services For"],
               ["typesofGlass", "Types of Glass"],
               ["installRepairReplace", "Install, Repair, Replace"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"]
               ]
             }, {
-              "title": "Glass Services For",
-              "options": [
+              title: "Glass Services For",
+              options: [
                 ["windows", "Windows"],
                 ["doors", "Doors"],
                 ["cabinetDoors", "Cabinet Doors"],
@@ -2926,8 +2931,8 @@ module.exports = {
                 ["railings", "Railings"]
               ]
             }, {
-              "title": "Types of Glass",
-              "options": [
+              title: "Types of Glass",
+              options: [
                 ["floatGlass", "Float Glass"],
                 ["plateGlass", "Plate Glass"],
                 ["tintedGlass", "Tinted Glass"],
@@ -2937,15 +2942,15 @@ module.exports = {
                 ["stainedGlass", "Stained Glass"]
               ]
             }, {
-              "title": "Install, Repair, Replace",
-              "options": [
+              title: "Install, Repair, Replace",
+              options: [
                 ["glassDoorsHingesClosersHandlesFramesEtc", "Glass Doors (Hinges, Closers, Handles, Frames, Etc.)"],
                 ["slidingGlassDoorsRollersHandlesTrackEtc", "Sliding Glass Doors (Rollers, Handles, Track, Etc.)"],
                 ["windowsMonolithicThermal", "Windows (Monolithic & Thermal)"]
               ]
             }, {
-              "title": "Landscape Design",
-              "options": [
+              title: "Landscape Design",
+              options: [
                 ["planning", "Planning"],
                 ["sitePreparation", "Site Preparation"],
                 ["hardscaping", "Hardscaping"],
@@ -2953,18 +2958,18 @@ module.exports = {
               ]
             }]
           },
+          // {
+          //   title: "Heating Contractors"
+          // },
           {
-            "title": "Heating Contractors"
-          },
-          {
-            "title": "Landscaping Contractors & Designers",
-            "options": [
+            title: "Landscaping Contractors & Designers",
+            options: [
               ["landscapeDesign", "Landscape Design"],
               ["landscaping", "Landscaping"]
             ],
-            "nodes": [{
-              "title": "Landscaping",
-              "options": [
+            nodes: [{
+              title: "Landscaping",
+              options: [
                 ["waterFeatures", "Water Features"],
                 ["planters", "Planters"],
                 ["fireFeatures", "Fire Features"],
@@ -2983,8 +2988,8 @@ module.exports = {
                 ["outdoorKitchens", "Outdoor Kitchens"]
               ]
             }, {
-              "title": "Garden Services",
-              "options": [
+              title: "Garden Services",
+              options: [
                 ["gardenCleanup", "Garden Cleanup"],
                 ["planting", "Planting"],
                 ["gardenMaintenance", "Garden Maintenance"],
@@ -2995,8 +3000,8 @@ module.exports = {
             }]
           },
           {
-            "title": "Lawn Maintenance",
-            "options": [
+            title: "Lawn Maintenance",
+            options: [
               ["gardenServices", "Garden Services"],
               ["lawnInstallationServices", "Lawn Installation Services"],
               ["lawnCareServices", "Lawn Care Services"],
@@ -3004,9 +3009,9 @@ module.exports = {
               ["relatedServices", "Related Services"],
               ["serviceType", "Service Type"]
             ],
-            "nodes": [{
-              "title": "Lawn Installation Services",
-              "options": [
+            nodes: [{
+              title: "Lawn Installation Services",
+              options: [
                 ["lawnInstallation", "Lawn Installation"],
                 ["lightingInstallation", "Lighting Installation"],
                 ["paverInstallation", "Paver Installation"],
@@ -3014,8 +3019,8 @@ module.exports = {
                 ["soilInstallation", "Soil Installation"]
               ]
             }, {
-              "title": "Lawn Care Services",
-              "options": [
+              title: "Lawn Care Services",
+              options: [
                 ["cuttingMowingEdging", "Cutting/Mowing & Edging"],
                 ["coreAeration", "Core Aeration"],
                 ["fertilization", "Fertilization"],
@@ -3025,16 +3030,16 @@ module.exports = {
                 ["topDressingReseeding", "Top Dressing/Reseeding"]
               ]
             }, {
-              "title": "Tree & Hedge Services",
-              "options": [
+              title: "Tree & Hedge Services",
+              options: [
                 ["trimming", "Trimming"],
                 ["pruning", "Pruning"],
                 ["fertilization", "Fertilization"],
                 ["plantHealthEvaluation", "Plant Health Evaluation"]
               ]
             }, {
-              "title": "Related Services",
-              "options": [
+              title: "Related Services",
+              options: [
                 ["snowPlowing", "Snow Plowing"],
                 ["deIcing", "De-Icing"],
                 ["landscapeDesign", "Landscape Design"],
@@ -3042,8 +3047,8 @@ module.exports = {
                 ["powerWashing", "Power Washing"]
               ]
             }, {
-              "title": "Service Type",
-              "options": [
+              title: "Service Type",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["strata", "Strata"],
@@ -3052,14 +3057,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Locks & Locksmiths",
-            "options": [
+            title: "Locks & Locksmiths",
+            options: [
               ["locksmith", "Locksmith"],
               ["safesLockboxes", "Safes & Lockboxes"]
             ],
-            "nodes": [{
-              "title": "Locksmith",
-              "options": [
+            nodes: [{
+              title: "Locksmith",
+              options: [
                 ["keyReplacement", "Key Replacement"],
                 ["brokenKeysinLocks", "Broken Keys in Locks"],
                 ["stuckJammedLocks", "Stuck/Jammed Locks"],
@@ -3073,8 +3078,8 @@ module.exports = {
                 ["24HourService", "24 Hour Service"]
               ]
             }, {
-              "title": "Safes & Lockboxes",
-              "options": [
+              title: "Safes & Lockboxes",
+              options: [
                 ["safeSales", "Safe Sales"],
                 ["openingSafes", "Opening Safes"],
                 ["lockboxSales", "Lockbox Sales"],
@@ -3084,23 +3089,23 @@ module.exports = {
             }]
           },
           {
-            "title": "Moving & Storage",
-            "options": [
+            title: "Moving & Storage",
+            options: [
               ["packing", "Packing"],
               ["moving", "Moving"],
               ["junkRemoval", "Junk Removal"],
               ["storage", "Storage"]
             ],
-            "nodes": [{
-              "title": "Packing",
-              "options": [
+            nodes: [{
+              title: "Packing",
+              options: [
                 ["commercial", "Commercial"],
                 ["residential", "Residential"],
                 ["packingMaterials", "Packing Materials"]
               ]
             }, {
-              "title": "Moving",
-              "options": [
+              title: "Moving",
+              options: [
                 ["commercial", "Commercial"],
                 ["residential", "Residential"],
                 ["localMoves", "Local Moves"],
@@ -3109,14 +3114,14 @@ module.exports = {
                 ["pianoMoving", "Piano Moving"]
               ]
             }, {
-              "title": "Junk Removal",
-              "options": [
+              title: "Junk Removal",
+              options: [
                 ["availableforMovingClients", "Available for Moving Clients"],
                 ["availableonitsOwn", "Available on its Own"]
               ]
             }, {
-              "title": "Storage",
-              "options": [
+              title: "Storage",
+              options: [
                 ["availableforMovingClients", "Available for Moving Clients"],
                 ["availableonitsOwn", "Available on its Own"],
                 ["selfStorage", "Self-Storage"],
@@ -3133,22 +3138,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Painters",
-            "options": [
+            title: "Painters",
+            options: [
               ["typeofWork", "Type of Work"],
               ["interior", "Interior"],
               ["exterior", "Exterior"]
             ],
-            "nodes": [{
-              "title": "Type of Work",
-              "options": [
+            nodes: [{
+              title: "Type of Work",
+              options: [
                 ["commercial", "Commercial"],
                 ["residential", "Residential"],
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Interior",
-              "options": [
+              title: "Interior",
+              options: [
                 ["paintingallinteriorsurfaces", "Painting (all interior surfaces)"],
                 ["latexCoating", "Latex Coating"],
                 ["urethaneCoating", "Urethane Coating"],
@@ -3157,8 +3162,8 @@ module.exports = {
                 ["wallHangings", "Wall Hangings"]
               ]
             }, {
-              "title": "Exterior",
-              "options": [
+              title: "Exterior",
+              options: [
                 ["stuccoPainting", "Stucco Painting"],
                 ["concretePainting", "Concrete Painting"],
                 ["woodPainting", "Wood Painting"],
@@ -3172,24 +3177,24 @@ module.exports = {
             }]
           },
           {
-            "title": "Pest Control Services",
-            "options": [
+            title: "Pest Control Services",
+            options: [
               ["clientsServiced", "Clients Serviced"],
               ["animalsControlled", "Animals Controlled"],
               ["insectsControlled", "Insects Controlled"],
               ["controlMethods", "Control Methods"]
             ],
-            "nodes": [{
-              "title": "Clients Serviced",
-              "options": [
+            nodes: [{
+              title: "Clients Serviced",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"],
                 ["agricultural", "Agricultural"]
               ]
             }, {
-              "title": "Animals Controlled",
-              "options": [
+              title: "Animals Controlled",
+              options: [
                 ["birds", "Birds"],
                 ["rats", "Rats"],
                 ["mice", "Mice"],
@@ -3202,8 +3207,8 @@ module.exports = {
                 ["pigeons", "Pigeons"]
               ]
             }, {
-              "title": "Insects Controlled",
-              "options": [
+              title: "Insects Controlled",
+              options: [
                 ["wasps", "Wasps"],
                 ["hornets", "Hornets"],
                 ["flies", "Flies"],
@@ -3220,8 +3225,8 @@ module.exports = {
                 ["earwigs", "Earwigs"]
               ]
             }, {
-              "title": "Control Methods",
-              "options": [
+              title: "Control Methods",
+              options: [
                 ["geeseHazing", "Geese Hazing"],
                 ["fumigation", "Fumigation"],
                 ["naturalMethods", "Natural Methods (i.e. using other animals, etc.)"]
@@ -3229,8 +3234,8 @@ module.exports = {
             }]
           },
           {
-            "title": "Plumbing Contractors",
-            "options": [
+            title: "Plumbing Contractors",
+            options: [
               ["drainage", "Drainage"],
               ["sewer", "Sewer"],
               ["garburator", "Garburator"],
@@ -3238,66 +3243,66 @@ module.exports = {
               ["waterHeater", "Water Heater"],
               ["property", "Property"]
             ],
-            "nodes": [{
-              "title": "Drainage",
-              "options": [
+            nodes: [{
+              title: "Drainage",
+              options: [
                 ["clogorBackup", "Clog or Backup"]
               ]
             }, {
-              "title": "Sewer",
-              "options": [
+              title: "Sewer",
+              options: [
                 ["repairs", "Repairs"],
                 ["replacement", "Replacement"]
               ]
             }, {
-              "title": "Garburator",
-              "options": [
+              title: "Garburator",
+              options: [
                 ["repairs", "Repairs"],
                 ["replacement", "Replacement"]
               ]
             }, {
-              "title": "Pipes",
-              "options": [
+              title: "Pipes",
+              options: [
                 ["burstPipeRepair", "Burst Pipe Repair"],
                 ["replacement", "Replacement"]
               ]
             }, {
-              "title": "Water Heater",
-              "options": [
+              title: "Water Heater",
+              options: [
                 ["repair", "Repair"],
                 ["replacement", "Replacement"],
                 ["maintenance", "Maintenance"],
                 ["boilers", "Boilers"]
               ]
             }, {
-              "title": "Property",
-              "options": [
+              title: "Property",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"]
               ]
             }]
           },
+          // {
+          //   title: "Pumps"
+          // },
           {
-            "title": "Pumps"
-          },
-          {
-            "title": "Renovation & Home Improvements",
-            "options": [
+            title: "Renovation & Home Improvements",
+            options: [
               ["renoHomeImprovementServices", "Reno/Home Improvement Services"],
               ["handymanServices", "Handyman Services"],
               ["typesofAdditions", "Types of Additions"]
             ],
-            "nodes": [{
-              "title": "Reno/Home Improvement Services",
-              "options": [
+            nodes: [{
+              title: "Reno/Home Improvement Services",
+              options: [
                 ["basementRenovations", "Basement Renovations"],
                 ["additions", "Additions"],
                 ["inFloorHeatingInstallations", "In-Floor Heating Installations"],
                 ["generalHandymanWork", "General Handyman Work"]
               ]
             }, {
-              "title": "Handyman Services",
-              "options": [
+              title: "Handyman Services",
+              options: [
                 ["fences", "Fences"],
                 ["gates", "Gates"],
                 ["drywallRepair", "Drywall Repair"],
@@ -3305,8 +3310,8 @@ module.exports = {
                 ["replacingFlooring", "Replacing Flooring"]
               ]
             }, {
-              "title": "Types of Additions",
-              "options": [
+              title: "Types of Additions",
+              options: [
                 ["bedrooms", "Bedrooms"],
                 ["bathrooms", "Bathrooms"],
                 ["garages", "Garages"],
@@ -3318,14 +3323,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Septic Tanks - Cleaning",
-            "options": [
+            title: "Septic Tanks - Cleaning",
+            options: [
               ["commercial", "Commercial"],
               ["residential", "Residential"]
             ],
-            "nodes": [{
-              "title": "Commercial",
-              "options": [
+            nodes: [{
+              title: "Commercial",
+              options: [
                 ["septicTankCleaning", "Septic Tank Cleaning"],
                 ["greaseTrapCleaning", "Grease Trap Cleaning"],
                 ["floodingServices", "Flooding Services"],
@@ -3337,8 +3342,8 @@ module.exports = {
                 ["videoInspection", "Video Inspection"]
               ]
             }, {
-              "title": "Residential",
-              "options": [
+              title: "Residential",
+              options: [
                 ["septicTankCleaning", "Septic Tank Cleaning"],
                 ["septicTankMaintenance", "Septic Tank Maintenance"],
                 ["septicSystemInspection", "Septic System Inspection"],
@@ -3349,15 +3354,15 @@ module.exports = {
             }]
           },
           {
-            "title": "Siding Contractors",
-            "options": [
+            title: "Siding Contractors",
+            options: [
               ["buildingTypes", "Building Types"],
               ["sidingTypes", "Siding Types"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Building Types",
-              "options": [
+            nodes: [{
+              title: "Building Types",
+              options: [
                 ["houses", "Houses"],
                 ["townhouses", "Townhouses"],
                 ["condoApartment", "Condo/Apartment"],
@@ -3365,8 +3370,8 @@ module.exports = {
                 ["industrial", "Industrial"]
               ]
             }, {
-              "title": "Siding Types",
-              "options": [
+              title: "Siding Types",
+              options: [
                 ["vinyl", "Vinyl"],
                 ["metal", "Metal"],
                 ["wood", "Wood"],
@@ -3378,8 +3383,8 @@ module.exports = {
                 ["ecoFriendly", "Eco-Friendly"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["installation", "Installation"],
                 ["removal", "Removal"],
                 ["repair", "Repair"],
@@ -3388,22 +3393,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Storage - Self Service",
-            "options": [
+            title: "Storage - Self Service",
+            options: [
               ["typesofStorage", "Types of Storage"],
               ["features", "Features"]
             ],
-            "nodes": [{
-              "title": "Types of Storage",
-              "options": [
+            nodes: [{
+              title: "Types of Storage",
+              options: [
                 ["selfStorage", "Self-Storage"],
                 ["mobileStorage", "Mobile Storage"],
                 ["commercial", "Commercial"],
                 ["residential", "Residential"]
               ]
             }, {
-              "title": "Features",
-              "options": [
+              title: "Features",
+              options: [
                 ["climateControlled", "Climate-Controlled"],
                 ["driveUp", "Drive-Up"],
                 ["accessible247", "Accessible 24/7"],
@@ -3416,29 +3421,29 @@ module.exports = {
             }]
           },
           {
-            "title": "Tree Service",
-            "options": [
+            title: "Tree Service",
+            options: [
               ["removal", "Removal"],
               ["planting", "Planting"],
               ["maintenance", "Maintenance"]
             ],
-            "nodes": [{
-              "title": "Removal",
-              "options": [
+            nodes: [{
+              title: "Removal",
+              options: [
                 ["treeRemoval", "Tree Removal"],
                 ["stumpRemoval", "Stump Removal"],
                 ["stumpGrinding", "Stump Grinding"]
               ]
             }, {
-              "title": "Planting",
-              "options": [
+              title: "Planting",
+              options: [
                 ["treeRemoval", "Tree Removal"],
                 ["mulching", "Mulching"],
                 ["transplanting", "Transplanting"]
               ]
             }, {
-              "title": "Maintenance",
-              "options": [
+              title: "Maintenance",
+              options: [
                 ["pruning", "Pruning"],
                 ["fertilization", "Fertilization"],
                 ["soilAeration", "Soil Aeration"],
@@ -3449,15 +3454,15 @@ module.exports = {
             }]
           },
           {
-            "title": "Upholsterers",
-            "options": [
+            title: "Upholsterers",
+            options: [
               ["furnitureRestorationfor", "Furniture Restoration for"],
               ["upholsterySuppliesSales", "Upholstery Supplies Sales"],
               ["upholsteryServices", "Upholstery Services"]
             ],
-            "nodes": [{
-              "title": "Furniture Restoration for",
-              "options": [
+            nodes: [{
+              title: "Furniture Restoration for",
+              options: [
                 ["homes", "Homes"],
                 ["offices", "Offices"],
                 ["restaurants", "Restaurants"],
@@ -3467,8 +3472,8 @@ module.exports = {
                 ["boats", "Boats"]
               ]
             }, {
-              "title": "Upholstery Supplies Sales",
-              "options": [
+              title: "Upholstery Supplies Sales",
+              options: [
                 ["fabrics", "Fabrics"],
                 ["foams", "Foams"],
                 ["leather", "Leather"],
@@ -3479,8 +3484,8 @@ module.exports = {
                 ["vinyl", "Vinyl"]
               ]
             }, {
-              "title": "Upholstery Services",
-              "options": [
+              title: "Upholstery Services",
+              options: [
                 ["wallUpholstery", "Wall Upholstery"],
                 ["restylingRebuilding", "Restyling & Rebuilding"],
                 ["antiqueRefurbishing", "Antique Refurbishing"],
@@ -3497,14 +3502,14 @@ module.exports = {
             }]
           },
           {
-            "title": "Vacuum Cleaners",
-            "options": [
+            title: "Vacuum Cleaners",
+            options: [
               ["products", "Products"],
               ["services", "Services"]
             ],
-            "nodes": [{
-              "title": "Products",
-              "options": [
+            nodes: [{
+              title: "Products",
+              options: [
                 ["centralVacuums", "Central Vacuums"],
                 ["portablevacuums", "Portable vacuums"],
                 ["commercialacuums", "Commercial acuums"],
@@ -3516,8 +3521,8 @@ module.exports = {
                 ["addOnsAccessories", "Add-Ons/Accessories"]
               ]
             }, {
-              "title": "Services",
-              "options": [
+              title: "Services",
+              options: [
                 ["maintenance", "Maintenance"],
                 ["repairs", "Repairs"],
                 ["installation", "Installation"],
@@ -3526,15 +3531,15 @@ module.exports = {
             }]
           },
           {
-            "title": "Water Drilling & Service",
-            "options": [
+            title: "Water Drilling & Service",
+            options: [
               ["wellDrilling", "Well Drilling"],
               ["clients", "Clients"],
               ["relatedServices", "Related Services"]
             ],
-            "nodes": [{
-              "title": "Well Drilling",
-              "options": [
+            nodes: [{
+              title: "Well Drilling",
+              options: [
                 ["waterWells", "Water Wells"],
                 ["geotechnicalEnvironmental", "Geotechnical/Environmental"],
                 ["explorationCoring", "Exploration/Coring"],
@@ -3544,8 +3549,8 @@ module.exports = {
                 ["artesianWells", "Artesian Wells"]
               ]
             }, {
-              "title": "Clients",
-              "options": [
+              title: "Clients",
+              options: [
                 ["commercial", "Commercial"],
                 ["industrial", "Industrial"],
                 ["residential", "Residential"],
@@ -3553,8 +3558,8 @@ module.exports = {
                 ["agricultural", "Agricultural"]
               ]
             }, {
-              "title": "Related Services",
-              "options": [
+              title: "Related Services",
+              options: [
                 ["waterTreatment", "Water Treatment"],
                 ["pumpInstallation", "Pump Installation"],
                 ["wellChlorination", "Well Chlorination"],
@@ -3564,22 +3569,22 @@ module.exports = {
             }]
           },
           {
-            "title": "Windows",
-            "options": [
+            title: "Windows",
+            options: [
               ["typesofProperties", "Types of Properties"],
               ["surfacesCleaned", "Surfaces Cleaned"],
               ["additionalServices", "Additional Services"]
             ],
-            "nodes": [{
-              "title": "Types of Properties",
-              "options": [
+            nodes: [{
+              title: "Types of Properties",
+              options: [
                 ["residential", "Residential"],
                 ["commercial", "Commercial"],
                 ["highrise", "High-rise"]
               ]
             }, {
-              "title": "Surfaces Cleaned",
-              "options": [
+              title: "Surfaces Cleaned",
+              options: [
                 ["exteriorWindows", "Exterior Windows"],
                 ["interiorWindows", "Interior Windows"],
                 ["skylights", "Skylights"],
@@ -3587,8 +3592,8 @@ module.exports = {
                 ["windowFramesSashes", "Window Frames & Sashes"]
               ]
             }, {
-              "title": "Additional Services",
-              "options": [
+              title: "Additional Services",
+              options: [
                 ["gutterCleaning", "Gutter Cleaning"],
                 ["pressureWashing", "Pressure Washing"],
                 ["sidingCleaning", "Siding Cleaning"],
@@ -3600,8 +3605,8 @@ module.exports = {
         ]
       },
       {
-        "title": "Law & Finance",
-        "options": [
+        title: "Law & Finance",
+        options: [
           ["accountants", "Accountants"],
           ["lawyersinAdministration", "Lawyers in Administration"],
           ["lawyersinCivilLaw", "Lawyers in Civil Law"],
@@ -3610,11 +3615,416 @@ module.exports = {
           ["insuranceAgentsBrokers", "Insurance Agents & Brokers"],
           ["notaries", "Notaries"]
         ],
-        "nodes": []
+        nodes: [{
+            title: "Accountants",
+            options: [
+              ["personal", "Personal"],
+              ["business", "Business"]
+            ],
+            nodes: [{
+              title: "Personal",
+              options: [
+                ["taxServices", "Tax Services"],
+                ["trustEstatePlanning", "Trust & Estate Planning"],
+                ["internationalTax", "International Tax"],
+                ["financialPlanning", "Financial Planning"],
+                ["billPaying", "Bill Paying"]
+              ]
+            }, {
+              title: "Business",
+              options: [
+                ["taxServices", "Tax Services"],
+                ["successionPlanning", "Succession Planning"],
+                ["auditsAssurance", "Audits & Assurance"],
+                ["internationalTax", "International Tax"],
+                ["accountingSystems", "Accounting Systems"],
+                ["financialStatements", "Financial Statements"],
+                ["reorganizations", "Reorganizations"],
+                ["consulting", "Consulting"],
+                ["bookkeeping", "Bookkeeping"],
+                ["financialPlanning", "Financial Planning"],
+                ["payrollServices", "Payroll Services"]
+              ]
+            }]
+          }, {
+            title: "Lawyers in Administration",
+            options: [
+              ["servicesProvided", "Services Provided"],
+              ["typesofTribunalsExperiencedWith", "Types of Tribunals Experienced With"],
+              ["federalTribunals", "Federal Tribunals"],
+              ["albertaTribunals", "Alberta Tribunals"],
+              ["britishColumbiaTribunals", "British Columbia Tribunals"],
+              ["manitobaTribunals", "Manitoba Tribunals"],
+              ["newBrunswickTribunals", "New Brunswick Tribunals"],
+              ["newfoundlandTribunals", "Newfoundland Tribunals"],
+              ["northwestTerritoriesTribunals", "Northwest Territories Tribunals"],
+              ["novaScotiaTribunals", "Nova Scotia Tribunals"],
+              ["nunavutTribunals", "Nunavut Tribunals"],
+              ["ontarioTribunals", "Ontario Tribunals"],
+              ["princeEdwardIslandTribunals", "Prince Edward Island Tribunals"],
+              ["quebecTribunals", "Quebec Tribunals"],
+              ["saskatchewanTribunals", "Saskatchewan Tribunals"],
+              ["yukonTribunals", "Yukon Tribunals"]
+            ],
+            nodes: [{
+              title: "Services Provided",
+              options: [
+                ["consultations", "Consultations"],
+                ["interpretingtheRightTribunal", "Interpreting the Right Tribunal"],
+                ["gatheringEvidence", "Gathering Evidence"],
+                ["settinguptheApproach", "Setting up the Approach"],
+                ["representation", "Representation"]
+              ]
+            }, {
+              title: "Types of Tribunals Experienced With",
+              options: [
+                ["healthCare", "Health Care"],
+                ["municipalLaw", "Municipal Law"],
+                ["forestry", "Forestry"],
+                ["energyRegulation", "Energy Regulation"],
+                ["professionalDiscipline", "Professional Discipline"],
+                ["environmentalProtection", "Environmental Protection"],
+                ["policeProcedure", "Police Procedure"],
+                ["humanRightsFederal", "Human Rights (Federal)"],
+                ["humanRightsProvincial", "Human Rights (Provincial)"],
+                ["agricultureEnvironmentResources", "Agriculture, Environment & Resources"],
+                ["citizenshipRightsLawEnforcement", "Citizenship, Rights & Law Enforcement"],
+                ["employementLabour", "Employement & Labour"],
+                ["cultureInformation", "Culture & Information"],
+                ["financeIndustryTrade", "Finance, Industry & Trade"],
+                ["healthHealthProfessionals", "Health & Health Professionals"],
+                ["housingPropertyConstruction", "Housing, Property & Construction"],
+                ["professionalsAssociations", "Professionals & Associations"]
+              ]
+            }, {
+              title: "Federal Tribunals",
+              options: [
+                ["canadaIndustrialRelationsBoard", "Canada Industrial Relations Board"],
+                ["canadianArtistsProducersProfessionalRelationsBoard", "Canadian Artists & Producers Professional Relations Board"],
+                ["canadianForcesGrievanceBoard", "Canadian Forces Grievance Board"],
+                ["canadianHumanRightsCommission", "Canadian Human Rights Commission"],
+                ["canadianInternationalTradeTribunal", "Canadian International Trade Tribunal"],
+                ["canadianTelecommunications", "Canadian Radio-television & Telecommunications Commission"],
+                ["canadianTransportationAgency", "Canadian Transportation Agency"],
+                ["competitionTribunal", "Competition Tribunal"],
+                ["immigrationRefugeeBoard", "Immigration & Refugee Board"],
+                ["nationalEnergyBoard", "National Energy Board"],
+                ["nationalParoleBoard", "National Parole Board"],
+                ["patentedMedicineReviewBoard", "Patented Medicine Prices Review Board"],
+                ["pensionAppealsBoard", "Pension Appeals Board"],
+                ["privacyCommissionerofCanada", "Privacy Commissioner of Canada"],
+                ["publicServiceStaffRelationsBoard", "Public Service Staff Relations Board"],
+                ["rCMPPublicComplaintsCommission", "RCMP Public Complaints Commission"],
+                ["reviewTribunalAgriculture", "Review Tribunal under the Agriculture & Agri-Food Administrative Monetary Penalties Act"],
+                ["transportationSafetyBoard", "Transportation Safety Board"]
+              ]
+            }, {
+              title: "Alberta Tribunals",
+              options: [
+                ["appealsCommissionfortheWCB", "Appeals Commission for the Workers' Compensation Board"],
+                ["environmentalAppealBoardofAlberta", "Environmental Appeal Board of Alberta"],
+                ["albertaLabourRelationsBoard", "Alberta Labour Relations Board"],
+                ["albertaEnergyandUtilitiesBoard", "Alberta Energy and Utilities Board"],
+                ["humanRightsCitizenshipCommission", "Human Rights & Citizenship Commission"],
+                ["informationPrivacyCommissioner", "Information & Privacy Commissioner"],
+                ["gamingLiquorCommission", "Gaming & Liquor Commission"],
+                ["metisSettlementsAppealTribunal", "Metis Settlements Appeal Tribunal"],
+                ["naturalResourcesConservationBoard", "Natural Resources Conservation Board"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "British Columbia Tribunals",
+              options: [
+                ["bCSecuritiesCommission", "B.C. Securities Commission"],
+                ["commercialAppealsCommission", "Commercial Appeals Commission"],
+                ["environmentalAppealBoard", "Environmental Appeal Board"],
+                ["financialInstitutionsCommission", "Financial Institutions Commission"],
+                ["forestryAppealsCommission", "Forestry Appeals Commission"],
+                ["gamingCommission", "Gaming Commission"],
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["informationPrivacyCommissioner", "Information & Privacy Commissioner"],
+                ["liquorAppealBoard", "Liquor Appeal Board"],
+                ["motionPictureAppealBoard", "Motion Picture Appeal Board"],
+                ["officeofthePoliceComplaintCommissioner", "Office of the Police Complaint Commissioner"],
+                ["ombudsman", "Ombudsman"],
+                ["publicServiceCommission", "Public Service Employee Relations Commission"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "Manitoba Tribunals",
+              options: [
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["pensionCommission", "Pension Commission"],
+                ["workersCompensationBoard", "Workers Compensation Board"]
+              ]
+            }, {
+              title: "New Brunswick Tribunals",
+              options: [
+                ["nBHumanRightsCommission", "N.B. Human Rights Commission"],
+                ["workplaceHealthSafety", "Workplace Health, Safety & Compensation Commission"],
+                ["workplaceSafetyInsurance", "Workplace Safety & Insurance Appeals Tribunal"]
+              ]
+            }, {
+              title: "Newfoundland Tribunals",
+              options: [
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["workplaceHealthSafety", "Workplace Health Safety & Compensation Commission"]
+              ]
+            },
+            // {
+            //   title: "Northwest Territories Tribunals"
+            // },
+            {
+              title: "Nova Scotia Tribunals",
+              options: [
+                ["alcoholGamingCommission", "Alcohol & Gaming Commission"],
+                ["dairyCommissionofNovaScotia", "Dairy Commission of Nova Scotia"],
+                ["disabledPersonsCommission", "Disabled Persons Commission"],
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["labourRelationsBoard", "Labour Relations Board"],
+                ["labourStandardsTribunal", "Labour Standards Tribunal"],
+                ["ombudsman", "Ombudsman"],
+                ["payEquityCommission", "Pay Equity Commission"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "Nunavut Tribunals",
+              options: [
+                ["nunavutPlanningCommission", "Nunavut Planning Commission"],
+                ["nunavutGovernmentTribunal", "Nunavut Government Tribunal"],
+                ["waterBoard", "Water Board"]
+              ]
+            }, {
+              title: "Ontario Tribunals",
+              options: [
+                ["conservationReviewBoard", "Conservation Review Board"],
+                ["energyBoard", "Energy Board"],
+                ["environmentalBoards", "Environmental Assessment and Appeal Boards"],
+                ["financialServicesCommission", "Financial Services Commission"],
+                ["liquorControlBoardofOntario", "Liquor Control Board of Ontario"],
+                ["ontarioHumanRightsCommission", "Ontario Human Rights Commission"],
+                ["municipalBoard", "Municipal Board"],
+                ["payEquityCommission", "Pay Equity Commission"],
+                ["rentalHousingTribunal", "Rental Housing Tribunal"],
+                ["ontarioSecuritiesCommission", "Ontario Securities Commission"],
+                ["workplaceSafetyInsuranceBoard", "Workplace Safety & Insurance Board"]
+              ]
+            }, {
+              title: "Prince Edward Island Tribunals",
+              options: [
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "Quebec Tribunals",
+              options: [
+                ["humanRightsTribunal", "Human Rights Tribunal"],
+                ["quebecSecuritiesCommission", "Quebec Securities Commission"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "Saskatchewan Tribunals",
+              options: [
+                ["humanRightsCommission", "Human Rights Commission"],
+                ["liquorandGamingAuthority", "Liquor and Gaming Authority"],
+                ["municipalBoard", "Municipal Board"],
+                ["workersCompensationBoard", "Workers' Compensation Board"]
+              ]
+            }, {
+              title: "Yukon Tribunals",
+              options: [
+                ["forestCommission", "Forest Commission"],
+                ["surfaceRightsBoard", "Surface Rights Board"],
+                ["workersSafetyBoard", "Workers' Compensation Health & Safety Board"],
+                ["yukonGovernmentTribunals", "Yukon Government Tribunals"]
+              ]
+            }]
+          }, {
+            title: "Lawyers in Civil Law",
+            options: [
+              ["typesorCivilLawServices", "Types or Civil Law Services"],
+              ["disputeResolutionOffered", "Dispute Resolution Offered"]
+            ],
+            nodes: [{
+              title: "Types or Civil Law Services/Areas of Practice",
+              options: [
+                ["personalInjuryClaims", "Personal Injury Claims"],
+                ["medicalMalpracticeClaims", "Medical Malpractice Claims"],
+                ["insuranceDefence", "Insurance Defence"],
+                ["productsLiability", "Products Liability"],
+                ["willsEstates", "Wills & Estates"],
+                ["environmentalLaw", "Environmental Law"],
+                ["employmentLabourLaw", "Employment & Labour Law"],
+                ["realEstateLaw", "Real Estate Law"],
+                ["intellectualPropertyLaw", "Intellectual Property Law"],
+                ["specialEducationLaw", "Special Education Law"],
+                ["debtorCreditorLaw", "Debtor & Creditor Law"],
+                ["constructionLaw", "Construction Law"],
+                ["antitrustCompetitionLaw", "Antitrust & Competition Law"]
+              ]
+            }, {
+              title: "Dispute Resolution Offered",
+              options: [
+                ["mediation", "Mediation"],
+                ["arbitration", "Arbitration"],
+                ["litigation", "Litigation"]
+              ]
+            }]
+          }, {
+            title: "Lawyers in Criminal Law",
+            options: [
+              ["violentCrimes", "Violent Crimes"],
+              ["sexualCrimes", "Sexual Crimes"],
+              ["drugCharges", "Drug Charges"],
+              ["drivingOffenses", "Driving Offenses"],
+              ["propertyCrimes", "Property Crimes"],
+              ["miscellaneous", "Miscellaneous"]
+            ],
+            nodes: [{
+              title: "Violent Crimes",
+              options: [
+                ["murderManslaughter", "Murder/Manslaughter"],
+                ["assault", "Assault"],
+                ["domesticAssault", "Domestic Assault"],
+                ["gunCharges", "Gun Charges"]
+              ]
+            }, {
+              title: "Sexual Crimes",
+              options: [
+                ["sexualAssault", "Sexual Assault"],
+                ["sexualExploitation", "Sexual Exploitation"],
+                ["sexualInterferencewithaMinor", "Sexual Interference with a Minor"],
+                ["voyeurism", "Voyeurism"]
+              ]
+            }, {
+              title: "Drug Charges",
+              options: [
+                ["drugProduction", "Drug Production"],
+                ["trafficking", "Trafficking"],
+                ["possession", "Possession"],
+                ["possessionforPurposeofTrafficking", "Possession for Purpose of Trafficking"],
+                ["exportingImporting", "Exporting/Importing"]
+              ]
+            }, {
+              title: "Driving Offenses",
+              options: [
+                ["dUIDrunkDriving", "DUI/Drunk Driving"],
+                ["drivingWhileProhibited", "Driving While Prohibited"],
+                ["drivingWithoutDueCareAttention", "Driving Without Due Care & Attention"],
+                ["dangerousDriving", "Dangerous Driving"]
+              ]
+            }, {
+              title: "Property Crimes",
+              options: [
+                ["theftUnder5000", "Theft (Under $5000)"],
+                ["theftOver5000", "Theft (Over $5000)"],
+                ["fraudUnder5000", "Fraud (Under $5000)"],
+                ["fraudOver5000", "Fraud (Over $5000)"],
+                ["utteringaForgedDocument", "Uttering a Forged Document"],
+                ["possessionofStolenProperty", "Possession of Stolen Property"]
+              ]
+            }, {
+              title: "Miscellaneous",
+              options: [
+                ["obscenity", "Obscenity"],
+                ["solicitation", "Solicitation"],
+                ["treason", "Treason"]
+              ]
+            }]
+          },
+          // {
+          //   title: "Lawyers in Family Law"
+          // },
+          {
+            title: "Insurance Agents & Brokers",
+            options: [
+              ["businessInsurance", "Business Insurance"],
+              ["propertyInsurance", "Property Insurance"],
+              ["travelInsurance", "Travel Insurance"],
+              ["automobileInsurance", "Automobile Insurance"],
+              ["lifeHealthDentalInsurance", "Life, Health & Dental Insurance"]
+            ],
+            nodes: [{
+              title: "Business Insurance",
+              options: [
+                ["commercial", "Commercial"],
+                ["liability", "Liability"],
+                ["construction", "Construction"],
+                ["smallBusiness", "Small Business"],
+                ["contactSurety", "Contact Surety"],
+                ["careProviders", "Care Providers"],
+                ["informationTechnology", "Information Technology"],
+                ["manufacturingBusiness", "Manufacturing Business"],
+                ["importersExporters", "Importers & Exporters"],
+                ["restaurant", "Restaurant"],
+                ["retailOffice", "Retail & Office"],
+                ["school", "School"]
+              ]
+            }, {
+              title: "Property Insurance",
+              options: [
+                ["house", "House"],
+                ["condo", "Condo"],
+                ["tenant", "Tenant"],
+                ["mobileHome", "Mobile Home"],
+                ["seasonal", "Seasonal"]
+              ]
+            }, {
+              title: "Travel Insurance",
+              options: [
+                ["individual", "Individual"],
+                ["family", "Family"],
+                ["visitorstoCanada", "Visitors to Canada"]
+              ]
+            }, {
+              title: "Automobile Insurance",
+              options: [
+                ["basic", "Basic"],
+                ["motorcycle", "Motorcycle"],
+                ["recreationalVehicle", "Recreational Vehicle"]
+              ]
+            }, {
+              title: "Life, Health & Dental Insurance",
+              options: [
+                ["lifeInsurance", "Life Insurance"],
+                ["healthCare", "Health Care"],
+                ["drugDentalPlans", "Drug & Dental Plans"],
+                ["criticalIllnessCoverage", "Critical Illness Coverage"],
+                ["disabilityIncomeCoverage", "Disability Income Coverage"],
+                ["longTermCareCoverage", "Long-Term Care Coverage"]
+              ]
+            }]
+          },
+          {
+            title: "Notaries",
+            options: [
+              ["propertyPurchasesSalesTransfers", "Property Purchases, Sales & Transfers"],
+              ["mortgagesorRefinancing", "Mortgages or Refinancing"],
+              ["loans", "Loans"],
+              ["wills", "Wills"],
+              ["powersofAttorney", "Powers of Attorney"],
+              ["representationAgreements", "Representation Agreements"],
+              ["estateExecutorships", "Estate Executorships"],
+              ["statutoryDeclarations", "Statutory Declarations"],
+              ["affidavits", "Affidavits"],
+              ["notarizations", "Notarizations"],
+              ["privateLenderMortgages", "Private Lender Mortgages"],
+              ["travelConsentLetters", "Travel Consent Letters"],
+              ["insuranceLossDeclarations", "Insurance Loss Declarations"],
+              ["marriageLicenses", "Marriage Licenses"],
+              ["mediation", "Mediation"],
+              ["immigrationConsulting", "Immigration Consulting"],
+              ["lifeCriticalDisabilityInsurance", "Life/Critical/Disability Insurance"],
+              ["advanceDirectives", "Advance Directives"],
+              ["buildersLiens", "Builder’s Liens"],
+              ["certifiedTrueCopies", "Certified True Copies"]
+            ]
+          }
+        ]
       },
       {
-        "title": "Miscellaneous",
-        "options": [
+        title: "Miscellaneous",
+        options: [
           ["childCareServices", "Child Care Services"],
           ["drivingInstruction", "Driving Instruction"],
           ["cleaners", "Cleaners"],
@@ -3628,42 +4038,507 @@ module.exports = {
           ["taxis", "Taxis"],
           ["veterinarians", "Veterinarians"]
         ],
-        "nodes": []
+        nodes: [
+        //   {
+        //   title: "Child Care Services"
+        // },
+        {
+          title: "Driving Instruction",
+          options: [
+            ["typesofDriverTraining", "Types of Driver Training"],
+            ["commercialDriverTraining", "Commercial Driver Training"],
+            ["additionalServices", "Additional Services"]
+          ],
+          nodes: [{
+            title: "Types of Driver Training",
+            options: [
+              ["standardDriversLicense", "Standard Driver’s License"],
+              ["motorcycle", "Motorcycle"],
+              ["commercial", "Commercial"]
+            ]
+          }, {
+            title: "Commercial Driver Training",
+            options: [
+              ["semitrailerTrucks", "Semi-trailer Trucks"],
+              ["tandemAxelTrucks", "Tandem Axel Trucks"],
+              ["buses", "Buses"],
+              ["taxis", "Taxis"],
+              ["limousinesetc", "Limousines, etc."]
+            ]
+          }, {
+            title: "Additional Services",
+            options: [
+              ["carRentalsforRoadTests", "Car Rentals for Road Tests"],
+              ["practiceTests", "Practice Tests"]
+            ]
+          }]
+        }, {
+          title: "Cleaners",
+          options: [
+            ["cleaningServices", "Cleaning Services"],
+            ["odourRestoration", "Odour Restoration"],
+            ["specialtyItemsCleaned", "Specialty Items Cleaned"],
+            ["materialCleaned", "Material Cleaned"],
+            ["tailoring", "Tailoring"]
+          ],
+          nodes: [{
+            title: "Cleaning Services",
+            options: [
+              ["dryCleaning", "Dry Cleaning"],
+              ["wetCleaning", "Wet Cleaning"],
+              ["pickupDeliveryofItems", "Pickup/Delivery of Items"],
+              ["coinOpLaundromat", "Coin-Op Laundromat"],
+              ["washandFold", "Wash and Fold"]
+            ]
+          }, {
+            title: "Odour Restoration",
+            options: [
+              ["hydroxyl", "Hydroxyl"],
+              ["ozone", "Ozone"]
+            ]
+          }, {
+            title: "Specialty Items Cleaned",
+            options: [
+              ["weddingDresses", "Wedding Dresses"],
+              ["linens", "Linens"],
+              ["drapery", "Drapery"],
+              ["pillows", "Pillows"],
+              ["duvetsComforters", "Duvets/Comforters"]
+            ]
+          }, {
+            title: "Material Cleaned",
+            options: [
+              ["suedeLeather", "Suede & Leather"],
+              ["fur", "Fur"],
+              ["silk", "Silk"],
+              ["satin", "Satin"],
+              ["polyester", "Polyester"],
+              ["wool", "Wool"],
+              ["rayon", "Rayon"],
+              ["cotton", "Cotton"]
+            ]
+          }, {
+            title: "Tailoring",
+            options: [
+              ["zipperReplacement", "Zipper Replacement"],
+              ["buttonReplacement", "Button Replacement"],
+              ["sizeAdjustmentsTakingin", "Size Adjustments (Taking in)"],
+              ["shorteningLenghtening", "Shortening & Lenghtening"],
+              ["pocketsLiningRepairs", "Pockets & Lining Repairs"],
+              ["repairingFabricRipsHoles", "Repairing Fabric Rips/Holes"]
+            ]
+          }]
+        }, {
+          title: "Environmental Consult",
+          options: [
+            ["aquaticConsulting", "Aquatic Consulting"],
+            ["terrestrialConsulting", "Terrestrial Consulting"],
+            ["constructionDevelopmentConsulting", "Construction & Development Consulting"],
+            ["environmentalAssessment", "Environmental Assessment"]
+          ],
+          nodes: [{
+            title: "Aquatic Consulting",
+            options: [
+              ["fishPopulationEstimate", "Fish Population Estimate"],
+              ["fishSalvage", "Fish Salvage"],
+              ["streamClassification", "Stream Classification"],
+              ["hADDEvaluation", "HADD Evaluation"],
+              ["fishPassageDesign", "Fish Passage Design"],
+              ["iPPsAssessment", "IPPs Assessment"],
+              ["instreamFlowAssessment", "In-stream Flow Assessment"],
+              ["rARAssessment", "RAR Assessment"],
+              ["instreamWorksApproval", "In-stream Works Approval"],
+              ["riparianPlanting", "Riparian Planting"],
+              ["habitatReclamation", "Habitat Restoration, Enhancement & Reclamation"],
+              ["wetlandDesign", "Wetland Design"],
+              ["detentionPondDesign", "Detention Pond Design"],
+              ["settlingPondDesign", "Settling Pond Design"],
+              ["watercourseRelocation", "Watercourse Relocation"],
+              ["habitatEnhancement", "Estuarine & Marine Habitat Enhancement"]
+            ]
+          }, {
+            title: "Terrestrial Consulting",
+            options: [
+              ["speciesatRiskMgmt", "Species-at-Risk Mgmt"],
+              ["habitatWildlifeSurvey", "Habitat & Wildlife Survey"],
+              ["songbirdNestingSurvey", "Songbird Nesting Survey"],
+              ["raptorNestSurvey", "Raptor Nest Survey"],
+              ["habitatMapping", "Habitat Mapping"],
+              ["invasiveSpeciesMapping", "Invasive Species Mapping"],
+              ["invasiveSpeciesMgmt", "Invasive Species Mgmt"]
+            ]
+          }, {
+            title: "Construction & Development Consulting",
+            options: [
+              ["environmentalMonitoring", "Environmental Monitoring"],
+              ["waterQualityTesting", "Water Quality Testing"],
+              ["erosionSedimentControl", "Erosion & Sediment Control"],
+              ["developmentFeasibilityStudy", "Development Feasibility Study"]
+            ]
+          }, {
+            title: "Environmental Assessment",
+            options: [
+              ["environmentalAssessment", "Environmental Assessment"],
+              ["environmentalImpactAssessment", "Environmental Impact Assessment"]
+            ]
+          }]
+        }, {
+          title: "Florist - Retail",
+          options: [
+            ["flowerPlantProducts", "Flower & Plant Products"],
+            ["weddingEventServices", "Wedding & Event Services"],
+            ["additionalServices", "Additional Services"]
+          ],
+          nodes: [{
+            title: "Flower & Plant Products",
+            options: [
+              ["everydayBouquets", "Everyday Bouquets"],
+              ["specialOccasionBouquets", "Special Occasion Bouquets (birthday, sympathy, anniversary, etc.)"],
+              ["planters", "Planters (potted flowers & plants)"],
+              ["arrangements", "Arrangements (in vases or keepsake containers)"],
+              ["wreaths", "Wreaths"],
+              ["terrariums", "Terrariums (air plants & succulents)"]
+            ]
+          }, {
+            title: "Wedding & Event Services",
+            options: [
+              ["bouquets", "Bouquets"],
+              ["boutonnieres", "Boutonnieres"],
+              ["corsages", "Corsages"],
+              ["centrepieces", "Centrepieces"],
+              ["pewMarker", "Pew Marker"],
+              ["altarGarlandsArbors", "Altar Garlands & Arbors"],
+              ["deliverySetUp", "Delivery & Set Up"],
+              ["flowerCrowns", "Flower Crowns"]
+            ]
+          }, {
+            title: "Additional Services",
+            options: [
+              ["giftBasketsfoodchocolatewinefruit", "Gift Baskets (food, chocolate, wine, fruit)"],
+              ["cards", "Cards"],
+              ["delivery", "Delivery"],
+              ["corporateFlowerArrangements", "Corporate Flower Arrangements"],
+              ["dcor", "Décor"],
+              ["customOrdersforArrangementsBouquets", "Custom Orders for Arrangements & Bouquets"]
+            ]
+          }]
+        }, {
+          title: "Motels",
+          options: [
+            ["roomTypes", "Room Types"],
+            ["inRoomAmenities", "In-Room Amenities"],
+            ["facilities", "Facilities"]
+          ],
+          nodes: [{
+            title: "Room Types",
+            options: [
+              ["oneBed", "One Bed"],
+              ["twoBeds", "Two Beds"],
+              ["connectingRooms", "Connecting Rooms"],
+              ["suite", "Suite"]
+            ]
+          }, {
+            title: "In-Room Amenities",
+            options: [
+              ["roomService", "Room Service"],
+              ["freeWiFi", "Free Wi-Fi"],
+              ["freeBreakfast", "Free Breakfast"],
+              ["cableTV", "Cable TV"],
+              ["kitchenette", "Kitchenette"],
+              ["coffeemakerTea", "Coffeemaker & Tea"],
+              ["hairDryer", "Hair Dryer"],
+              ["toiletries", "Toiletries"],
+              ["miniBar", "Mini-Bar"],
+              ["petFriendlyRooms", "Pet-Friendly Rooms"],
+              ["wakeUpCall", "Wake-Up Call"],
+              ["airConditioning", "Air Conditioning"]
+            ]
+          }, {
+            title: "Facilities",
+            options: [
+              ["indoorSwimmingPool", "Indoor Swimming Pool"],
+              ["outdoorSwimmingPool", "Outdoor Swimming Pool"],
+              ["hotTub", "Hot Tub"],
+              ["barRestaurant", "Bar/Restaurant"],
+              ["freeParking", "Free Parking"],
+              ["laundry", "Laundry"],
+              ["conferenceRooms", "Conference Rooms"],
+              ["businessCentre", "Business Centre"]
+            ]
+          }]
+        }, {
+          title: "Pet Grooming Services",
+          options: [
+            ["typeofPet", "Type of Pet"],
+            ["groomingServices", "Grooming Services"],
+            ["classesEvents", "Classes & Events"],
+            ["productsUsedOffered", "Products Used/Offered"]
+          ],
+          nodes: [{
+            title: "Type of Pet",
+            options: [
+              ["dogs", "Dogs"],
+              ["cats", "Cats"]
+            ]
+          }, {
+            title: "Grooming Services",
+            options: [
+              ["bathing", "Bathing"],
+              ["dryingBrushing", "Drying & Brushing"],
+              ["nailTrim", "Nail Trim"],
+              ["hairFurCut", "Hair/Fur Cut"],
+              ["furDeTangling", "Fur De-Tangling"],
+              ["teethCleaning", "Teeth Cleaning"],
+              ["earCleaningPlucking", "Ear Cleaning/Plucking"],
+              ["faceCleaning", "Face Cleaning"],
+              ["spaPackages", "Spa Packages"]
+            ]
+          }, {
+            title: "Classes & Events",
+            options: [
+              ["obedienceClass", "Obedience Class"],
+              ["agilityTraining", "Agility Training"],
+              ["petOwnerBonding", "Pet/Owner Bonding"]
+            ]
+          }, {
+            title: "Products Used/Offered",
+            options: [
+              ["organicShampoos", "Organic Shampoos"],
+              ["organicConditioners", "Organic Conditioners"],
+              ["deSheddingShampoosConditioners", "De-Shedding Shampoos & Conditioners"],
+              ["tickTreatmentShampoosConditioners", "Tick Treatment Shampoos & Conditioners"],
+              ["fleaTreatmentShampoosConditioners", "Flea Treatment Shampoos & Conditioners"]
+            ]
+          }]
+        }, {
+          title: "Retirement Community & Homes",
+          options: [
+            ["facilities", "Facilities"],
+            ["services", "Services"]
+          ],
+          nodes: [{
+            title: "Facilities",
+            options: [
+              ["privateApartments", "Private Apartments"],
+              ["diningRoom", "Dining Room"],
+              ["recreationSocialAreas", "Recreation/Social Areas"],
+              ["outdoorGardens", "Outdoor Gardens"],
+              ["wheelchairAccessible", "Wheelchair Accessible"],
+              ["petFriendlyRooms", "Pet-Friendly Rooms"],
+              ["fitnessExerciseArea", "Fitness/Exercise Area"],
+              ["giftShop", "Gift Shop"],
+              ["tVRoom", "TV Room"],
+              ["library", "Library"],
+              ["computers", "Computers"],
+              ["laundryMachines", "Laundry Machines"]
+            ]
+          }, {
+            title: "Services",
+            options: [
+              ["meals", "Meals"],
+              ["medicalPersonnelOnSite", "Medical Personnel On-Site"],
+              ["healthMonitoring", "Health Monitoring"],
+              ["medicationManagement", "Medication Management"],
+              ["hospiceCare", "Hospice Care"],
+              ["247Reception", "24/7 Reception"],
+              ["toileting", "Toileting"],
+              ["bathing", "Bathing"],
+              ["hairBeauty", "Hair/Beauty"],
+              ["clubsGroupEvents", "Clubs/Group Events"],
+              ["laundryHousekeeping", "Laundry/Housekeeping"],
+              ["outingsDayTrips", "Outings/Day Trips"],
+              ["brainFitness", "Brain Fitness"]
+            ]
+          }]
+        }, {
+          title: "Scrap Metal",
+          options: [
+            ["itemsRecycled", "Items Recycled"],
+            ["services", "Services"],
+            ["metalsHandled", "Metals Handled"]
+          ],
+          nodes: [{
+            title: "Items Recycled",
+            options: [
+              ["appliances", "Appliances"],
+              ["householdScrap", "Household Scrap"],
+              ["demolitionScrap", "Demolition Scrap"],
+              ["industrialScrap", "Industrial Scrap"],
+              ["endofLifeVehicles", "End-of-Life Vehicles"],
+              ["heavyEquipment", "Heavy Equipment"],
+              ["wiring", "Wiring"],
+              ["batteries", "Batteries"],
+              ["emptyCompressedGasContainers", "Empty Compressed Gas Containers"],
+              ["radiators", "Radiators"]
+            ]
+          }, {
+            title: "Services",
+            options: [
+              ["recyclingMetals", "Recycling Metals"],
+              ["buyingMetals", "Buying Metals"],
+              ["containerServices", "Container Services"],
+              ["offSiteDemolitionCleanup", "Off-Site Demolition & Cleanup"],
+              ["scrapMetalPickup", "Scrap Metal Pickup"],
+              ["productSales", "Product Sales"]
+            ]
+          }, {
+            title: "Metals Handled",
+            options: [
+              ["lead", "Lead"],
+              ["zinc", "Zinc"],
+              ["copper", "Copper"],
+              ["brass", "Brass"],
+              ["aluminium", "Aluminium"],
+              ["iron", "Iron"],
+              ["steel", "Steel"]
+            ]
+          }]
+        }, {
+          title: "Surveyors - Land",
+          options: [
+            ["services", "Services"],
+            ["landType", "Land Type"],
+            ["applicationsSurveysfor", "Applications - Surveys for"]
+          ],
+          nodes: [{
+            title: "Services",
+            options: [
+              ["generalSurvey", "General Survey"],
+              ["landDevelopment", "Land Development"],
+              ["residentialSurvey", "Residential Survey"],
+              ["municipalGovernment", "Municipal/Government"],
+              ["industrial", "Industrial"]
+            ]
+          }, {
+            title: "Land Type",
+            options: [
+              ["rural", "Rural"],
+              ["urban", "Urban"],
+              ["wilderness", "Wilderness"]
+            ]
+          }, {
+            title: "Applications - Surveys for",
+            options: [
+              ["construction", "Construction"],
+              ["monitoring", "Monitoring"],
+              ["airSpacePlans", "Air Space Plans"],
+              ["condoDevelopment", "Condo Development"],
+              ["leases", "Leases"],
+              ["subdivisions", "Subdivisions"],
+              ["topographicMapping", "Topographic Mapping"],
+              ["mortgageCertificates", "Mortgage Certificates"],
+              ["newHomeConstruction", "New Home Construction"],
+              ["propertyLinePosting", "Property Line Posting"],
+              ["renovations", "Renovations"],
+              ["easements", "Easements"],
+              ["geographicCovenants", "Geographic Covenants"],
+              ["rightsofWay", "Rights-of-Way"]
+            ]
+          }]
+        }, {
+          title: "Taxis",
+          options: [
+            ["typesofVehicle", "Types of Vehicle"],
+            ["services", "Services"]
+          ],
+          nodes: [{
+            title: "Types of Vehicle",
+            options: [
+              ["sedans", "Sedans"],
+              ["minivans", "Minivans"],
+              ["limousine", "Limousine"],
+              ["ecoFriendlyCars", "Eco-Friendly Cars"],
+              ["wheelchairAccessible", "Wheelchair Accessible"]
+            ]
+          }, {
+            title: "Services",
+            options: [
+              ["airportPickUpDropOff", "Airport Pick-Up/Drop-Off"],
+              ["longDistanceService", "Long-Distance Service"],
+              ["247Availability", "24/7 Availability"],
+              ["preBookedRides", "Pre-Booked Rides"],
+              ["shortNoticeRides", "Short-Notice Rides"],
+              ["lostFound", "Lost & Found for Items Left in Taxi"],
+              ["dogFriendlyTaxis", "Dog-Friendly Taxis"],
+              ["jumpstartforMotorists", "Jumpstart for Motorists"],
+              ["smallPackageCourier", "Small Package Courier"]
+            ]
+          }]
+        }, {
+          title: "Veterinarians",
+          options: [
+            ["areasofPractice", "Area(s) of Practice"],
+            ["surgicalServices", "Surgical Services"],
+            ["medicalCareServices", "Medical Care Services"],
+            ["specialtyServices", "Specialty Services"],
+            ["livestockFarmAnimalSpecificServices", "Livestock/Farm Animal Specific Services"]
+          ],
+          nodes: [{
+            title: "Area(s) of Practice",
+            options: [
+              ["petsdogscatsetc", "Pets (dogs, cats, etc.)"],
+              ["exoticAnimals", "Exotic Animals (reptiles, parrots, etc.)"],
+              ["smallAnimals", "Small Animals (rodents, hamsters, etc.)"],
+              ["aquaticAnimals", "Aquatic Animals"],
+              ["livestockFarmAnimals", "Livestock/Farm Animals (cattle, pigs, etc.)"],
+              ["conservationMedicine", "Conservation Medicine"],
+              ["laboratoryAnimals", "Laboratory Animals"],
+              ["equineMedicine", "Equine Medicine"],
+              ["foodAnimalMedicine", "Food Animal Medicine"],
+              ["foodSafety", "Food Safety"],
+              ["wildlifeMedicine", "Wildlife Medicine"]
+            ]
+          }, {
+            title: "Surgical Services",
+            options: [
+              ["laserSurgery", "Laser Surgery"],
+              ["spayingNeutering", "Spaying & Neutering"],
+              ["softTissueSurgery", "Soft Tissue Surgery"],
+              ["orthopedicSurgery", "Orthopedic Surgery"]
+            ]
+          }, {
+            title: "Medical Care Services",
+            options: [
+              ["medicalAssessments", "Medical Assessments"],
+              ["diagnosis", "Diagnosis"],
+              ["vaccinations", "Vaccinations"],
+              ["dentistry", "Dentistry"],
+              ["radiology", "Radiology (x0rays)"],
+              ["fleaControl", "Flea Control"],
+              ["dermatology", "Dermatology (skin)"],
+              ["endoscopy", "Endoscopy"],
+              ["cardiology", "Cardiology"],
+              ["tonometry", "Tonometry"],
+              ["ultrasounds", "Ultrasounds"],
+              ["endocrinology", "Endocrinology (hormones)"]
+            ]
+          }, {
+            title: "Specialty Services",
+            options: [
+              ["laserTherapy", "Laser Therapy"],
+              ["inHousePharmacy", "In-House Pharmacy"],
+              ["nutritionalCounselling", "Nutritional Counselling"],
+              ["houseCalls", "House Calls"],
+              ["boarding", "Boarding"],
+              ["grooming", "Grooming"],
+              ["petIdentification", "Pet Identification (tattoos, microchips, etc.)"]
+            ]
+          }, {
+            title: "Livestock/Farm Animal Specific Services",
+            options: [
+              ["onFarmWellnessCheckUps", "On-Farm Wellness Check Ups"],
+              ["protocolDevelopment", "Protocol Development"],
+              ["problemSolvingDiagnostics", "Problem Solving & Diagnostics"],
+              ["pregnancyDiagnosis", "Pregnancy Diagnosis"],
+              ["woundRepair", "Wound Repair"],
+              ["surgicalCastration", "Surgical Castration"],
+              ["foodRationFormulation", "Food Ration Formulation"],
+              ["diseasePrevention", "Disease Prevention"],
+              ["obstetrics", "Obstetrics – Difficult Calvings, Caesarean Section"]
+            ]
+          }]
+        }]
       }
     ]
   }
 }
-
-/*
-{
-  title: 'placeholder',
-  options: [
-    ['placeholder', 'placeholder'],
-    ['placeholder', 'placeholder'],
-    ['placeholder', 'placeholder']
-  ],
-  nodes: []
-}
-
-
-let tree = {
-  label: 'root',
-  nodes: [{
-      label: 'item1',
-      nodes: [{
-          label: 'item1.1'
-        },
-        {
-          label: 'item1.2',
-          nodes: [{
-            label: 'item1.2.1'
-          }]
-        }
-      ]
-    },
-    {
-      label: 'item2'
-    }
-  ]
-}
-*/

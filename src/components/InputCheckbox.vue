@@ -1,6 +1,7 @@
 <template>
   <fieldset>
-    <slot></slot>
+    <slot name="en"></slot>
+    <slot name="fr"></slot>
     <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
       <input
         v-model="checked"

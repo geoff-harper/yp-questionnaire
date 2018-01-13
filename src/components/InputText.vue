@@ -1,6 +1,7 @@
 <template>
   <label :for="inputParams[0]" class="form-field__label">
-    <slot>Input label</slot>
+    <slot name="en"></slot>
+    <slot name="fr"></slot>
     <input
       v-if="inputParams[1] === 0"
       :name="inputParams[0]"

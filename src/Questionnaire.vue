@@ -6,7 +6,7 @@
       <ProductsServices v-show="activeTab === 'productsServices'" @update="handleData" @error="handleError" :fieldData="formData.productsServicesData" />
       <ExistingPresence v-show="activeTab === 'existingPresence'" @update="handleData" @error="handleError" :fieldData="formData.existingPresenceData" />
       <YourAudience v-show="activeTab === 'yourAudience'" @update="handleData" @error="handleError" :fieldData="formData.yourAudienceData" />
-      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" @update="handleRep" :formData="formData" />
+      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" @update="handleData" :formData="formData" />
     </form>
     <ButtonNav v-show="activeTab !== 'finishQuestionnaire'" :activeTab="activeTab" @navigate="handleNav" />
   </main>
@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'productsServices',
+      activeTab: 'businessDetails',
       formData: {
         businessDetailsData: {
           primaryContact: '',
@@ -75,7 +75,10 @@ export default {
           suppliedContent: [],
           stockImagesSubjects: ''
         },
-        rep: ''
+        finishSection: {
+          rep: '',
+          submitted: false
+        }
       },
       errorPresent: false
     }
@@ -92,9 +95,6 @@ export default {
     handleError (errorPresent) {
       this.errorPresent = errorPresent
     },
-    handleRep (inputVal) {
-      this.formData.rep = inputVal
-    },
     handleSubmit () {
       const jsonString = JSON.stringify(this.formData)
 
@@ -108,7 +108,10 @@ export default {
         body: jsonString
       })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+          console.log(data)
+          this.formData.finishSection.submitted = true
+        })
         .catch(err => console.log(err))
     }
   }
@@ -128,4 +131,5 @@ label, input, textarea {
 .form-field__error {
   color: red;
 }
+p.form-field__question { font-weight: bold; }
 </style>

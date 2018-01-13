@@ -1,22 +1,24 @@
 <template>
-  <section id="existing-presence" class="existing-presence section">
-    <IntroSubSection header="Great job kid" subHeader="Now don't get cocky">
-      <span slot="en">Thanks for doing the form, you nailed it.</span>
-      <span slot="fr">Le thanks for doing the form, you nailed it.</span>
+  <section id="finish-questionnaire" class="finish-questionnaire section">
+    <IntroSubSection header="Finishing Up" subHeader="Finishing Up">
+      <p slot="en" class="sub-section__intro">Your insights and opinions help us do a better job. Together we can create the ideal showcase for your business! We appreciate your input. Feel free to review your answers and make any necessary changes. Once complete, click the "Complete Questionionnaire" button. This form will be added to your file as we prepare for your phone consultation.</p>
     </IntroSubSection>
-    <div class="sub-section">
-      <h3 class="section__sub-header">Select Your Representative</h3>
+    <div v-if="!formData.finishSection.submitted" class="sub-section">
       <label for="repNames" class="form-field__label">
-        <select v-model="selectedRep" @change="emitRep()" name="repNames" id="repNames">
+        <div>
+          <p v-if="true" class="form-field__question">Please select your Fulfillment Representative</p>
+        </div>
+        <select v-model="selectedRep" @change="emitFieldData('rep', selectedRep)" name="repNames" id="repNames">
           <option v-for="rep of repNames" :value="rep[0]">{{ rep[1] }}</option>
         </select>
       </label>
       <input v-if="selectedRep !== ''" type="submit" value="Complete Questionnaire" class="form-button">
-      <!-- <img src="https://media1.tenor.com/images/a2ba6c6292ebaaa4c6c7f01480cbef02/tenor.gif" alt="nice"> -->
     </div>
-    <!-- <div class="sub-section">
-      {{ formData }}
-    </div> -->
+    <div v-if="formData.finishSection.submitted" class="sub-section">
+      <h3 class="sub-section__header">Thank You</h3>
+      <p class="sub-section__primer">If you’re looking for more helpful hints on the website design process, please review the following YP document:<br/><a href="#" target="_blank">Welcome to Your Website</a></p>
+      <p class="sub-section__primer">To get a better idea of the type of work we do, please click the link below to view YP’s online portfolio. Each site is numbered (e.g. WEB002) and will help your Fulfillment Representative determine your style preferences. Don’t worry about the type of business being featured, just focus on the elements you would like to see incorporated into your site.<br/><a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP Website Portfolio</a></p>
+    </div>
   </section>
 </template>
 
@@ -42,8 +44,8 @@ export default {
     }
   },
   methods: {
-    emitRep () {
-      this.$emit('update', this.selectedRep)
+    emitFieldData (elem, value) {
+      this.$emit('update', 'finishSection', elem, value)
     }
   }
 }
