@@ -20,7 +20,7 @@ module.exports = {
           ['automobilePartsSupplies', 'Automobile Parts & Supplies'],
           ['automobileRepairingService', 'Automobile Repairing & Service'],
           ['autoWreckingRecycling', 'Auto Wrecking & Recycling'],
-          ['homeMaintenance', 'Garages Auto Repairing'],
+          ['garagesAutoRepairing', 'Garages Auto Repairing'],
           ['tireDealersRetail', 'Tire Dealers – Retail'],
           ['towingAutomotive', 'Towing – Automotive'],
           ['transmissionsAutomotive', 'Transmissions – Automotive'],
@@ -65,29 +65,26 @@ module.exports = {
               }
             ]
           },
-          // {
-          //   title: 'Auto Body Repairing & Painting'
-          // },
+          {
+            title: 'Auto Body Repairing & Painting'
+          },
           {
             title: 'Automobile Parts & Supplies',
             options: [
-              ['productsServices', 'Products & Services']
-            ],
-            nodes: [{
-              title: 'Products & Services',
-              options: [
-                ['smallEngineParts', 'Small Engine Parts'],
-                ['lightDieselTruckParts', 'Light Diesel Truck Parts'],
-                ['autoAccessoriesAddOns', 'Auto Accessories/Add-Ons'],
-                ['shippingNational', 'Shipping – National'],
-                ['shippingInternational', 'Shipping – International'],
-                ['automotiveRepair', 'Automotive Repair'],
-                ['lightDutyDieselRepairs', 'Light Duty Diesel Repairs'],
-                ['scrapCarRecycling', 'Scrap Car Recycling'],
-                ['partsRecycling', 'Parts Recycling'],
-                ['maintenance', 'Maintenance']
-              ]
-            }]
+              ['smallEngineParts', 'Small Engine Parts'],
+              ['lightDieselTruckParts', 'Light Diesel Truck Parts'],
+              ['autoAccessoriesAddOns', 'Auto Accessories/Add-Ons'],
+              ['shippingNational', 'Shipping – National'],
+              ['shippingInternational', 'Shipping – International'],
+              ['automotiveRepair', 'Automotive Repair'],
+              ['lightDutyDieselRepairs', 'Light Duty Diesel Repairs'],
+              ['scrapCarRecycling', 'Scrap Car Recycling'],
+              ['partsRecycling', 'Parts Recycling'],
+              ['maintenance', 'Maintenance']
+            ]
+          },
+          {
+            title: 'Automobile Repairing & Service'
           },
           {
             title: 'Auto Wrecking & Recycling',
@@ -338,6 +335,9 @@ module.exports = {
             ]
           },
           {
+            title: 'Transmissions – Automotive'
+          },
+          {
             title: 'Truck Repairing & Service',
             options: [
               ['truckType', 'Truck Type'],
@@ -403,7 +403,7 @@ module.exports = {
           ["printers", "Printers"],
           ["sandGravel", "Sand & Gravel"],
           ["signs", "Signs"],
-          ["transportService", "Transport Service"],
+          // ["transportService", "Transport Service"],
           ["welding", "Welding"],
           ["windowCleaning", "Window Cleaning"]
         ],
@@ -1359,7 +1359,7 @@ module.exports = {
       }, {
         title: "Food Services",
         options: [
-          ["caterers", "Caterers"],
+          // ["caterers", "Caterers"],
           ["pizza", "Pizza"],
           ["restaurant", "Restaurant"]
         ],
@@ -2080,7 +2080,7 @@ module.exports = {
               ["patients", "Patients"],
               ["counsellingorTherapy", "Counselling or Therapy"],
               ["typesofTherapies", "Types of Therapies"],
-              ["educationalAssessments", "Educational Assessments"]
+              // ["educationalAssessments", "Educational Assessments"]
             ],
             nodes: [{
               title: "Patients",
@@ -2130,7 +2130,7 @@ module.exports = {
           ["carpetRugCleaners", "Carpet & Rug Cleaners"],
           ["carpetRugDealers", "Carpet & Rug Dealers"],
           ["cleaningServicesResidentialCommercialIndustrial", "Cleaning Services Residential, Commercial & Industrial"],
-          ["doorsWindows", "Doors & Windows"],
+          // ["doorsWindows", "Doors & Windows"],
           ["doorsOverhead", "Doors - Overhead"],
           ["eavestroughing", "Eavestroughing"],
           ["electricContractors", "Electric Contractors"],
@@ -2138,7 +2138,7 @@ module.exports = {
           ["floorLayingRefinishingResurfacing", "Floor Laying, Refinishing, Resurfacing"],
           ["garbageCollection", "Garbage Collection"],
           ["glassFloatPlateWindowsDoorsEtc", "Glass - Float, Plate, Windows & Doors Etc."],
-          ["heatingContractors", "Heating Contractors"],
+          // ["heatingContractors", "Heating Contractors"],
           ["landscapingContractorsDesigners", "Landscaping Contractors & Designers"],
           ["lawnMaintenance", "Lawn Maintenance"],
           ["locksLocksmiths", "Locks & Locksmiths"],
@@ -2146,7 +2146,7 @@ module.exports = {
           ["painters", "Painters"],
           ["pestControlServices", "Pest Control Services"],
           ["plumbingContractors", "Plumbing Contractors"],
-          ["pumps", "Pumps"],
+          // ["pumps", "Pumps"],
           ["renovationHomeImprovements", "Renovation & Home Improvements"],
           ["septicTanksCleaning", "Septic Tanks - Cleaning"],
           ["sidingContractors", "Siding Contractors"],
@@ -2630,9 +2630,9 @@ module.exports = {
               ]
             }]
           },
-          {
-            title: "Doors & Windows"
-          },
+          // {
+          //   title: "Doors & Windows"
+          // },
           {
             title: "Doors - Overhead",
             options: [
@@ -2944,17 +2944,9 @@ module.exports = {
             }, {
               title: "Install, Repair, Replace",
               options: [
-                ["glassDoorsHingesClosersHandlesFramesEtc", "Glass Doors (Hinges, Closers, Handles, Frames, Etc.)"],
-                ["slidingGlassDoorsRollersHandlesTrackEtc", "Sliding Glass Doors (Rollers, Handles, Track, Etc.)"],
-                ["windowsMonolithicThermal", "Windows (Monolithic & Thermal)"]
-              ]
-            }, {
-              title: "Landscape Design",
-              options: [
-                ["planning", "Planning"],
-                ["sitePreparation", "Site Preparation"],
-                ["hardscaping", "Hardscaping"],
-                ["softscaping", "Softscaping"]
+                ["glassDoors", "Glass Doors (Hinges, Closers, Handles, Frames, Etc.)"],
+                ["slidingGlassDoors", "Sliding Glass Doors (Rollers, Handles, Track, Etc.)"],
+                ["windows", "Windows (Monolithic & Thermal)"]
               ]
             }]
           },
@@ -2968,6 +2960,14 @@ module.exports = {
               ["landscaping", "Landscaping"]
             ],
             nodes: [{
+              title: "Landscape Design",
+              options: [
+                ["planning", "Planning"],
+                ["sitePreparation", "Site Preparation"],
+                ["hardscaping", "Hardscaping"],
+                ["softscaping", "Softscaping"]
+              ]
+            }, {
               title: "Landscaping",
               options: [
                 ["waterFeatures", "Water Features"],
@@ -2987,16 +2987,6 @@ module.exports = {
                 ["stoneworkPaving", "Stonework & Paving"],
                 ["outdoorKitchens", "Outdoor Kitchens"]
               ]
-            }, {
-              title: "Garden Services",
-              options: [
-                ["gardenCleanup", "Garden Cleanup"],
-                ["planting", "Planting"],
-                ["gardenMaintenance", "Garden Maintenance"],
-                ["weeding", "Weeding"],
-                ["fertilization", "Fertilization"],
-                ["pruning", "Pruning"]
-              ]
             }]
           },
           {
@@ -3010,6 +3000,16 @@ module.exports = {
               ["serviceType", "Service Type"]
             ],
             nodes: [{
+              title: "Garden Services",
+              options: [
+                ["gardenCleanup", "Garden Cleanup"],
+                ["planting", "Planting"],
+                ["gardenMaintenance", "Garden Maintenance"],
+                ["weeding", "Weeding"],
+                ["fertilization", "Fertilization"],
+                ["pruning", "Pruning"]
+              ]
+            }, {
               title: "Lawn Installation Services",
               options: [
                 ["lawnInstallation", "Lawn Installation"],
@@ -3611,7 +3611,7 @@ module.exports = {
           ["lawyersinAdministration", "Lawyers in Administration"],
           ["lawyersinCivilLaw", "Lawyers in Civil Law"],
           ["lawyersinCriminalLaw", "Lawyers in Criminal Law"],
-          ["lawyersinFamilyLaw", "Lawyers in Family Law"],
+          // ["lawyersinFamilyLaw", "Lawyers in Family Law"],
           ["insuranceAgentsBrokers", "Insurance Agents & Brokers"],
           ["notaries", "Notaries"]
         ],
@@ -3657,7 +3657,7 @@ module.exports = {
               ["manitobaTribunals", "Manitoba Tribunals"],
               ["newBrunswickTribunals", "New Brunswick Tribunals"],
               ["newfoundlandTribunals", "Newfoundland Tribunals"],
-              ["northwestTerritoriesTribunals", "Northwest Territories Tribunals"],
+              // ["northwestTerritoriesTribunals", "Northwest Territories Tribunals"],
               ["novaScotiaTribunals", "Nova Scotia Tribunals"],
               ["nunavutTribunals", "Nunavut Tribunals"],
               ["ontarioTribunals", "Ontario Tribunals"],
@@ -4025,7 +4025,7 @@ module.exports = {
       {
         title: "Miscellaneous",
         options: [
-          ["childCareServices", "Child Care Services"],
+          // ["childCareServices", "Child Care Services"],
           ["drivingInstruction", "Driving Instruction"],
           ["cleaners", "Cleaners"],
           ["environmentalConsult", "Environmental Consult"],
@@ -4039,7 +4039,7 @@ module.exports = {
           ["veterinarians", "Veterinarians"]
         ],
         nodes: [
-        //   {
+        // {
         //   title: "Child Care Services"
         // },
         {

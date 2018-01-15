@@ -1,5 +1,5 @@
 <template>
-  <main id="questionnaire">
+  <main id="questionnaire" class="questionnaire">
     <TabNav :activeTab="activeTab" @navigate="handleNav" />
     <form @submit.prevent="handleSubmit" class="questionnaire-form">
       <BusinessDetails v-show="activeTab === 'businessDetails'" @update="handleData" @error="handleError" :fieldData="formData.businessDetailsData" />
@@ -117,19 +117,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#questionnaire {
-  width: 500px;
-}
-label {
-  margin-bottom: 20px;
-}
-label, input, textarea {
-  display: block;
-}
-.form-field__error {
-  color: red;
-}
-p.form-field__question { font-weight: bold; }
-</style>

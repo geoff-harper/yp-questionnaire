@@ -4,9 +4,9 @@
       <p slot="en" class="sub-section__intro">Congratulations on your new website product! The first step in our production process is to learn a little bit more about your business and its goals. This information will help our web team strategize a plan before the next scheduled phone consultation. Your responses here will help us strengthen your online presence.</p>
       <p slot="fr" class="sub-section__intro">French placeholder text.</p>
     </IntroSubSection>
-    <div class="sub-section">
+    <div class="sub-section lg">
       <h3 class="sub-section__header">Business Info</h3>
-      <p class="sub-section__primer">Let's start with some of the basic business details.</p>
+      <p class="sub-section__intro">Let's start with some of the basic business details.</p>
       <InputText @input="emitFieldData" :inputParams="['primaryContact', 0, true]">
         <div slot="en">
           <p class="form-field__question">Primary point of contact for our website development team</p>
@@ -24,33 +24,37 @@
           <p class="form-field__question">Contact information to be displayed on site</p>
         </div>
       </InputCheckbox>
-      <InputText @input="emitFieldData" :inputParams="['mainPhone', 0, true]">
-        <div slot="en">
-          <p class="form-field__question">Main phone number</p>
-        </div>
-      </InputText>
-      <InputText @input="emitFieldData" :inputParams="['otherPhone', 1, false]">
-        <div slot="en">
-          <p class="form-field__question">Additional phone numbers</p>
-        </div>
-      </InputText>
       <InputText @input="emitFieldData" :inputParams="['email', 0, true, true]">
         <div slot="en">
           <p class="form-field__question">Email</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['mainAddress', 0, true]">
-        <div slot="en">
-          <p class="form-field__question">Main business address</p>
-        </div>
-      </InputText>
-      <InputText @input="emitFieldData" :inputParams="['otherAddress', 1, false]">
-        <div slot="en">
-          <p class="form-field__question">Additional addresses</p>
-        </div>
-      </InputText>
+      <fieldset>
+        <InputText @input="emitFieldData" :inputParams="['mainPhone', 0, true]">
+          <div slot="en">
+            <p class="form-field__question">Main phone number</p>
+          </div>
+        </InputText>
+        <InputText @input="emitFieldData" :inputParams="['otherPhone', 1, false]">
+          <div slot="en">
+            <p class="form-field__question">Additional phone numbers</p>
+          </div>
+        </InputText>
+      </fieldset>
+      <fieldset>
+        <InputText @input="emitFieldData" :inputParams="['mainAddress', 0, true]">
+          <div slot="en">
+            <p class="form-field__question">Main business address</p>
+          </div>
+        </InputText>
+        <InputText @input="emitFieldData" :inputParams="['otherAddress', 1, false]">
+          <div slot="en">
+            <p class="form-field__question">Additional addresses</p>
+          </div>
+        </InputText>
+      </fieldset>    
     </div>
-    <div class="sub-section">
+    <div class="sub-section lg">
       <h3 class="sub-section__header">Hours of Operation</h3>
       <InputText @input="emitFieldData" :inputParams="['monday', 0, false]">
         <div slot="en">
@@ -130,7 +134,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

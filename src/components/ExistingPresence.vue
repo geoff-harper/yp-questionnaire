@@ -4,15 +4,15 @@
       <p slot="en" class="sub-section__intro">Let us know which online platforms your business is currently using.</p>
     </IntroSubSection>
     <div class="sub-section">
-      <h3 class="section__sub-header">Existing Online Presence</h3>
+      <h3 class="sub-section__header">Existing Online Presence</h3>
       <InputCheckbox @change="emitFieldData" :inputParams="['presenceTypes', presenceTypesOptions, false]">
         <div slot="en">
           <p class="form-field__question">What online platforms are you already on?</p>
         </div>
       </InputCheckbox>
     </div>
-    <div v-show="fieldData.presenceTypes.indexOf('currentWebsite') !== -1" class="sub-section">
-      <h3 class="section__sub-header">Current Website</h3>
+    <div v-if="fieldData.presenceTypes.indexOf('currentWebsite') !== -1" class="sub-section">
+      <h3 class="sub-section__header">Current Website</h3>
       <InputText @input="emitFieldData" :inputParams="['domainName', 0, false]">
         <div slot="en">
           <p class="form-field__question">What is the domain name?</p>
@@ -31,9 +31,9 @@
         </div>
       </InputText>
     </div>
-    <div v-show="checkSocialVisibility" class="sub-section">
-      <h3 class="section__sub-header">Social Media</h3>
-      <p class="section__primer">If possible, please provide URLs</p>
+    <div v-if="checkSocialVisibility" class="sub-section">
+      <h3 class="sub-section__header">Social Media</h3>
+      <p class="sub-section__intro">If possible, please provide URLs</p>
       <InputText
         v-show="fieldData.presenceTypes.indexOf('facebook') !== -1"
         @input="emitFieldData"
@@ -124,7 +124,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -16,8 +16,8 @@
     </div>
     <div v-if="formData.finishSection.submitted" class="sub-section">
       <h3 class="sub-section__header">Thank You</h3>
-      <p class="sub-section__primer">If you’re looking for more helpful hints on the website design process, please review the following YP document:<br/><a href="#" target="_blank">Welcome to Your Website</a></p>
-      <p class="sub-section__primer">To get a better idea of the type of work we do, please click the link below to view YP’s online portfolio. Each site is numbered (e.g. WEB002) and will help your Fulfillment Representative determine your style preferences. Don’t worry about the type of business being featured, just focus on the elements you would like to see incorporated into your site.<br/><a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP Website Portfolio</a></p>
+      <p class="sub-section__intro">If you’re looking for more helpful hints on the website design process, please review the following YP document:<a class="button" href="#" target="_blank">Welcome to Your Website</a></p>
+      <p class="sub-section__intro">To get a better idea of the type of work we do, please click the link below to view YP’s online portfolio. Each site is numbered (e.g. WEB002) and will help your Fulfillment Representative determine your style preferences. Don’t worry about the type of business being featured, just focus on the elements you would like to see incorporated into your site.<br/><a class="button" href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP Website Portfolio</a></p>
     </div>
   </section>
 </template>
@@ -50,7 +50,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

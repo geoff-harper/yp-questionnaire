@@ -1,9 +1,9 @@
 <template>
   <div class="form-panel">
-    <h3 class="section__sub-header">{{ title }}</h3>
+    <h3 class="sub-section__header">{{ title }}</h3>
     <InputCheckbox @change="toggleChild" v-if="options" :inputParams="[safe, options, false]"></InputCheckbox>
     <InputPanel v-for="(node, i) in nodes" :key="i"
-      v-show="checked.indexOf(options[i][0]) !== -1"
+      v-if="checked.indexOf(options[i][0]) !== -1"
       @update="emitChecked"
       :title="node.title"
       :options="node.options"
@@ -54,10 +54,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.form-panel {
-  background-color: rgba(0,0,0,0.06);
-  padding: 10px 10px 10px 20px;
-}
-</style>

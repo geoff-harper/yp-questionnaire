@@ -16,7 +16,7 @@
       :required="false"
       @input="emitText($event.target)"
       cols="30"
-      rows="10">
+      rows="5">
     </textarea>
     <p v-show="error" class="form-field__error">Please fill in this field.</p>
   </label>
@@ -61,7 +61,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
