@@ -1,0 +1,264 @@
+:root {
+  --main-yellow: #FFCD00;
+  --main-red: #E03131;
+}
+
+html * { box-sizing: border-box; }
+body {
+  background: #000 url(./uploads/body-background--device.jpg) center center / cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background: #000 url(./uploads/body-background.jpg) center center / cover no-repeat fixed;
+  }
+}
+
+/***
+ *** Base
+***/
+.questionnaire {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+
+@media only screen and (min-width: 1200px) {
+  .questionnaire {
+    padding: 60px 0;
+  }
+}
+
+/***
+ *** Typography
+***/
+.questionnaire * {
+  color: #6D6E71;
+  font-weight: 100;
+  font-family: 'YP Local', sans-serif;
+  line-height: 1.5em;
+}
+
+.section__header {
+  padding: 15px 20px;
+  background-color: #000;
+  color: var(--main-yellow);
+  font-size: 34px;
+  font-family: 'YP Hand Web_Regular', sans-serif;
+}
+
+.sub-section__header {
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 24px;
+}
+
+.sub-section__intro {
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.form-field__question {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.form-field__contextual {
+  color: #A7A9AC;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.form-field__error {
+  margin-top: 5px;
+  color: var(--main-red);
+  font-style: italic;
+}
+
+/***
+ *** Layout
+***/
+/*** Sub sections ***/
+.sub-section {
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  background-color: #FFF;
+}
+.sub-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.intro.sub-section {
+  padding: 0 0 30px;
+}
+.intro.sub-section .sub-section__intro {
+  padding: 0 20px 0;
+  margin-bottom: 0;
+}
+.intro.sub-section .sub-section__header {
+  padding: 20px 20px 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .sub-section.lg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+  .sub-section.lg .sub-section__header,
+  .sub-section.lg .sub-section__intro {
+    grid-column: 1 / 3;
+  }
+}
+
+/*** Field containers ***/
+.form-field__label,
+.form-field__checkbox-container {
+  display: block;
+  margin: 0 0 20px;
+}
+
+.form-field__label:last-of-type,
+.form-field__checkbox-container .form-field__label {
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-field__checkbox-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-field__checkbox-container > div {
+    grid-column: 1 / 3;
+  }
+}
+
+/***
+ *** Inputs
+***/
+/*** Text fields ***/
+.form-field__label input[type="text"],
+.form-field__label textarea {
+  margin: 10px 0 0;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.08);
+  resize: none;
+}
+
+/*** Checkboxes ***/
+.form-field__checkbox-container > div {
+  margin: 0 0 10px;
+}
+
+.form-field__checkbox-container .form-field__label {
+  margin-bottom: 5px;
+}
+
+.form-field__checkbox-container:not(#foo) .form-field__checkbox {
+  margin-right: 5px;
+  opacity: 0;
+  position: absolute;
+}
+
+.form-field__checkbox-container:not(#foo) .form-field__checkbox-span {
+  background-image: url(./uploads/check--unselected.png);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding-left: 28px;
+}
+
+.form-field__checkbox-container:not(#foo) .form-field__checkbox:checked + .form-field__checkbox-span {
+  background-image: url(./uploads/check--selected.png);
+}
+
+/*** Buttons ***/
+.button {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 20px;
+  padding: 8px 20px;
+  border: none;
+  background-color: var(--main-yellow);
+  font-weight: 300;
+}
+
+.button:hover {
+  color: var(--main-yellow);
+  background-color: #000;
+}
+
+.finish-questionnaire a.button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0 30px;
+}
+
+/***
+ *** Nav
+***/
+/*** Top tab nav ***/
+.tab-navigation {
+  background-color: var(--main-yellow);
+  margin-bottom: 20px;
+}
+
+.tab-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tab {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab.active,
+.tab:hover {
+  color: #FFF;
+  background-color: #000;
+}
+
+@media only screen and (min-width: 1200px) {
+  .tab-navigation ul {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .tab-navigation .tab {
+    flex: 1 0 auto;
+  }
+}
+
+/*** Bottom button nav ***/
+.button-navigation {
+  background-color: #FFF;
+  padding: 0 20px 30px;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-between;
+}
+
+.button-navigation .button {
+  min-width: 40%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .button-navigation .button {
+    min-width: 20%;
+  }
+}
