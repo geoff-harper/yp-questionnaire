@@ -5,13 +5,13 @@
 
 html * { box-sizing: border-box; }
 body {
-  background: #000 url(./uploads/body-background--device.jpg) center center / cover no-repeat fixed;
+  background: #000 url(./uploads/body-background--device.jpg) center top / cover no-repeat fixed;
   min-height: 100vh;
 }
 
 @media only screen and (min-width: 768px) {
   body {
-    background: #000 url(./uploads/body-background.jpg) center center / cover no-repeat fixed;
+    background: #000 url(./uploads/body-background.jpg) center top / cover no-repeat fixed;
   }
 }
 
@@ -107,6 +107,10 @@ h1, h2, h3, h4, p { margin: 0; }
   padding: 20px 20px 0;
 }
 
+.margin .intro.sub-section {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: 1200px) {
   .sub-section.lg {
     display: grid;
@@ -135,6 +139,7 @@ h1, h2, h3, h4, p { margin: 0; }
   .form-field__checkbox-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
   }
   .form-field__checkbox-container > div {
     grid-column: 1 / 3;
@@ -200,7 +205,11 @@ h1, h2, h3, h4, p { margin: 0; }
 .finish-questionnaire a.button {
   text-decoration: none;
   display: inline-block;
-  margin: 20px 0 30px;
+  margin-bottom: 30px;
+}
+
+.finish-questionnaire a.button:last-of-type {
+  margin-bottom: 0;
 }
 
 /***
@@ -219,13 +228,14 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 .tab {
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 5px;
+  padding: 0.5em;
   text-align: center;
   cursor: pointer;
+  position: relative;
 }
 
 .tab.active,
@@ -235,12 +245,49 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 @media only screen and (min-width: 1200px) {
+  .tab-navigation {
+    background-color: #000;
+  }
+
   .tab-navigation ul {
     display: flex;
     flex-flow: row nowrap;
+    overflow: hidden;
   }
-  .tab-navigation .tab {
+
+  .tab {
     flex: 1 0 auto;
+    color: #FFF;
+    background-color: #000;
+  }
+
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1.5em;
+    height: 0;
+    width: 0;
+    border-top: 1.25em solid transparent;
+    border-bottom: 1.25em solid transparent;
+    border-right: 0.75em solid transparent;
+    border-left: 0.75em solid #000;
+    z-index: 2;
+  }
+
+  .tab:hover {
+    color: #FFF !important;
+    background-color: #000 !important;
+  }
+
+  .tab:hover ~ .tab,
+  .tab.active ~ .tab {
+    background-color: var(--main-yellow);
+    color: #000;
+  }
+
+  .tab:hover ~ .tab::after {
+    border-left-color: var(--main-yellow);
   }
 }
 
@@ -261,4 +308,10 @@ h1, h2, h3, h4, p { margin: 0; }
   .button-navigation .button {
     min-width: 20%;
   }
+}
+
+/*** Submit section ***/
+.submit-section {
+  background-color: #FFF;
+  padding: 0 20px 30px;
 }

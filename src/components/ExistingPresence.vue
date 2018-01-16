@@ -31,7 +31,7 @@
         </div>
       </InputText>
     </div>
-    <div v-if="checkSocialVisibility" class="sub-section">
+    <div v-if="checkSocialVisibility" class="sub-section lg">
       <h3 class="sub-section__header">Social Media</h3>
       <p class="sub-section__intro">If possible, please provide URLs</p>
       <InputText
