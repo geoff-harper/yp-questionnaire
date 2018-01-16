@@ -1,7 +1,7 @@
 <template>
   <nav class="button-navigation">
-    <button @click="emitNav('next')" class="button">Next &gt;</button>
-    <button @click="emitNav('prev')" v-show="activeTab !== 'businessDetails'" class="button">&lt; Previous</button>
+    <button @click.prevent="emitNav('next')" class="button">Next &gt;</button>
+    <button @click.prevent="emitNav('prev')" v-show="activeTab !== 'businessDetails'" class="button">&lt; Previous</button>
   </nav>
 </template>
 

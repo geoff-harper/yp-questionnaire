@@ -83,6 +83,7 @@
         </div>
       </InputText>
     </div>
+    <ButtonNav activeTab="existingPresence" @navigate="emitNav" />
   </section>
 </template>
 
@@ -90,6 +91,7 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
+import ButtonNav from './ButtonNav'
 import { presenceTypesOptions } from '../assets/presenceOptions'
 
 export default {
@@ -97,7 +99,8 @@ export default {
   components: {
     IntroSubSection,
     InputText,
-    InputCheckbox
+    InputCheckbox,
+    ButtonNav
   },
   props: {
     fieldData: {
@@ -118,8 +121,11 @@ export default {
   },
   methods: {
     emitFieldData (elem, value, errorPresent) {
-      this.$emit('update', 'existingPresenceData', elem, value)
+      this.$emit('update', 'existingPresence', elem, value)
       this.$emit('error', errorPresent)
+    },
+    emitNav (tab) {
+      this.$emit('navigate', tab)
     }
   }
 }

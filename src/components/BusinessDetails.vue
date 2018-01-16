@@ -52,7 +52,7 @@
             <p class="form-field__question">Additional addresses</p>
           </div>
         </InputText>
-      </fieldset>    
+      </fieldset>
     </div>
     <div class="sub-section lg">
       <h3 class="sub-section__header">Hours of Operation</h3>
@@ -99,6 +99,7 @@
         </div>
       </InputText>
     </div>
+    <ButtonNav activeTab="businessDetails" @navigate="emitNav" />
   </section>
 </template>
 
@@ -106,6 +107,7 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
+import ButtonNav from './ButtonNav'
 import { displayedMediums } from '../assets/businessInfoOptions'
 
 export default {
@@ -113,7 +115,8 @@ export default {
   components: {
     IntroSubSection,
     InputText,
-    InputCheckbox
+    InputCheckbox,
+    ButtonNav
   },
   props: {
     fieldData: {
@@ -128,8 +131,11 @@ export default {
   },
   methods: {
     emitFieldData (elem, value, errorPresent) {
-      this.$emit('update', 'businessDetailsData', elem, value)
+      this.$emit('update', 'businessDetails', elem, value)
       this.$emit('error', errorPresent)
+    },
+    emitNav (tab) {
+      this.$emit('navigate', tab)
     }
   }
 }

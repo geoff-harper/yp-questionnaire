@@ -11,19 +11,22 @@
         :nodes="productsServicesOptions.nodes"
         :safe="'productsServices'"></InputPanel>
     </div>
+    <ButtonNav activeTab="productsServices" @navigate="emitNav" />
   </section>
 </template>
 
 <script>
 import IntroSubSection from './IntroSubSection'
 import InputPanel from './InputPanel'
+import ButtonNav from './ButtonNav'
 import { productsServicesOptions } from '../assets/prodServicesOptions'
 
 export default {
   name: 'ProductsServices',
   components: {
     IntroSubSection,
-    InputPanel
+    InputPanel,
+    ButtonNav
   },
   props: {
     fieldData: {
@@ -40,7 +43,10 @@ export default {
   methods: {
     emitFieldData (elem, value) {
       this.emittedData[elem] = value[0]
-      this.$emit('update', 'productsServicesData', 'selectedProdsServices', this.emittedData)
+      this.$emit('update', 'productsServices', 'selectedProdsServices', this.emittedData)
+    },
+    emitNav (tab) {
+      this.$emit('navigate', tab)
     }
   }
 }

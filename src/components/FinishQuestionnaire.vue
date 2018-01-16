@@ -1,12 +1,12 @@
 <template>
-  <section id="finish-questionnaire" :class="['finish-questionnaire', 'section', !formData.finishSection.submitted ? 'margin': null]">
+  <section id="finish-questionnaire" :class="['finish-questionnaire', 'section', !fieldData.finishSection.submitted ? 'margin': null]">
     <IntroSubSection header="Finishing Up" subHeader="Finishing Up">
       <p slot="en" class="sub-section__intro">Your insights and opinions help us do a better job. Together we can create the ideal showcase for your business! We appreciate your input. Feel free to review your answers and make any necessary changes. Once complete, click the "Complete Questionionnaire" button. This form will be added to your file as we prepare for your phone consultation.</p>
     </IntroSubSection>
-    <div v-if="!formData.finishSection.submitted" class="submit-section">
+    <div v-if="!fieldData.finishSection.submitted" class="submit-section">
       <input type="submit" value="Complete Questionnaire" class="button">
     </div>
-    <div v-if="formData.finishSection.submitted" class="sub-section">
+    <div v-if="fieldData.finishSection.submitted" class="sub-section">
       <h3 class="sub-section__header">Thank You</h3>
       <p class="sub-section__intro">If you’re looking for more helpful hints on the website design process, please review the following YP document:</p>
       <a class="button" href="#" target="_blank">Welcome to Your Website</a>
@@ -18,7 +18,6 @@
 
 <script>
 import IntroSubSection from './IntroSubSection'
-import { repNames } from '../assets/repOptions'
 
 export default {
   name: 'FinishQuestionnaire',
@@ -26,15 +25,13 @@ export default {
     IntroSubSection
   },
   props: {
-    formData: {
+    fieldData: {
       type: Object,
       required: true
     }
   },
   data () {
-    return {
-      repNames: repNames
-    }
+    return {}
   }
 }
 </script>

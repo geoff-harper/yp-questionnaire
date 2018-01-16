@@ -30,6 +30,7 @@
         </div>
       </InputText>
     </div>
+    <ButtonNav activeTab="yourAudience" @navigate="emitNav" />
   </section>
 </template>
 
@@ -37,6 +38,7 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
+import ButtonNav from './ButtonNav'
 import { suppliedContentTypes } from '../assets/audienceOptions'
 
 export default {
@@ -44,7 +46,8 @@ export default {
   components: {
     IntroSubSection,
     InputText,
-    InputCheckbox
+    InputCheckbox,
+    ButtonNav
   },
   props: {
     fieldData: {
@@ -59,8 +62,11 @@ export default {
   },
   methods: {
     emitFieldData (elem, value, errorPresent) {
-      this.$emit('update', 'yourAudienceData', elem, value)
+      this.$emit('update', 'yourAudience', elem, value)
       this.$emit('error', errorPresent)
+    },
+    emitNav (tab) {
+      this.$emit('navigate', tab)
     }
   }
 }

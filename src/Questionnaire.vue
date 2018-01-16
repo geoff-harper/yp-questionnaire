@@ -2,13 +2,13 @@
   <main id="questionnaire" class="questionnaire">
     <TabNav :activeTab="activeTab" @navigate="handleNav" />
     <form @submit.prevent="handleSubmit" class="questionnaire-form">
-      <BusinessDetails v-show="activeTab === 'businessDetails'" @update="handleData" @error="handleError" :fieldData="formData.businessDetailsData" />
-      <ProductsServices v-show="activeTab === 'productsServices'" @update="handleData" @error="handleError" :fieldData="formData.productsServicesData" />
-      <ExistingPresence v-show="activeTab === 'existingPresence'" @update="handleData" @error="handleError" :fieldData="formData.existingPresenceData" />
-      <YourAudience v-show="activeTab === 'yourAudience'" @update="handleData" @error="handleError" :fieldData="formData.yourAudienceData" />
-      <FinishQuestionnaire v-show="activeTab === 'finishQuestionnaire'" @update="handleData" :formData="formData" />
+      <transition name="slide-fade" mode="out-in">
+        <keep-alive>
+          <component :is="activeTab" :fieldData="getProps" @update="handleData" @error="handleError" @navigate="handleNav"></component>
+        </keep-alive>
+      </transition>
     </form>
-    <ButtonNav v-show="activeTab !== 'finishQuestionnaire'" :activeTab="activeTab" @navigate="handleNav" />
+    <!-- <ButtonNav  :activeTab="activeTab" @navigate="handleNav" :class="navigating ? 'button-nav-animation' : null" /> -->
   </main>
 </template>
 
@@ -25,18 +25,18 @@ export default {
   name: 'Questionnaire',
   components: {
     TabNav,
-    BusinessDetails,
-    ProductsServices,
-    ExistingPresence,
-    YourAudience,
-    FinishQuestionnaire,
+    'businessDetails': BusinessDetails,
+    'productsServices': ProductsServices,
+    'existingPresence': ExistingPresence,
+    'yourAudience': YourAudience,
+    'finishQuestionnaire': FinishQuestionnaire,
     ButtonNav
   },
   data () {
     return {
-      activeTab: 'businessDetails',
+      activeTab: 'productsServices',
       formData: {
-        businessDetailsData: {
+        businessDetails: {
           primaryContact: '',
           displayedName: '',
           displayedInfo: [],
@@ -54,10 +54,10 @@ export default {
           sunday: '',
           otherInfo: ''
         },
-        productsServicesData: {
+        productsServices: {
           selectedProdsServices: []
         },
-        existingPresenceData: {
+        existingPresence: {
           presenceTypes: [],
           domainName: '',
           domainNameContinue: '',
@@ -69,18 +69,22 @@ export default {
           other2: '',
           other3: ''
         },
-        yourAudienceData: {
+        yourAudience: {
           targetDemo: '',
           firstThing: '',
           suppliedContent: [],
           stockImagesSubjects: ''
         },
         finishSection: {
-          rep: '',
           submitted: false
         }
       },
       errorPresent: false
+    }
+  },
+  computed: {
+    getProps () {
+      return this.activeTab === 'finishQuestionnaire' ? this.formData : this.formData[this.activeTab]
     }
   },
   methods: {
@@ -117,3 +121,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 300ms ease;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>

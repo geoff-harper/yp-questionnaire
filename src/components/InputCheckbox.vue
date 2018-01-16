@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="form-field__checkbox-container">
+  <div class="form-field__checkbox-container">
     <slot name="en"></slot>
     <slot name="fr"></slot>
     <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
@@ -14,7 +14,7 @@
       <span class="form-field__checkbox-span">{{ checkboxText[1] }}</span>
     </label>
     <p v-if="error" class="form-field__error">Please fill in this field.</p>
-  </fieldset>
+  </div>
 </template>
 
 <script>
