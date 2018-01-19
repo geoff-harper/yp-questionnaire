@@ -65,8 +65,15 @@ export default {
     },
     updateVertical (elem, value) {
       for (let vertical of this.productsServices.options) {
-        if (value.indexOf(vertical.safe) !== -1) vertical.visible = true
-        else vertical.visible = false
+        if (value.indexOf(vertical.safe) !== -1) {
+          vertical.visible = true
+        } else {
+          vertical.visible = false
+          for (let subVertical of vertical.options) {
+            subVertical.visible = false
+            Vue.delete(this.subVerticals, subVertical.safe)
+          }
+        }
       }
     },
     updateSubVertical (elem, value) {
@@ -75,7 +82,6 @@ export default {
           for (let subVertical of vertical.options) {
             if (value.indexOf(subVertical.safe) !== -1) {
               subVertical.visible = true
-              // this.subVerticals[subVertical.safe] = subVertical
               Vue.set(this.subVerticals, subVertical.safe, subVertical)
             } else {
               subVertical.visible = false
@@ -83,6 +89,7 @@ export default {
             }
           }
         }
+        break
       }
     },
     emitFieldData (elem, value) {
