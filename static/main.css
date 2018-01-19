@@ -103,6 +103,11 @@ h1, h2, h3, h4, p { margin: 0; }
   padding: 0 20px 0;
   margin-bottom: 0;
 }
+
+.sub-section.low-level {
+  padding: 0;
+}
+
 .intro.sub-section .sub-section__header {
   padding: 20px 20px 0;
 }
@@ -165,7 +170,7 @@ h1, h2, h3, h4, p { margin: 0; }
   margin: 10px 0 0;
   padding: 8px;
   width: 100%;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.11);
   resize: none;
 }
 
@@ -186,9 +191,10 @@ h1, h2, h3, h4, p { margin: 0; }
 
 .form-field__checkbox-container:not(#foo) .form-field__checkbox-span {
   background-image: url(./uploads/check--unselected.png);
-  background-size: auto 100%;
+  background-size: auto 1em;
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: 0 0.25em;
+  display: inline-block;
   padding-left: 28px;
 }
 
@@ -197,19 +203,13 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 /*** Panels ***/
-/* .form-panel {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 0 20px;
+.form-panel__sub-sub-vertical {
+  padding: 30px 20px;
 }
 
-.form-panel .sub-section__header {
-  grid-column: 1 / 3;
+.form-panel__sub-sub-vertical:nth-child(2n) {
+  background-color: rgba(0,0,0,0.02);
 }
-
-.form-panel .form-field__checkbox-container {
-  display: block;
-} */
 
 /*** Buttons ***/
 .button {
@@ -290,7 +290,7 @@ h1, h2, h3, h4, p { margin: 0; }
     content: '';
     position: absolute;
     top: 0;
-    right: -1.5em;
+    right: -1.49em;
     height: 0;
     width: 0;
     border-top: 1.2em solid transparent;
@@ -320,14 +320,33 @@ h1, h2, h3, h4, p { margin: 0; }
 .button-navigation {
   background-color: #FFF;
   padding: 0 20px 30px;
-  display: flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between;
   transition: all 300ms ease;
 }
 
+.products-and-services .button-navigation {
+  padding-top: 15px;
+}
+
 .button-navigation .button {
-  min-width: 40%;
+  min-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .button-navigation .button:first-of-type {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .button-navigation {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+  }
+
+  .button-navigation .button {
+    min-width: 40%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {

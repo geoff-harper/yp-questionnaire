@@ -3,28 +3,38 @@
     <IntroSubSection header="Products &amp; Services" subHeader="Products &amp; Services">
       <p slot="en" class="sub-section__intro">We would like to know more about what you do. The following provides a range of industries we have created web products for in the past.</p>
     </IntroSubSection>
-    <div class="sub-section">
-      <InputPanel
-        @update="emitFieldData"
-        :title="productsServicesOptions.title"
-        :options="productsServicesOptions.options"
-        :nodes="productsServicesOptions.nodes"
-        :safe="'productsServices'"></InputPanel>
+    <div class="sub-section high-level">
+      <div class="form-panel__vertical">
+        <h3 class="sub-section__header">{{ productsServices.en_title }}</h3>
+        <InputCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]"></InputCheckbox>
+      </div>
+      <div class="form-panel__sub-verticals">
+        <div v-for="subVertical of getSubVerticals" class="form-panel__sub-vertical-container">
+          <h3 class="form-field__question">{{ subVertical.en_title }}</h3>
+          <InputCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]"></InputCheckbox>
+        </div>
+      </div>
+    </div>
+    <div v-if="Object.keys(subVerticals).length > 0" class="sub-section low-level">
+      <InputPanel v-for="(subVertical, i) of subVerticals" :subVertical="subVertical" :key="i"></InputPanel>
     </div>
     <ButtonNav activeTab="productsServices" @navigate="emitNav" />
   </section>
 </template>
 
 <script>
+import Vue from 'vue'
 import IntroSubSection from './IntroSubSection'
+import InputCheckbox from './InputCheckbox'
 import InputPanel from './InputPanel'
 import ButtonNav from './ButtonNav'
-import { productsServicesOptions } from '../assets/prodServicesOptions'
+import { productsServices } from '../assets/productServiceOptions'
 
 export default {
   name: 'ProductsServices',
   components: {
     IntroSubSection,
+    InputCheckbox,
     InputPanel,
     ButtonNav
   },
@@ -36,14 +46,48 @@ export default {
   },
   data () {
     return {
-      productsServicesOptions: productsServicesOptions,
-      emittedData: {}
+      productsServices: productsServices,
+      checked: [],
+      subVerticals: {}
+    }
+  },
+  computed: {
+    getSubVerticals () {
+      return this.productsServices.options.filter(item => item.visible)
+    },
+    getVerticalTitles () {
+      return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])
     }
   },
   methods: {
+    getSubVerticalTitles (subVertical) {
+      return subVertical.options.map(item => [item.safe, item.en_title, item.fr_title])
+    },
+    updateVertical (elem, value) {
+      for (let vertical of this.productsServices.options) {
+        if (value.indexOf(vertical.safe) !== -1) vertical.visible = true
+        else vertical.visible = false
+      }
+    },
+    updateSubVertical (elem, value) {
+      for (let vertical of this.productsServices.options) {
+        if (vertical.safe === elem) {
+          for (let subVertical of vertical.options) {
+            if (value.indexOf(subVertical.safe) !== -1) {
+              subVertical.visible = true
+              // this.subVerticals[subVertical.safe] = subVertical
+              Vue.set(this.subVerticals, subVertical.safe, subVertical)
+            } else {
+              subVertical.visible = false
+              Vue.delete(this.subVerticals, subVertical.safe)
+            }
+          }
+        }
+      }
+    },
     emitFieldData (elem, value) {
-      this.emittedData[elem] = value[0]
-      this.$emit('update', 'productsServices', 'selectedProdsServices', this.emittedData)
+      // this.emittedData[elem] = value[0]
+      // this.$emit('update', 'productsServices', 'selectedProdsServices', this.emittedData)
     },
     emitNav (tab) {
       this.$emit('navigate', tab)

@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'businessDetails',
+      activeTab: 'productsServices',
       formData: {
         businessDetails: {
           primaryContact: '',

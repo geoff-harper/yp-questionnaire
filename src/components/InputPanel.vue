@@ -1,14 +1,13 @@
 <template>
-  <div class="form-panel">
-    <h3 class="sub-section__header">{{ title }}</h3>
-    <InputCheckbox @change="toggleChild" v-if="options" :inputParams="[safe, options, false]"></InputCheckbox>
-    <InputPanel v-for="(node, i) in nodes" :key="i"
-      v-if="checked.indexOf(options[i][0]) !== -1"
-      @update="emitChecked"
-      :title="node.title"
-      :options="node.options"
-      :nodes="node.nodes"
-      :safe="options[i][0]"></InputPanel>
+  <div class="form-panel__sub-sub-vertical">
+    <h3 class="sub-section__header">{{ subVertical.en_title }}</h3>
+    <div v-for="subOption of subVertical.subOptions">
+      <InputCheckbox @change="emitFieldData" :inputParams="[subOption.safe, subOption.options, false]">
+        <div slot="en">
+          <p class="form-field__question">{{ subOption.en_label }}</p>
+        </div>
+      </InputCheckbox>
+    </div>
   </div>
 </template>
 
@@ -16,40 +15,19 @@
 import InputCheckbox from './InputCheckbox'
 
 export default {
-  name: 'InputPanel',
+  name: 'InputPanelLow',
   components: {
     InputCheckbox
   },
   props: {
-    title: {
-      type: String
-    },
-    safe: {
-      type: String
-    },
-    options: {
-      type: Array
-    },
-    nodes: {
-      type: Array
-    }
+    subVertical: { type: Object }
   },
   data () {
-    return {
-      checked: []
-    }
+    return {}
   },
   methods: {
-    toggleChild (elem, value) {
-      this.checked = value
-      this.emitChecked(elem, this.checked, true)
-    },
-    emitChecked (elem, value, nodeChanged) {
-      if (!this.nodes || nodeChanged) {
-        this.$emit('update', elem, [this.checked])
-      } else {
-        this.$emit('update', elem, [...value, this.checked])
-      }
+    emitFieldData (elem, value) {
+      console.log(value)
     }
   }
 }
