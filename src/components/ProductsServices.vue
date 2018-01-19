@@ -16,10 +16,10 @@
       </div>
     </div>
     <div v-if="Object.keys(subVerticals).length > 0" class="sub-section low-level">
-      <InputPanel v-for="(subVertical, i) of subVerticals" :subVertical="subVertical" :key="i"></InputPanel>
+      <InputPanel v-for="(subVertical, i) of subVerticals" @change="subOptionSelected" v-if="subVertical.subOptions.length > 0" :subVertical="subVertical" :key="i"></InputPanel>
     </div>
     <div class="sub-section">
-      <InputText @input="emitFieldData" :inputParams="['otherInfo', 1, false]">
+      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]">
         <div slot="en">
           <p class="form-field__question">Are there any other notes you would like to provide regarding your business information?</p>
         </div>
@@ -57,7 +57,8 @@ export default {
     return {
       productsServices: productsServices,
       checked: [],
-      subVerticals: {}
+      subVerticals: {},
+      otherProductsServices: ''
     }
   },
   computed: {
@@ -94,6 +95,16 @@ export default {
               Vue.delete(this.subVerticals, subVertical.safe)
             }
           }
+        }
+      }
+    },
+    subOptionSelected (parent, elem, value) {
+      console.log(parent)
+      console.log(elem)
+      console.log(value)
+      for (let sub of this.subVerticals[parent].subOptions) {
+        if (sub.safe === elem) {
+          // let emitObj = {}
         }
       }
     },

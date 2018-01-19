@@ -8,7 +8,6 @@
         </keep-alive>
       </transition>
     </form>
-    <!-- <ButtonNav  :activeTab="activeTab" @navigate="handleNav" :class="navigating ? 'button-nav-animation' : null" /> -->
   </main>
 </template>
 
@@ -34,7 +33,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'businessDetails',
+      activeTab: 'finishQuestionnaire',
       formData: {
         businessDetails: {
           primaryContact: '',
@@ -121,16 +120,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 300ms ease;
-}
-
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
-}
-</style>

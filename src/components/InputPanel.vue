@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     emitFieldData (elem, value) {
-      console.log(value)
+      this.$emit('change', this.subVertical.safe, elem, value)
     }
   }
 }
