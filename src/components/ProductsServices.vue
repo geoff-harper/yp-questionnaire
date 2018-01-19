@@ -9,7 +9,7 @@
         <InputCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]"></InputCheckbox>
       </div>
       <div class="form-panel__sub-verticals">
-        <div v-for="subVertical of getSubVerticals" class="form-panel__sub-vertical-container">
+        <div v-for="subVertical of productsServices.options" v-if="subVertical.visible" class="form-panel__sub-vertical-container">
           <h3 class="form-field__question">{{ subVertical.en_title }}</h3>
           <InputCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]"></InputCheckbox>
         </div>
@@ -61,9 +61,6 @@ export default {
     }
   },
   computed: {
-    getSubVerticals () {
-      return this.productsServices.options.filter(item => item.visible)
-    },
     getVerticalTitles () {
       return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])
     }

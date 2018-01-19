@@ -88,7 +88,7 @@ h1, h2, h3, h4, p { margin: 0; }
 ***/
 /*** Sub sections ***/
 .sub-section {
-  padding: 30px 20px;
+  padding: 30px;
   margin-bottom: 20px;
   background-color: #FFF;
 }
@@ -204,7 +204,7 @@ h1, h2, h3, h4, p { margin: 0; }
 
 /*** Panels ***/
 .form-panel__sub-sub-vertical {
-  padding: 30px 20px;
+  padding: 30px;
 }
 
 .form-panel__sub-sub-vertical:nth-child(2n) {
