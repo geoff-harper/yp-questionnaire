@@ -18,6 +18,13 @@
     <div v-if="Object.keys(subVerticals).length > 0" class="sub-section low-level">
       <InputPanel v-for="(subVertical, i) of subVerticals" :subVertical="subVertical" :key="i"></InputPanel>
     </div>
+    <div class="sub-section">
+      <InputText @input="emitFieldData" :inputParams="['otherInfo', 1, false]">
+        <div slot="en">
+          <p class="form-field__question">Are there any other notes you would like to provide regarding your business information?</p>
+        </div>
+      </InputText>
+    </div>
     <ButtonNav activeTab="productsServices" @navigate="emitNav" />
   </section>
 </template>
@@ -26,6 +33,7 @@
 import Vue from 'vue'
 import IntroSubSection from './IntroSubSection'
 import InputCheckbox from './InputCheckbox'
+import InputText from './InputText'
 import InputPanel from './InputPanel'
 import ButtonNav from './ButtonNav'
 import { productsServices } from '../assets/productServiceOptions'
@@ -35,6 +43,7 @@ export default {
   components: {
     IntroSubSection,
     InputCheckbox,
+    InputText,
     InputPanel,
     ButtonNav
   },

@@ -323,10 +323,6 @@ h1, h2, h3, h4, p { margin: 0; }
   transition: all 300ms ease;
 }
 
-.products-and-services .button-navigation {
-  padding-top: 15px;
-}
-
 .button-navigation .button {
   min-width: 100%;
 }
