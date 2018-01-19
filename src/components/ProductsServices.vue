@@ -98,7 +98,6 @@ export default {
             }
           }
         }
-        break
       }
     },
     emitFieldData (elem, value) {
