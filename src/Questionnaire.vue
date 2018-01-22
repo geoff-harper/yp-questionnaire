@@ -33,7 +33,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'finishQuestionnaire',
+      activeTab: 'businessDetails',
       formData: {
         businessDetails: {
           primaryContact: '',
@@ -53,9 +53,7 @@ export default {
           sunday: '',
           otherInfo: ''
         },
-        productsServices: {
-          selectedProdsServices: []
-        },
+        productsServices: {},
         existingPresence: {
           presenceTypes: [],
           domainName: '',

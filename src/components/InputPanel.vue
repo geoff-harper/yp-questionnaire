@@ -15,7 +15,7 @@
 import InputCheckbox from './InputCheckbox'
 
 export default {
-  name: 'InputPanelLow',
+  name: 'InputPanel',
   components: {
     InputCheckbox
   },

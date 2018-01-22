@@ -99,18 +99,23 @@ export default {
       }
     },
     subOptionSelected (parent, elem, value) {
-      console.log(parent)
-      console.log(elem)
-      console.log(value)
+      let emitObj = this.fieldData[parent] || {}
       for (let sub of this.subVerticals[parent].subOptions) {
         if (sub.safe === elem) {
-          // let emitObj = {}
+          const selected = sub.options.filter(x => value.indexOf(x[0]) !== -1)
+          let deepEmitObj = {
+            en_label: sub.en_label,
+            fr_label: sub.fr_label,
+            safe: sub.safe,
+            selected: selected
+          }
+          emitObj[sub.safe] = deepEmitObj
         }
       }
+      this.emitFieldData(this.subVerticals[parent].safe, emitObj)
     },
     emitFieldData (elem, value) {
-      // this.emittedData[elem] = value[0]
-      // this.$emit('update', 'productsServices', 'selectedProdsServices', this.emittedData)
+      this.$emit('update', 'productsServices', elem, value)
     },
     emitNav (tab) {
       this.$emit('navigate', tab)

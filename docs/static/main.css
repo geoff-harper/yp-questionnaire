@@ -170,6 +170,16 @@ h1, h2, h3, h4, p { margin: 0; }
   resize: none;
 }
 
+.error.form-field__label input[type="text"],
+.error.form-field__label textarea {
+  border: 1px solid var(--main-red);
+}
+
+.required.form-field__label input[type="text"],
+.required.form-field__label textarea {
+  background: url(./uploads/input__required.png) right top / auto 50% no-repeat;
+}
+
 /*** Checkboxes ***/
 .form-field__checkbox-container > div {
   margin: 0 0 10px;
@@ -297,8 +307,7 @@ nav::before {
     background-color: #000;
   }
 
-  .tab.active::after,
-  .tab:hover::after {
+  .tab.active::after {
     content: '';
     position: absolute;
     top: 0;
@@ -407,6 +416,11 @@ nav::before {
   text-align: center;
   grid-column: 1 / 4;
   margin-bottom: 30px;
+}
+
+.sub-section.thank-you .button:hover {
+  color: #000;
+  background-color: #FFF;
 }
 
 

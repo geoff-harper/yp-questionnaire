@@ -1,5 +1,5 @@
 <template>
-  <label :for="inputParams[0]" class="form-field__label">
+  <label :for="inputParams[0]" :class="['form-field__label', error ? 'error' : null, inputParams[2] ? 'required' : null]">
     <slot name="en"></slot>
     <slot name="fr"></slot>
     <input
