@@ -1,14 +1,15 @@
 <template>
   <section id="finish-questionnaire" :class="['finish-questionnaire', 'section', !submitted ? 'margin': null]">
-    <IntroSubSection header="Finish Questionnaire" subHeader="Finishing Up">
+    <IntroSubSection :header="['Finish Questionnaire', 'Pour terminer']" :subHeader="['Finishing Up', 'Pour terminer']" :en="en">
       <p slot="en" class="sub-section__intro">Your insights and opinions help us do a better job. Together we can create the ideal showcase for your business! We appreciate your input. Feel free to review your answers and make any necessary changes. Once complete, click the "Complete Questionionnaire" button. This form will be added to your file as we prepare for your phone consultation.</p>
+      <p slot="fr" class="sub-section__intro">Vos connaissances et votre avis nous permettent de faire un meilleur travail. Ensemble nous pouvons créer la vitrine idéale pour votre entreprise! Nous apprécions votre contribution. N’hésitez pas à verifier vos réponses et à apporter tout changement qui vous semble nécessaire. Une fois complété, cliquez le bouton Envoyer le questionnaire. Ce formulaire sera ajouté à votre dossier pendant la préparation de votre consultation téléphonique.</p>
     </IntroSubSection>
     <div v-if="!submitted" class="submit-section">
-      <input type="submit" value="Complete Questionnaire" class="button">
+      <input type="submit" :value="en ? 'Complete Questionnaire' : 'Envoyer le questionnaire'" class="button">
     </div>
     <transition name="slide-fade" mode="out-in">
       <div v-show="submitted" class="sub-section thank-you">
-        <h3 class="sub-section__header">Thank You</h3>
+        <h3 class="sub-section__header">{{ en ? 'Thank You' : 'Merci' }}</h3>
         <div class="thank-you__third">
           <p class="sub-section__intro">If you’re looking for more helpful hints on the website design process prior to your next consultation, please review the following YP document. It contains practical information on everything from the visual components to the written copy and more.</p>
           <a @click="trackPostSubmit('leaveBehind')" class="button" href="/uploads/welcome_to_your_website-en.pdf" target="_blank">Welcome to Your Website</a>
@@ -40,6 +41,11 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    en () {
+      return document.documentElement.lang === 'en'
+    }
   },
   methods: {
     trackPostSubmit (button) {

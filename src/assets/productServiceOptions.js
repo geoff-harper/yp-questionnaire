@@ -2,7 +2,7 @@
 module.exports = {
   productsServices: {
     "en_title": "Products & Services",
-    "fr_title": "",
+    "fr_title": "Produits & services",
     "safe": "productsServices",
     "visible": false,
     "options": [{

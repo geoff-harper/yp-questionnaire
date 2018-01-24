@@ -1,7 +1,7 @@
 <template>
   <label :for="inputParams[0]" :class="['form-field__label', error ? 'error' : null, inputParams[2] ? 'required' : null]">
-    <slot name="en"></slot>
-    <slot name="fr"></slot>
+    <slot v-if="en" name="en"></slot>
+    <slot v-if="!en" name="fr"></slot>
     <input
       v-if="inputParams[1] === 0"
       :name="inputParams[0]"
@@ -39,7 +39,8 @@ export default {
       validator (value) {
         return value.length >= 3
       }
-    }
+    },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {

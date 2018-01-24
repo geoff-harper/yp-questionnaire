@@ -5,6 +5,8 @@ import Questionnaire from './Questionnaire'
 
 Vue.config.productionTip = false
 
+window.en = document.documentElement.lang === 'en'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#questionnaire',

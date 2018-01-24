@@ -189,6 +189,10 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 /*** Checkboxes ***/
+.form-field__checkbox-container {
+  align-self: baseline;
+}
+
 .form-field__checkbox-container > div {
   margin: 0 0 10px;
 }
@@ -290,6 +294,10 @@ nav::before {
   cursor: pointer;
   position: relative;
   display: block;
+}
+
+.fr .tab {
+  font-size: 16px;
 }
 
 .tab.active,

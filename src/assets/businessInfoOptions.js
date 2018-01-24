@@ -1,7 +1,7 @@
 module.exports = {
   displayedMediums: [
-    ['phoneDisplay', 'Phone'],
-    ['emailDisplay', 'Email'],
-    ['addressDisplay', 'Address']
+    ['phoneDisplay', 'Phone', 'Téléphone'],
+    ['emailDisplay', 'Email', 'Courriel'],
+    ['addressDisplay', 'Address', 'Adresse']
   ]
 }

@@ -1,7 +1,7 @@
 <template>
   <nav class="button-navigation">
-    <button @click.prevent="emitNav('next')" class="button">Next &gt;</button>
-    <button @click.prevent="emitNav('prev')" v-show="activeTab !== 'businessDetails'" class="button">&lt; Previous</button>
+    <button @click.prevent="emitNav('next')" class="button">{{ en ? 'Next &gt;' : 'Suivant &gt;' }}</button>
+    <button @click.prevent="emitNav('prev')" v-show="activeTab !== 'businessDetails'" class="button">{{ en ? '&lt; Previous' : '&lt; Précédent' }}</button>
   </nav>
 </template>
 
@@ -12,10 +12,8 @@ export default {
   name: 'ButtonNav',
   components: {},
   props: {
-    activeTab: {
-      required: true,
-      type: String
-    }
+    activeTab: { required: true, type: String },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {

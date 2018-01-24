@@ -1,10 +1,13 @@
 <template>
   <div class="form-panel__sub-sub-vertical">
-    <h3 class="sub-section__header">{{ subVertical.en_title }}</h3>
+    <h3 class="sub-section__header">{{ en ? subVertical.en_title : subVertical.fr_title }}</h3>
     <div v-for="subOption of subVertical.subOptions">
-      <InputCheckbox @change="emitFieldData" :inputParams="[subOption.safe, subOption.options, false]">
+      <InputCheckbox @change="emitFieldData" :inputParams="[subOption.safe, subOption.options, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">{{ subOption.en_label }}</p>
+        </div>
+        <div slot="fr">
+          <p class="form-field__question">{{ subOption.fr_label }}</p>
         </div>
       </InputCheckbox>
     </div>
@@ -20,7 +23,8 @@ export default {
     InputCheckbox
   },
   props: {
-    subVertical: { type: Object }
+    subVertical: { type: Object },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {}

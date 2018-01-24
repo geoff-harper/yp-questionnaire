@@ -1,7 +1,7 @@
 <template>
   <div class="form-field__checkbox-container">
-    <slot name="en"></slot>
-    <slot name="fr"></slot>
+    <slot v-if="en" name="en"></slot>
+    <slot v-if="!en" name="fr"></slot>
     <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
       <input
         v-model="checked"
@@ -11,7 +11,7 @@
         @change="emitChecked"
         type="checkbox"
         class="form-field__checkbox">
-      <span class="form-field__checkbox-span">{{ checkboxText[1] }}</span>
+      <span class="form-field__checkbox-span">{{ en ? checkboxText[1] : checkboxText[2] }}</span>
     </label>
     <p v-if="error" class="form-field__error">Please fill in this field.</p>
   </div>
@@ -30,7 +30,8 @@ export default {
       validator (value) {
         return value.length === 3
       }
-    }
+    },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {

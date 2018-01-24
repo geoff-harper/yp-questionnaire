@@ -1,9 +1,9 @@
 module.exports = {
   tabs: [
-    ['businessDetails', 'Business Details'],
-    ['productsServices', 'Products and Services'],
-    ['existingPresence', 'Existing Presence'],
-    ['yourAudience', 'Your Audience'],
-    ['finishQuestionnaire', 'Finish Questionnaire']
+    ['businessDetails', 'Business Details', 'Données sur l’entreprise'],
+    ['productsServices', 'Products and Services', 'Produits et services'],
+    ['existingPresence', 'Existing Presence', 'Présence en ligne actuelle'],
+    ['yourAudience', 'Your Audience', 'Votre audience'],
+    ['finishQuestionnaire', 'Finish Questionnaire', 'Pour terminer']
   ]
 }

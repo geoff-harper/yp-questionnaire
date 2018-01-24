@@ -1,31 +1,41 @@
 <template>
   <section id="products-and-services" class="products-and-services section">
-    <IntroSubSection header="Products &amp; Services" subHeader="Products &amp; Services">
+    <IntroSubSection :header="['Products & Services', 'Produits & Services']" :subHeader="['Products & Services', 'Produits et services']" :en="en">
       <p slot="en" class="sub-section__intro">We would like to know more about what you do. The following provides a range of industries we have created web products for in the past.</p>
+      <p slot="fr" class="sub-section__intro">Nous voulons en savoir plus sur ce que vous faites. Vous trouverez ci-dessous une liste des secteurs pour lesquels nous avons eu l’occasion de créér des sites Web.</p>
     </IntroSubSection>
     <div class="sub-section high-level">
       <div class="form-panel__vertical">
-        <h3 class="sub-section__header">{{ productsServices.en_title }}</h3>
-        <InputCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]"></InputCheckbox>
+        <h3 class="sub-section__header">{{ en ? productsServices.en_title : productsServices.fr_title }}</h3>
+        <InputCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]" :en="en"></InputCheckbox>
       </div>
       <div class="form-panel__sub-verticals">
         <div v-for="subVertical of productsServices.options" v-if="subVertical.visible" class="form-panel__sub-vertical-container">
-          <h3 class="form-field__question">{{ subVertical.en_title }}</h3>
-          <InputCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]"></InputCheckbox>
+          <h3 class="form-field__question">{{ en ? subVertical.en_title : subVertical.fr_title }}</h3>
+          <InputCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]" :en="en"></InputCheckbox>
         </div>
       </div>
     </div>
     <div v-if="Object.keys(subVerticals).length > 0" class="sub-section low-level">
-      <InputPanel v-for="(subVertical, i) of subVerticals" @change="subOptionSelected" v-if="subVertical.subOptions.length > 0" :subVertical="subVertical" :key="i"></InputPanel>
+      <InputPanel
+        v-for="(subVertical, i) of subVerticals"
+        @change="subOptionSelected"
+        v-if="subVertical.subOptions.length > 0"
+        :subVertical="subVertical"
+        :key="i"
+        :en="en"></InputPanel>
     </div>
     <div class="sub-section">
-      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]">
+      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Are there any other notes you would like to provide regarding your business information?</p>
         </div>
+        <div slot="fr">
+          <p class="form-field__question">Y-a-t-il autre chose que vous désirez inclure concernant votre entreprise?</p>
+        </div>
       </InputText>
     </div>
-    <ButtonNav activeTab="productsServices" @navigate="emitNav" />
+    <ButtonNav activeTab="productsServices" @navigate="emitNav" :en="en" />
   </section>
 </template>
 
@@ -62,6 +72,9 @@ export default {
     }
   },
   computed: {
+    en () {
+      return document.documentElement.lang === 'en'
+    },
     getVerticalTitles () {
       return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])
     }
