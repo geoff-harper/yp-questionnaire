@@ -155,7 +155,7 @@ export default {
   },
   computed: {
     en () {
-      return document.documentElement.lang === '!fr'
+      return document.documentElement.lang !== 'fr'
     },
     checkSocialVisibility () {
       const pTypes = this.fieldData.presenceTypes

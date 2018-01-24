@@ -208,7 +208,7 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 .form-field__checkbox-container:not(#foo) .form-field__checkbox-span {
-  background-image: url(./uploads/check--unselected-2.png);
+  background-image: url(./uploads/input__check--unselected.png);
   background-size: auto 1em;
   background-repeat: no-repeat;
   background-position: 0 0.25em;
@@ -217,7 +217,7 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 .form-field__checkbox-container:not(#foo) .form-field__checkbox:checked + .form-field__checkbox-span {
-  background-image: url(./uploads/check--selected.png);
+  background-image: url(./uploads/input__check--selected.png);
 }
 
 /*** Panels ***/
