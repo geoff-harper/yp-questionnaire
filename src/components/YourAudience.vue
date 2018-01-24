@@ -13,7 +13,7 @@
         </div>
         <div slot="fr">
           <p class="form-field__question">Votre cible démographique</p>
-          <p class="form-field__contextual">Quelle est votre cible démographique? Pensez aux clients que vous avez servis (aidés) par le passé. Selon que vous vouliez miser sur les B2C (entreprise-consommateur) ou les B2B (interentreprises), vous devez concentrer vos efforts sur votre cible.</p>
+          <p class="form-field__contextual">Quelle est votre cible démographique? Pensez aux clients que vous avez servis par le passé. Selon que vous vouliez miser sur les B2C (entreprise-consommateur) ou les B2B (interentreprises), vous devez concentrer vos efforts sur votre cible.</p>
         </div>
       </InputText>
       <InputText @input="emitFieldData" :inputParams="['firstThing', 1, false]" :en="en">
@@ -23,7 +23,7 @@
         </div>
         <div slot="fr">
           <p class="form-field__question">Première impression</p>
-          <p class="form-field__contextual">Quelle est la première chose que vous voulez que vos client potentiels voient sur votre site? Il est toujours important de donner le ton juste. Vous disposez d’une seule chance de faire une bonne première impression.</p>
+          <p class="form-field__contextual">Quelle est la première chose que vous voulez que vos client potentiels voient sur votre site? Il est toujours important de donner le ton juste. Vous n’avez qu’une seule chance de faire une bonne première impression.</p>
         </div>
       </InputText>
       <InputCheckbox @change="emitFieldData" :inputParams="['suppliedContent', suppliedContentTypes, false]" :en="en">

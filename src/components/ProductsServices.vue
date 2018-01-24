@@ -2,7 +2,7 @@
   <section id="products-and-services" class="products-and-services section">
     <IntroSubSection :header="['Products & Services', 'Produits & Services']" :subHeader="['Products & Services', 'Produits et services']" :en="en">
       <p slot="en" class="sub-section__intro">We would like to know more about what you do. The following provides a range of industries we have created web products for in the past.</p>
-      <p slot="fr" class="sub-section__intro">Nous voulons en savoir plus sur ce que vous faites. Vous trouverez ci-dessous une liste des secteurs pour lesquels nous avons eu l’occasion de créér des sites Web.</p>
+      <p slot="fr" class="sub-section__intro">Nous voulons en savoir plus sur ce que vous faites. Vous trouverez ci-dessous une liste des secteurs pour lesquels nous avons eu l’occasion de créer des sites Web.</p>
     </IntroSubSection>
     <div class="sub-section high-level">
       <div class="form-panel__vertical">

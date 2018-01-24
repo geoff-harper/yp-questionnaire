@@ -14,7 +14,7 @@
           <p class="form-field__contextual">Ask yourself, who is best suited to speak about the particulars of the business for the duration of the process?</p>
         </div>
         <div slot="fr">
-          <p class="form-field__question">Personne à contacter en priorité par notre équipe site Web</p>
+          <p class="form-field__question">Personne à contacter en priorité par notre équipe de site Web</p>
           <p class="form-field__contextual">Posez-vous la question suivante : qui est la personne la plus compétente pour parler des spécificités de votre entreprise? Idéalement, cette personne est en mesure de donner des informations détaillées sur vos produits et services. C’est cette personne que nous appellerons  pour discuter du design et du texte du site une fois celui-ci complété ainsi que pour toutes questions que nous pourrions avoir sur les demandes de révision.</p>
         </div>
       </InputText>
