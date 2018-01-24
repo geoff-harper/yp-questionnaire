@@ -4,7 +4,14 @@
     <form @submit.prevent="handleSubmit" class="questionnaire-form">
       <transition name="slide-fade" mode="out-in">
         <keep-alive>
-          <component :is="activeTab" :fieldData="getProps" @update="handleData" @error="handleError" @navigate="handleNav"></component>
+          <component
+            :is="activeTab"
+            :fieldData="getProps"
+            :submitted="submitted"
+            @update="handleData"
+            @error="handleError"
+            @navigate="handleNav"
+            :errorFields="errorFields"></component>
         </keep-alive>
       </transition>
     </form>
@@ -18,7 +25,6 @@ import ProductsServices from './components/ProductsServices'
 import ExistingPresence from './components/ExistingPresence'
 import YourAudience from './components/YourAudience'
 import FinishQuestionnaire from './components/FinishQuestionnaire'
-import ButtonNav from './components/ButtonNav'
 
 export default {
   name: 'Questionnaire',
@@ -28,8 +34,7 @@ export default {
     'productsServices': ProductsServices,
     'existingPresence': ExistingPresence,
     'yourAudience': YourAudience,
-    'finishQuestionnaire': FinishQuestionnaire,
-    ButtonNav
+    'finishQuestionnaire': FinishQuestionnaire
   },
   data () {
     return {
@@ -71,12 +76,11 @@ export default {
           firstThing: '',
           suppliedContent: [],
           stockImagesSubjects: ''
-        },
-        finishSection: {
-          submitted: false
         }
       },
-      errorPresent: false
+      submitted: false,
+      errorPresent: false,
+      errorFields: []
     }
   },
   computed: {
@@ -86,20 +90,49 @@ export default {
   },
   methods: {
     handleNav (tab) {
+      this.checkRequired()
       if (!this.errorPresent) {
         this.activeTab = tab
+        window.ga('set', 'page', `/${tab}`)
+        window.ga('send', 'pageview')
       }
     },
     handleData (section, sectionInput, inputVal) {
+      this.checkRequired()
       this.formData[section][sectionInput] = inputVal
     },
     handleError (errorPresent) {
       this.errorPresent = errorPresent
     },
+    checkRequired () {
+      if (this.activeTab === 'businessDetails') {
+        // const reqFields = ['primaryContact', 'displayedName', 'mainPhone', 'email']
+        const reqFields = []
+        this.errorFields = reqFields.filter(field => this.formData.businessDetails[field].length === 0)
+        this.errorPresent = this.errorFields.length > 0
+      }
+    },
     handleSubmit () {
       const jsonString = JSON.stringify(this.formData)
 
       // fetch('./php/mail.php', {
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json'
+      //   },
+      //   method: 'POST',
+      //   body: jsonString
+      // })
+      //   .then(res => {
+      //     console.log(res)
+      //     return res.json()
+      //   })
+      //   .then(message => {
+      //     console.log(message)
+      //     this.submitted = true
+      //   })
+      //   .catch(err => console.log(err))
+
       fetch('https://httpbin.org/post', {
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -111,8 +144,20 @@ export default {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          this.formData.finishSection.submitted = true
+          this.submitted = true
+          return data
         })
+        // .then(data => {
+        //   const sectionKeys = Object.keys(this.formData)
+        //   for (let section of sectionKeys) {
+        //     let formKeys = Object.keys(this.formData[section])
+        //
+        //     for (let field of formKeys) {
+        //       console.log(field)
+        //       window.ga('send', 'event', 'Fields', 'skipped', field)
+        //     }
+        //   }
+        // })
         .catch(err => console.log(err))
     }
   }

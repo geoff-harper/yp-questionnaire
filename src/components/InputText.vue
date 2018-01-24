@@ -8,6 +8,7 @@
       :id="inputParams[0]"
       :required="false"
       @input="emitText($event.target)"
+      @blur="emitText($event.target)"
       type="text">
     <textarea
       v-if="inputParams[1] === 1"
@@ -15,10 +16,11 @@
       :id="inputParams[0]"
       :required="false"
       @input="emitText($event.target)"
+      @blur="emitText($event.target)"
       cols="30"
       rows="5">
     </textarea>
-    <p v-show="error" class="form-field__error">Please fill in this field.</p>
+    <p class="form-field__error">Please fill in this field.</p>
   </label>
 </template>
 

@@ -26,6 +26,7 @@ export default {
   methods: {
     emitNav (tab) {
       this.$emit('navigate', tab)
+      window.ga('send', 'event', 'Navigation', 'Tab')
     }
   }
 }

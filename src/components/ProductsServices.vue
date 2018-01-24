@@ -100,6 +100,8 @@ export default {
     },
     subOptionSelected (parent, elem, value) {
       let emitObj = this.fieldData[parent] || {}
+      emitObj.en_title = this.subVerticals[parent].en_title
+      emitObj.fr_title = this.subVerticals[parent].fr_title
       for (let sub of this.subVerticals[parent].subOptions) {
         if (sub.safe === elem) {
           const selected = sub.options.filter(x => value.indexOf(x[0]) !== -1)

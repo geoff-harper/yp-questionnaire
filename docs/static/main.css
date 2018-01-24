@@ -175,6 +175,14 @@ h1, h2, h3, h4, p { margin: 0; }
   border: 1px solid var(--main-red);
 }
 
+.form-field__error {
+  display: none;
+}
+
+.error.form-field__label .form-field__error {
+  display: block;
+}
+
 .required.form-field__label input[type="text"],
 .required.form-field__label textarea {
   background: url(./uploads/input__required.png) right top / auto 50% no-repeat;

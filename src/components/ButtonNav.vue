@@ -32,6 +32,7 @@ export default {
           else tabCounter = --tab
 
           this.$emit('navigate', this.tabs[tabCounter][0])
+          window.ga('send', 'event', 'Navigation', 'Button')
           return
         }
       }

@@ -7,13 +7,13 @@
     <div class="sub-section lg">
       <h3 class="sub-section__header">Business Info</h3>
       <p class="sub-section__intro">Let's start with some of the basic business details.</p>
-      <InputText @input="emitFieldData" :inputParams="['primaryContact', 0, true]">
+      <InputText @input="emitFieldData" :inputParams="['primaryContact', 0, false]" :class="errorFields.indexOf('primaryContact') !== -1 ? 'error' : null">
         <div slot="en">
           <p class="form-field__question">Primary point of contact for our website development team</p>
           <p class="form-field__contextual">Ask yourself, who is best suited to speak about the particulars of the business for the duration of the process?</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['displayedName', 0, true]">
+      <InputText @input="emitFieldData" :inputParams="['displayedName', 0, false]" :class="errorFields.indexOf('displayedName') !== -1 ? 'error' : null">
         <div slot="en">
           <p class="form-field__question">Business name to be displayed on site</p>
           <p class="form-field__contextual">Does your online logo match the name printed on your business cards? For example, if you represent a private limited company, do you spell your name Ltd. (with a period), Ltd (without the period), LTD (all caps), or Limited (spelled out)?</p>
@@ -24,13 +24,13 @@
           <p class="form-field__question">Contact information to be displayed on site</p>
         </div>
       </InputCheckbox>
-      <InputText @input="emitFieldData" :inputParams="['email', 0, true, true]">
+      <InputText @input="emitFieldData" :inputParams="['email', 0, false, true]" :class="errorFields.indexOf('email') !== -1 ? 'error' : null">
         <div slot="en">
           <p class="form-field__question">Email</p>
         </div>
       </InputText>
       <fieldset>
-        <InputText @input="emitFieldData" :inputParams="['mainPhone', 0, true]">
+        <InputText @input="emitFieldData" :inputParams="['mainPhone', 0, false]" :class="errorFields.indexOf('mainPhone') !== -1 ? 'error' : null">
           <div slot="en">
             <p class="form-field__question">Main phone number</p>
           </div>
@@ -42,7 +42,7 @@
         </InputText>
       </fieldset>
       <fieldset>
-        <InputText @input="emitFieldData" :inputParams="['mainAddress', 0, true]">
+        <InputText @input="emitFieldData" :inputParams="['mainAddress', 0, false]">
           <div slot="en">
             <p class="form-field__question">Main business address</p>
           </div>
@@ -119,10 +119,8 @@ export default {
     ButtonNav
   },
   props: {
-    fieldData: {
-      required: true,
-      type: Object
-    }
+    fieldData: { required: true, type: Object },
+    errorFields: { required: false, type: Array }
   },
   data () {
     return {

@@ -5,7 +5,7 @@
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="sub-section__header">Demographic Info</h3>
-      <InputText @input="emitFieldData" :inputParams="['targetDemo', 1, true]">
+      <InputText @input="emitFieldData" :inputParams="['targetDemo', 1, false]">
         <div slot="en">
           <p class="form-field__question">Who is your target demographic?</p>
           <p class="form-field__contextual">Think about the customers you’ve helped in the past. Whether your focus is B2C (business-to-consumer) or B2B (business to business), you need to direct your efforts accordingly.</p>
