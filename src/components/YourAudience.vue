@@ -1,8 +1,8 @@
 <template>
   <section id="your-audience" class="your-audience section">
-    <IntroSubSection :header="['Your Audience', 'Votre audience']" :subHeader="['Your Goals', 'Vos objectifs.']" :en="en">
+    <IntroSubSection :header="['Your Audience', 'Votre audience']" :subHeader="['Your Goals', 'Vos objectifs']" :en="en">
       <p slot="en" class="sub-section__intro">Let's talk about who you are looking to attract and what information you would like to share on your new website.</p>
-      <p slot="fr" class="sub-section__intro">Parlons un peu des personnes que vous souhaitez attirer sur votre site Web et de quel genre d’information vous désirez partager.</p>
+      <p slot="fr" class="sub-section__intro">Parlons un peu des personnes que vous souhaitez attirer sur votre site Web et de quel type d’information vous désirez partager.</p>
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Demographic Info' : 'Information démographique'}}</h3>
@@ -33,7 +33,7 @@
         </div>
         <div slot="fr">
           <p class="form-field__question">Images/Contenu</p>
-          <p class="form-field__contextual">Pour résumer, personne ne comprend ce que vous faites mieux que vous. Votre équipe Web attditrée fera de son mieux pour créer pour vous du contenu qui reflète votre entreprise; cependant, plus le contenu et les images sont spécifiques et pertinentes par rapport à ce que vous faites, mieux c’est. Allez-vous nous envoyer de la documentation, des images, des logos? Cochez tout ce qui s’applique.</p>
+          <p class="form-field__contextual">Pour résumer, personne ne comprend ce que vous faites mieux que vous. Votre équipe Web attitrée fera de son mieux pour créer pour vous du contenu qui reflète votre entreprise; cependant, plus le contenu et les images sont spécifiques et pertinentes par rapport à ce que vous faites, mieux c’est. Allez-vous nous envoyer de la documentation, des images, des logos? Cochez tout ce qui s’applique.</p>
         </div>
       </InputCheckbox>
       <InputText @input="emitFieldData" :inputParams="['stockImagesSubjects', 1, false]" :en="en">
