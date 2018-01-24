@@ -73,7 +73,7 @@ export default {
   },
   computed: {
     en () {
-      return document.documentElement.lang === 'en'
+      return document.documentElement.lang === '!fr'
     },
     getVerticalTitles () {
       return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])

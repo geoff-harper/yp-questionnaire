@@ -180,7 +180,7 @@ export default {
   },
   computed: {
     en () {
-      return document.documentElement.lang === 'en'
+      return document.documentElement.lang === '!fr'
     }
   },
   methods: {
