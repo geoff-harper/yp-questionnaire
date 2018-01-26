@@ -38,8 +38,8 @@
       </InputCheckbox>
       <InputText @input="emitFieldData" :inputParams="['stockImagesSubjects', 1, false]" :en="en">
         <div slot="en">
-          <p class="form-field__question">Quel genre de photos de banque d’images souhaitez-vous voir?</p>
-          <p class="form-field__contextual">Si vous ne pouvez obtenir des photos de bonne qualité de votre entreprise, PJ peut vous fournir des images génériques de haute qualité, provenant de la banque d’images avec laquelle nous sous-traitons. Dites-nous simplement le genre d’images que vous souhaitez voir sur votre site et nous trouverons la solution adéquate (p. ex. une famille au beau sourire pour un site de dentiste, des pièces détachées de moteur pour un garage, etc.)</p>
+          <p class="form-field__question">What type of stock images would you like to see?</p>
+          <p class="form-field__contextual">If you do not have access to quality photos of your business, YP can supply you with generic high-quality images from our stock photo provider. Simply let us know the type of imagery you would like to see and we will find a suitable option (e.g. a family with bright smiles for a dental site, engine parts for an auto mechanic, etc.).</p>
         </div>
         <div slot="fr">
           <p class="form-field__question">Quel genre de photos de banque d’images souhaitez-vous voir?</p>

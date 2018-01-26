@@ -115,23 +115,21 @@ export default {
     handleSubmit () {
       const jsonString = JSON.stringify(this.formData)
 
-      // fetch('./php/mail.php', {
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   method: 'POST',
-      //   body: jsonString
-      // })
-      //   .then(res => {
-      //     console.log(res)
-      //     return res.json()
-      //   })
-      //   .then(message => {
-      //     console.log(message)
-      //     this.submitted = true
-      //   })
-      //   .catch(err => console.log(err))
+      fetch('./php/mail.php', {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: jsonString
+      })
+        // .then(res => res.json())
+        .then(res => {
+          console.log(res.text())
+          this.submitted = true
+          window.ga('send', 'event', 'Form submission')
+        })
+        .catch(err => console.log(err))
 
       fetch('https://httpbin.org/post', {
         headers: {
@@ -144,8 +142,7 @@ export default {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          this.submitted = true
-          return data
+          // this.submitted = true
         })
         // .then(data => {
         //   const sectionKeys = Object.keys(this.formData)

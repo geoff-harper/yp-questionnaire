@@ -28,10 +28,10 @@
     <div class="sub-section">
       <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]" :en="en">
         <div slot="en">
-          <p class="form-field__question">Are there any other notes you would like to provide regarding your business information?</p>
+          <p class="form-field__question">Are there any other notes you would like to provide regarding your products or services?</p>
         </div>
         <div slot="fr">
-          <p class="form-field__question">Y-a-t-il autre chose que vous désirez inclure concernant votre entreprise?</p>
+          <p class="form-field__question">Y-a-t-il autre chose que vous désirez nous faire savoir concernant votre produits ou services?</p>
         </div>
       </InputText>
     </div>
@@ -46,7 +46,7 @@ import InputCheckbox from './InputCheckbox'
 import InputText from './InputText'
 import InputPanel from './InputPanel'
 import ButtonNav from './ButtonNav'
-import { productsServices } from '../assets/productServiceOptions'
+import { productsServices } from '../assets/productServiceOptions__partial-fr'
 
 export default {
   name: 'ProductsServices',
@@ -83,9 +83,12 @@ export default {
     getSubVerticalTitles (subVertical) {
       return subVertical.options.map(item => [item.safe, item.en_title, item.fr_title])
     },
+    getSafes (value) {
+      return value.map(val => val[0])
+    },
     updateVertical (elem, value) {
       for (let vertical of this.productsServices.options) {
-        if (value.indexOf(vertical.safe) !== -1) {
+        if (this.getSafes(value).indexOf(vertical.safe) !== -1) {
           vertical.visible = true
         } else {
           vertical.visible = false
@@ -100,9 +103,12 @@ export default {
       for (let vertical of this.productsServices.options) {
         if (vertical.safe === elem) {
           for (let subVertical of vertical.options) {
-            if (value.indexOf(subVertical.safe) !== -1) {
+            if (this.getSafes(value).indexOf(subVertical.safe) !== -1) {
               subVertical.visible = true
               Vue.set(this.subVerticals, subVertical.safe, subVertical)
+              if (subVertical.subOptions.length === 0) {
+                this.emitFieldData(subVertical.safe, subVertical)
+              }
             } else {
               subVertical.visible = false
               Vue.delete(this.subVerticals, subVertical.safe)
@@ -115,16 +121,23 @@ export default {
       let emitObj = this.fieldData[parent] || {}
       emitObj.en_title = this.subVerticals[parent].en_title
       emitObj.fr_title = this.subVerticals[parent].fr_title
+
+      if (typeof this.fieldData[parent] !== 'undefined') {
+        emitObj.subVerticals = this.fieldData[parent].subVerticals
+      } else {
+        emitObj.subVerticals = {}
+      }
+
       for (let sub of this.subVerticals[parent].subOptions) {
         if (sub.safe === elem) {
-          const selected = sub.options.filter(x => value.indexOf(x[0]) !== -1)
+          const selected = sub.options.filter(x => this.getSafes(value).indexOf(x[0]) !== -1)
           let deepEmitObj = {
             en_label: sub.en_label,
             fr_label: sub.fr_label,
             safe: sub.safe,
             selected: selected
           }
-          emitObj[sub.safe] = deepEmitObj
+          emitObj.subVerticals[sub.safe] = deepEmitObj
         }
       }
       this.emitFieldData(this.subVerticals[parent].safe, emitObj)

@@ -1,8 +1,8 @@
 <template>
   <section id="existing-presence" class="existing-presence section">
-    <IntroSubSection :header="['Existing Online Presence', 'Présence en ligne actuelle']" :subHeader="['Social Networks', 'Réseaux sociaux']" :en="en">
+    <IntroSubSection :header="['Existing Online Presence', 'Présence en ligne']" :subHeader="['Social Networks', 'Réseaux sociaux']" :en="en">
       <p slot="en" class="sub-section__intro">Let us know which online platforms your business is currently using.</p>
-      <p slot="fr" class="sub-section__intro">Quelle plateforme utilisez-vous actuellement en ligne pour votre entreprise? Veuillez cochez tout ce qui s’applique.</p>
+      <p slot="fr" class="sub-section__intro">Quelles plateformes utilisez-vous actuellement en ligne pour votre entreprise? Veuillez cochez tout ce qui s’applique.</p>
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Existing Online Presence' : 'Votre présence en ligne à ce jour' }}</h3>
@@ -15,7 +15,7 @@
         </div>
       </InputCheckbox>
     </div>
-    <div v-if="fieldData.presenceTypes.indexOf('currentWebsite') !== -1" class="sub-section">
+    <div v-if="getPresenceTypes.indexOf('currentWebsitePresence') !== -1" class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Current Website' : 'Site Web actuel' }}</h3>
       <InputText @input="emitFieldData" :inputParams="['domainName', 0, false]" :en="en">
         <div slot="en">
@@ -51,7 +51,7 @@
       <p v-if="en" class="sub-section__intro">If possible, please provide URLs</p>
       <p v-if="!en" class="sub-section__intro">Veuillez si possible nous fournir les URLs</p>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('facebook') !== -1"
+        v-show="getPresenceTypes.indexOf('facebookPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['facebook', 0, false]"
         :en="en">
@@ -63,7 +63,7 @@
         </div>
       </InputText>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('instagram') !== -1"
+        v-show="getPresenceTypes.indexOf('instagramPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['instagram', 0, false]"
         :en="en">
@@ -75,7 +75,7 @@
         </div>
       </InputText>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('twitter') !== -1"
+        v-show="getPresenceTypes.indexOf('twitterPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['twitter', 0, false]"
         :en="en">
@@ -87,7 +87,7 @@
         </div>
       </InputText>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('other') !== -1"
+        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['other1', 0, false]"
         :en="en">
@@ -99,7 +99,7 @@
         </div>
       </InputText>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('other') !== -1"
+        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['other2', 0, false]"
         :en="en">
@@ -111,7 +111,7 @@
         </div>
       </InputText>
       <InputText
-        v-show="fieldData.presenceTypes.indexOf('other') !== -1"
+        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
         @input="emitFieldData"
         :inputParams="['other3', 0, false]"
         :en="en">
@@ -159,7 +159,10 @@ export default {
     },
     checkSocialVisibility () {
       const pTypes = this.fieldData.presenceTypes
-      return ((pTypes.length === 1 && pTypes.indexOf('currentWebsite') === -1) || pTypes.length >= 2)
+      return ((pTypes.length === 1 && pTypes.indexOf('currentWebsitePresence') === -1) || pTypes.length >= 2)
+    },
+    getPresenceTypes () {
+      return this.fieldData.presenceTypes.map(type => type[0])
     }
   },
   methods: {

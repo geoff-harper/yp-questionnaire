@@ -1,9 +1,9 @@
 module.exports = {
   presenceTypesOptions: [
-    ['currentWebsite', 'Current Website', 'Site Web actuel'],
-    ['facebook', 'Facebook', 'Facebook'],
-    ['instagram', 'Instagram', 'Instagram'],
-    ['twitter', 'Twitter', 'Twitter'],
-    ['other', 'Other', 'Autre']
+    ['currentWebsitePresence', 'Current Website', 'Site Web actuel'],
+    ['facebookPresence', 'Facebook', 'Facebook'],
+    ['instagramPresence', 'Instagram', 'Instagram'],
+    ['twitterPresence', 'Twitter', 'Twitter'],
+    ['otherPresence', 'Other', 'Autre']
   ]
 }
