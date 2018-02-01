@@ -15,7 +15,7 @@
   <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', 'UA-113006162-1', 'auto')
-    if (location.hostname == 'localhost' || location.hostname == 'sitereview') ga('set', 'sendHitTask', null)
+    if (location.hostname == 'localhost' || location.hostname.indexOf('sandbox.sitereview.ca') != -1 || location.hostname.indexOf('github') != -1) ga('set', 'sendHitTask', null)
     ga('set', 'page', 'businessDetails')
     ga('send', 'pageview')
   </script>

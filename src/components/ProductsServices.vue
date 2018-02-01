@@ -46,7 +46,7 @@ import InputCheckbox from './InputCheckbox'
 import InputText from './InputText'
 import InputPanel from './InputPanel'
 import ButtonNav from './ButtonNav'
-import { productsServices } from '../assets/productServiceOptions__partial-fr'
+import { productsServices } from '../assets/productServiceOptions'
 
 export default {
   name: 'ProductsServices',
