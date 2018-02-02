@@ -72,11 +72,15 @@ export default {
           other3: ''
         },
         yourAudience: {
+          example1: '',
+          example2: '',
+          example3: '',
           targetDemo: '',
           firstThing: '',
           suppliedContent: [],
           stockImagesSubjects: ''
-        }
+        },
+        en: true
       },
       submitted: false,
       errorPresent: false,
@@ -113,7 +117,9 @@ export default {
       }
     },
     handleSubmit () {
-      const jsonString = JSON.stringify(this.formData)
+      let objToSend = this.formData
+      objToSend.en = document.documentElement.lang !== 'fr'
+      const jsonString = JSON.stringify(objToSend)
 
       fetch('./php/mail.php', {
         headers: {

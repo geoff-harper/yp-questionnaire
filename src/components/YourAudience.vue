@@ -4,6 +4,35 @@
       <p slot="en" class="sub-section__intro">Let's talk about who you are looking to attract and what information you would like to share on your new website.</p>
       <p slot="fr" class="sub-section__intro">Parlons un peu des personnes que vous souhaitez attirer sur votre site Web et de quel type d’information vous désirez partager.</p>
     </IntroSubSection>
+    <div class="sub-section lg">
+      <h3 class="sub-section__header">{{ en ? 'The Visuals' : 'Examples du design'}}</h3>
+      <p v-if="en" class="sub-section__intro">It is important to consider the feeling you wish to convey with your new website. Explore <a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP’s website portfolio</a> and select the three sites you like the looks of the most. Record their reference codes (e.g., WEB002) in the fields below. Or, feel free to send along the URLs of any other attractive websites you may have found elsewhere.</p>
+      <p v-if="!en" class="sub-section__intro">Il est important de penser à l’image que vous voulez transmettre à travers votre nouveau site Web. Explorez <a href="http://www.wss.yellowpages.ca/portfolio/index_fr.html" target="_blank">le portfolio des sites Web des PJ</a> et sélectionnez les trois sites que vous préférez visuellement. Entrez leur référence (p. ex. WEB002) dans les champs ci-dessous. N’hésitez pas à nous envoyer également les addresses URL de sites que vous aimez que vous auriez trouvé par vous-mêmes.</p>
+      <InputText @input="emitFieldData" :inputParams="['example1', 0, false]" :en="en">
+        <div slot="en">
+          <p class="form-field__question">Website #1</p>
+        </div>
+        <div slot="fr">
+          <p class="form-field__question">Site Web #1</p>
+        </div>
+      </InputText>
+      <InputText @input="emitFieldData" :inputParams="['example2', 0, false]" :en="en">
+        <div slot="en">
+          <p class="form-field__question">Website #2</p>
+        </div>
+        <div slot="fr">
+          <p class="form-field__question">Site Web #2</p>
+        </div>
+      </InputText>
+      <InputText @input="emitFieldData" :inputParams="['example3', 0, false]" :en="en">
+        <div slot="en">
+          <p class="form-field__question">Website #3</p>
+        </div>
+        <div slot="fr">
+          <p class="form-field__question">Site Web #3</p>
+        </div>
+      </InputText>
+    </div>
     <div class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Demographic Info' : 'Information démographique'}}</h3>
       <InputText @input="emitFieldData" :inputParams="['targetDemo', 1, false]" :en="en">
@@ -39,11 +68,11 @@
       <InputText @input="emitFieldData" :inputParams="['stockImagesSubjects', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">What type of stock images would you like to see?</p>
-          <p class="form-field__contextual">If you do not have access to quality photos of your business, YP can supply you with generic high-quality images from our stock photo provider. Simply let us know the type of imagery you would like to see and we will find a suitable option (e.g. a family with bright smiles for a dental site, engine parts for an auto mechanic, etc.).</p>
+          <p class="form-field__contextual">If you do not have access to quality photos of your business, YP can supply you with generic high-quality images from our stock photo provider. Simply let us know the type of imagery you would like to see, and we will find a suitable option (e.g. a family with bright smiles for a dental site, engine parts for an auto mechanic, etc.).</p>
         </div>
         <div slot="fr">
           <p class="form-field__question">Quel genre de photos de banque d’images souhaitez-vous voir?</p>
-          <p class="form-field__contextual">Si vous ne pouvez obtenir des photos de bonne qualité de votre entreprise, PJ peut vous fournir des images génériques de haute qualité, provenant de la banque d’images avec laquelle nous sous-traitons. Dites-nous simplement le genre d’images que vous souhaitez voir sur votre site et nous trouverons la solution adéquate (p. ex. une famille au beau sourire pour un site de dentiste, des pièces détachées de moteur pour un garage, etc.)</p>
+          <p class="form-field__contextual">Si vous ne pouvez obtenir des photos de bonne qualité de votre entreprise, PJ peut vous fournir des images génériques de haute qualité, provenant de la banque d’images avec laquelle nous sous-traitons. Dites-nous simplement le genre d’images que vous souhaitez voir sur votre site, et nous trouverons la solution adéquate (p. ex. une famille au beau sourire pour un site de dentiste, des pièces détachées de moteur pour un garage, etc.)</p>
         </div>
       </InputText>
     </div>

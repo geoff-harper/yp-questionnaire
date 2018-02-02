@@ -4128,7 +4128,7 @@ module.exports = {
             ["vertical_6_3_2_0", "Drug Production", "Fabrication"],
             ["vertical_6_3_2_1", "Trafficking", "Trafic"],
             ["vertical_6_3_2_2", "Possession", "Possession"],
-            ["vertical_6_3_2_3", "Possession for Purpose of Trafficking", "Possession en vue d'en faire le trafic "],
+            ["vertical_6_3_2_3", "Possession for the Purpose of Trafficking", "Possession en vue d'en faire le trafic"],
             ["vertical_6_3_2_4", "Exporting/Importing", "Exportation/Importation"]
           ]
         }, {
@@ -4369,7 +4369,7 @@ module.exports = {
             ["vertical_7_2_4_0", "Zipper Replacement", "Réparation de fermetures éclairs"],
             ["vertical_7_2_4_1", "Button Replacement", "Remplacement de bouton"],
             ["vertical_7_2_4_2", "Size Adjustments (Taking in)", "Retouches"],
-            ["vertical_7_2_4_3", "Shortening & Lenghtening", "Raccourcissements"],
+            ["vertical_7_2_4_3", "Shortening & Lengthening", "Raccourcissements"],
             ["vertical_7_2_4_4", "Pockets & Lining Repairs", "Réparation de poches et de doublures"],
             ["vertical_7_2_4_5", "Repairing Fabric Rips/Holes", "Réparation de trous et déchirures de tissu"]
           ]
@@ -4810,7 +4810,7 @@ module.exports = {
           "fr_label": "Animaux de ferme",
           "safe": "vertical_7_11_4",
           "options": [
-            ["vertical_7_11_4_0", "On-Farm Wellness Check Ups", "Examen médicaux à la ferme"],
+            ["vertical_7_11_4_0", "On-Farm Wellness Checkups", "Examen médicaux à la ferme"],
             ["vertical_7_11_4_1", "Protocol Development", "Dévelopement de protocols"],
             ["vertical_7_11_4_2", "Problem Solving & Diagnostics", "Résolution de problèmes"],
             ["vertical_7_11_4_3", "Pregnancy Diagnosis", "Diagnostique de grossesse"],
