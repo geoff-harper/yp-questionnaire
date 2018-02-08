@@ -91,7 +91,12 @@ export default {
   mounted () {
     if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
       const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
-      if (typeof storedData.primaryContact !== 'undefined') this.formData = storedData
+      if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
+        this.formData = storedData
+        this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
+                            storedData.businessDetails.displayedName.length === 0 ||
+                            storedData.businessDetails.mainPhone.length === 0
+      }
     }
   },
   computed: {
@@ -126,20 +131,19 @@ export default {
   },
   methods: {
     handleNav (tab) {
-      // if (!this.errorPresent) {
-      this.activeTab = tab
-      window.ga('set', 'page', `/${tab}`)
-      window.ga('send', 'pageview')
-      // } else {
-        // this.showErrors = true
-      // }
+      if (!this.errorPresent) {
+        this.activeTab = tab
+        window.ga('set', 'page', `/${tab}`)
+        window.ga('send', 'pageview')
+      } else {
+        this.showErrors = true
+      }
       if (this.storageAvailable) {
         const storageString = JSON.stringify(this.formData)
         localStorage.setItem('yp-questionnaire', storageString)
       }
     },
     handleData (section, sectionInput, inputVal) {
-      this.checkRequired()
       this.formData[section][sectionInput] = inputVal
     },
     handleError (errorPresent) {

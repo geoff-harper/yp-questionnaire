@@ -7,12 +7,12 @@
     <div class="sub-section high-level">
       <div class="form-panel__vertical">
         <h3 class="sub-section__header">{{ en ? productsServices.en_title : productsServices.fr_title }}</h3>
-        <InputCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]" :en="en"></InputCheckbox>
+        <ProdServsCheckbox @change="updateVertical" :inputParams="[productsServices.safe, getVerticalTitles, false]" :en="en"></ProdServsCheckbox>
       </div>
       <div class="form-panel__sub-verticals">
         <div v-for="subVertical of productsServices.options" v-if="subVertical.visible" class="form-panel__sub-vertical-container">
           <h3 class="form-field__question">{{ en ? subVertical.en_title : subVertical.fr_title }}</h3>
-          <InputCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]" :en="en"></InputCheckbox>
+          <ProdServsCheckbox @change="updateSubVertical" :inputParams="[subVertical.safe, getSubVerticalTitles(subVertical), false]" :en="en"></ProdServsCheckbox>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
         :en="en"></InputPanel>
     </div>
     <div class="sub-section">
-      <InputText v-model="fieldData.otherProductsServices" :inputParams="['otherProductsServices', 1, false]" :en="en">
+      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Are there any other notes you would like to provide regarding your products or services?</p>
         </div>
@@ -42,24 +42,25 @@
 <script>
 import Vue from 'vue'
 import IntroSubSection from './IntroSubSection'
-import InputCheckbox from './InputCheckbox'
+import ProdServsCheckbox from './ProdServsCheckbox'
 import InputText from './InputText'
 import InputPanel from './InputPanel'
 import ButtonNav from './ButtonNav'
 import { productsServices } from '../assets/productServiceOptions'
-
 export default {
   name: 'ProductsServices',
   components: {
     IntroSubSection,
-    InputCheckbox,
+    ProdServsCheckbox,
     InputText,
     InputPanel,
     ButtonNav
   },
   props: {
-    fieldData: { required: true, type: Object },
-    en: { required: true, type: Boolean }
+    fieldData: {
+      required: true,
+      type: Object
+    }
   },
   data () {
     return {
@@ -70,6 +71,9 @@ export default {
     }
   },
   computed: {
+    en () {
+      return document.documentElement.lang !== 'fr'
+    },
     getVerticalTitles () {
       return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])
     }
@@ -81,7 +85,7 @@ export default {
     getSafes (value) {
       return value.map(val => val[0])
     },
-    updateVertical (value, elem) {
+    updateVertical (elem, value) {
       for (let vertical of this.productsServices.options) {
         if (this.getSafes(value).indexOf(vertical.safe) !== -1) {
           vertical.visible = true
@@ -94,7 +98,7 @@ export default {
         }
       }
     },
-    updateSubVertical (value, elem) {
+    updateSubVertical (elem, value) {
       for (let vertical of this.productsServices.options) {
         if (vertical.safe === elem) {
           for (let subVertical of vertical.options) {
@@ -116,13 +120,11 @@ export default {
       let emitObj = this.fieldData[parent] || {}
       emitObj.en_title = this.subVerticals[parent].en_title
       emitObj.fr_title = this.subVerticals[parent].fr_title
-
       if (typeof this.fieldData[parent] !== 'undefined') {
         emitObj.subVerticals = this.fieldData[parent].subVerticals
       } else {
         emitObj.subVerticals = {}
       }
-
       for (let sub of this.subVerticals[parent].subOptions) {
         if (sub.safe === elem) {
           const selected = sub.options.filter(x => this.getSafes(value).indexOf(x[0]) !== -1)
