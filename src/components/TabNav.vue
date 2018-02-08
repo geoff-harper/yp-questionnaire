@@ -13,16 +13,12 @@ export default {
   name: 'TabNav',
   components: {},
   props: {
-    activeTab: { required: true, type: String }
+    activeTab: { required: true, type: String },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {
       tabs: tabs
-    }
-  },
-  computed: {
-    en () {
-      return document.documentElement.lang !== 'fr'
     }
   },
   methods: {

@@ -26,7 +26,7 @@
         :en="en"></InputPanel>
     </div>
     <div class="sub-section">
-      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]" :en="en">
+      <InputText v-model="fieldData.otherProductsServices" :inputParams="['otherProductsServices', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Are there any other notes you would like to provide regarding your products or services?</p>
         </div>
@@ -58,10 +58,8 @@ export default {
     ButtonNav
   },
   props: {
-    fieldData: {
-      required: true,
-      type: Object
-    }
+    fieldData: { required: true, type: Object },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {
@@ -72,9 +70,6 @@ export default {
     }
   },
   computed: {
-    en () {
-      return document.documentElement.lang !== 'fr'
-    },
     getVerticalTitles () {
       return this.productsServices.options.map(item => [item.safe, item.en_title, item.fr_title])
     }
@@ -86,7 +81,7 @@ export default {
     getSafes (value) {
       return value.map(val => val[0])
     },
-    updateVertical (elem, value) {
+    updateVertical (value, elem) {
       for (let vertical of this.productsServices.options) {
         if (this.getSafes(value).indexOf(vertical.safe) !== -1) {
           vertical.visible = true
@@ -99,7 +94,7 @@ export default {
         }
       }
     },
-    updateSubVertical (elem, value) {
+    updateSubVertical (value, elem) {
       for (let vertical of this.productsServices.options) {
         if (vertical.safe === elem) {
           for (let subVertical of vertical.options) {

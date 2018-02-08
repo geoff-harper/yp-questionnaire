@@ -4,7 +4,7 @@
     <slot v-if="!en" name="fr"></slot>
     <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
       <input
-        v-model="checked"
+        v-model="checkedBoxes"
         :name="checkboxText[0]"
         :id="checkboxText[0]"
         :value="checkboxText[0]"
@@ -31,22 +31,26 @@ export default {
         return value.length === 3
       }
     },
+    checked: { required: false, type: Array },
     en: { required: true, type: Boolean }
+  },
+  model: {
+    prop: 'checked',
+    event: 'change'
   },
   data () {
     return {
       error: false,
-      checked: []
+      checkedBoxes: []
     }
   },
   methods: {
     emitChecked () {
-      this.errorCheck()
-      const emitArr = this.inputParams[1].filter(check => this.checked.indexOf(check[0]) !== -1)
-      this.$emit('change', this.inputParams[0], emitArr, this.error)
+      // this.errorCheck()
+      this.$emit('change', this.checkedBoxes, this.inputParams[0])
     },
     errorCheck () {
-      if (this.checked.length === 0 && this.inputParams[2]) this.error = true
+      if (this.checkedBoxes.length === 0 && this.inputParams[2]) this.error = true
       else this.error = false
     }
   }

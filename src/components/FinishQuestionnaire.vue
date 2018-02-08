@@ -49,15 +49,11 @@ export default {
   },
   props: {
     fieldData: { type: Object, required: true },
-    submitted: { type: Boolean }
+    submitted: { type: Boolean },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {}
-  },
-  computed: {
-    en () {
-      return document.documentElement.lang !== 'fr'
-    }
   },
   methods: {
     trackPostSubmit (button) {

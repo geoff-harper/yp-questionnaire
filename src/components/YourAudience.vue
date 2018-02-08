@@ -8,7 +8,7 @@
       <h3 class="sub-section__header">{{ en ? 'The Visuals' : 'Examples du design'}}</h3>
       <p v-if="en" class="sub-section__intro">It is important to consider the feeling you wish to convey with your new website. Explore <a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP’s website portfolio</a> and select the three sites you like the looks of the most. Record their reference codes (e.g., WEB002) in the fields below. Or, feel free to send along the URLs of any other attractive websites you may have found elsewhere.</p>
       <p v-if="!en" class="sub-section__intro">Il est important de penser à l’image que vous voulez transmettre à travers votre nouveau site Web. Explorez <a href="http://www.wss.yellowpages.ca/portfolio/index_fr.html" target="_blank">le portfolio des sites Web des PJ</a> et sélectionnez les trois sites que vous préférez visuellement. Entrez leur référence (p. ex. WEB002) dans les champs ci-dessous. N’hésitez pas à nous envoyer également les addresses URL de sites que vous aimez que vous auriez trouvé par vous-mêmes.</p>
-      <InputText @input="emitFieldData" :inputParams="['example1', 0, false]" :en="en">
+      <InputText v-model="fieldData.example1" :inputParams="['example1', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Website #1</p>
         </div>
@@ -16,7 +16,7 @@
           <p class="form-field__question">Site Web #1</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['example2', 0, false]" :en="en">
+      <InputText v-model="fieldData.example2" :inputParams="['example2', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Website #2</p>
         </div>
@@ -24,7 +24,7 @@
           <p class="form-field__question">Site Web #2</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['example3', 0, false]" :en="en">
+      <InputText v-model="fieldData.example3" :inputParams="['example3', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Website #3</p>
         </div>
@@ -35,7 +35,7 @@
     </div>
     <div class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Demographic Info' : 'Information démographique'}}</h3>
-      <InputText @input="emitFieldData" :inputParams="['targetDemo', 1, false]" :en="en">
+      <InputText v-model="fieldData.targetDemo" :inputParams="['targetDemo', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Who is your target demographic?</p>
           <p class="form-field__contextual">Think about the customers you’ve helped in the past. Whether your focus is B2C (business-to-consumer) or B2B (business to business), you need to direct your efforts accordingly.</p>
@@ -45,7 +45,7 @@
           <p class="form-field__contextual">Quelle est votre cible démographique? Pensez aux clients que vous avez servis par le passé. Selon que vous vouliez miser sur les B2C (entreprise-consommateur) ou les B2B (interentreprises), vous devez concentrer vos efforts sur votre cible.</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['firstThing', 1, false]" :en="en">
+      <InputText v-model="fieldData.firstThing" :inputParams="['firstThing', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">First Impression</p>
           <p class="form-field__contextual">What is the first thing you would like potential clients to see when visiting your website? It is always important to set the right tone. You only get one chance to make a great first impression.</p>
@@ -55,7 +55,7 @@
           <p class="form-field__contextual">Quelle est la première chose que vous voulez que vos client potentiels voient sur votre site? Il est toujours important de donner le ton juste. Vous n’avez qu’une seule chance de faire une bonne première impression.</p>
         </div>
       </InputText>
-      <InputCheckbox @change="emitFieldData" :inputParams="['suppliedContent', suppliedContentTypes, false]" :en="en">
+      <InputCheckbox v-model="fieldData.suppliedContent" :inputParams="['suppliedContent', suppliedContentTypes, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Images/Content</p>
           <p class="form-field__contextual">Simply put, nobody understands your business as well as you. Your designated web team will do their best to provide you with content that accurately reflects your business; however, the more specific and relevant the copy and photos are to your particular business the better. Will you be supplying us with documentation, images, logos? Click all that apply.</p>
@@ -65,7 +65,7 @@
           <p class="form-field__contextual">Pour résumer, personne ne comprend ce que vous faites mieux que vous. Votre équipe Web attitrée fera de son mieux pour créer pour vous du contenu qui reflète votre entreprise; cependant, plus le contenu et les images sont spécifiques et pertinentes par rapport à ce que vous faites, mieux c’est. Allez-vous nous envoyer de la documentation, des images, des logos? Cochez tout ce qui s’applique.</p>
         </div>
       </InputCheckbox>
-      <InputText @input="emitFieldData" :inputParams="['stockImagesSubjects', 1, false]" :en="en">
+      <InputText v-model="fieldData.stockImagesSubjects" :inputParams="['stockImagesSubjects', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">What type of stock images would you like to see?</p>
           <p class="form-field__contextual">If you do not have access to quality photos of your business, YP can supply you with generic high-quality images from our stock photo provider. Simply let us know the type of imagery you would like to see, and we will find a suitable option (e.g. a family with bright smiles for a dental site, engine parts for an auto mechanic, etc.).</p>
@@ -96,19 +96,12 @@ export default {
     ButtonNav
   },
   props: {
-    fieldData: {
-      required: true,
-      type: Object
-    }
+    fieldData: { required: true, type: Object },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {
       suppliedContentTypes: suppliedContentTypes
-    }
-  },
-  computed: {
-    en () {
-      return document.documentElement.lang !== 'fr'
     }
   },
   methods: {

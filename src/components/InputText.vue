@@ -1,14 +1,14 @@
 <template>
-  <label :for="inputParams[0]" :class="['form-field__label', error ? 'error' : null, inputParams[2] ? 'required' : null]">
+  <label :for="inputParams[0]" :class="['form-field__label', inputParams[2] ? 'required' : null, error ? 'error' : null]">
     <slot v-if="en" name="en"></slot>
     <slot v-if="!en" name="fr"></slot>
     <input
       v-if="inputParams[1] === 0"
       :name="inputParams[0]"
       :id="inputParams[0]"
-      :required="false"
       @input="emitText($event.target)"
-      @blur="emitText($event.target)"
+      @blur="emitError()"
+      :value="value"
       type="text">
     <textarea
       v-if="inputParams[1] === 1"
@@ -16,7 +16,8 @@
       :id="inputParams[0]"
       :required="false"
       @input="emitText($event.target)"
-      @blur="emitText($event.target)"
+      @blur="emitError()"
+      :value="value"
       cols="30"
       rows="5">
     </textarea>
@@ -25,10 +26,9 @@
 </template>
 
 <script>
-// inputParams -> [inputName, inputType, inputRequired, emailValidate]
+// inputParams -> [inputName, inputType, inputRequired]
 // inputType -> 0 = text, 1 = textarea
 // inputRequired -> bool
-// emailValidate -> bool
 
 export default {
   name: 'InputText',
@@ -40,26 +40,21 @@ export default {
         return value.length >= 3
       }
     },
+    value: String,
     en: { required: true, type: Boolean }
   },
   data () {
     return {
-      error: false
+      error: true
     }
   },
   methods: {
     emitText (elem) {
-      this.errorCheck(elem.value)
-      this.$emit('input', elem.id, elem.value, this.error)
+      this.$emit('input', elem.value)
     },
-    errorCheck (val) {
-      if (this.inputParams[2]) this.error = (val.length === 0)
-      // else if (this.inputParams[3]) this.error = this.validateEmail(val)
-      else this.error = false
-    },
-    validateEmail (email) {
-      const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return reg.test(email.toLowerCase())
+    emitError () {
+      this.error = this.value.length === 0 && this.inputParams[2]
+      this.$emit('error', this.error)
     }
   }
 }

@@ -6,7 +6,7 @@
     </IntroSubSection>
     <div class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Existing Online Presence' : 'Votre présence en ligne à ce jour' }}</h3>
-      <InputCheckbox @change="emitFieldData" :inputParams="['presenceTypes', presenceTypesOptions, false]" :en="en">
+      <InputCheckbox v-model="fieldData.presenceTypes" :inputParams="['presenceTypes', presenceTypesOptions, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">What online platforms are you already on?</p>
         </div>
@@ -15,9 +15,9 @@
         </div>
       </InputCheckbox>
     </div>
-    <div v-if="getPresenceTypes.indexOf('currentWebsitePresence') !== -1" class="sub-section">
+    <div v-if="fieldData.presenceTypes.indexOf('currentWebsitePresence') !== -1" class="sub-section">
       <h3 class="sub-section__header">{{ en ? 'Current Website' : 'Site Web actuel' }}</h3>
-      <InputText @input="emitFieldData" :inputParams="['domainName', 0, false]" :en="en">
+      <InputText v-model="fieldData.domainName" :inputParams="['domainName', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">What is the domain name?</p>
           <p class="form-field__contextual">For example, in the URL https://business.yellowpages.ca/home/ the domain name would be yellowpages.ca</p>
@@ -27,7 +27,7 @@
           <p class="form-field__contextual">Par exemple, dans le URL https://business.yellowpages.ca/home/ le nom de domaine est yellowpages.ca</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['domainNameContinue', 0, false]" :en="en">
+      <InputText v-model="fieldData.domainNameContinue" :inputParams="['domainNameContinue', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Would you like to continue using this domain?</p>
         </div>
@@ -35,7 +35,7 @@
           <p class="form-field__question">Souhaitez-vous garder ce domaine?</p>
         </div>
       </InputText>
-      <InputText @input="emitFieldData" :inputParams="['upToDateInfo', 0, false]" :en="en">
+      <InputText v-model="fieldData.upToDateInfo" :inputParams="['upToDateInfo', 0, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Is the information on your website up to date?</p>
           <p class="form-field__contextual">Are you satisfied with the information that is currently available for your customers? We can revise and update as needed.</p>
@@ -51,8 +51,8 @@
       <p v-if="en" class="sub-section__intro">If possible, please provide URLs</p>
       <p v-if="!en" class="sub-section__intro">Veuillez si possible nous fournir les URLs</p>
       <InputText
-        v-show="getPresenceTypes.indexOf('facebookPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('facebookPresence') !== -1"
+        v-model="fieldData.facebook"
         :inputParams="['facebook', 0, false]"
         :en="en">
         <div slot="en">
@@ -63,8 +63,8 @@
         </div>
       </InputText>
       <InputText
-        v-show="getPresenceTypes.indexOf('instagramPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('instagramPresence') !== -1"
+        v-model="fieldData.instagram"
         :inputParams="['instagram', 0, false]"
         :en="en">
         <div slot="en">
@@ -75,8 +75,8 @@
         </div>
       </InputText>
       <InputText
-        v-show="getPresenceTypes.indexOf('twitterPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('twitterPresence') !== -1"
+        v-model="fieldData.twitter"
         :inputParams="['twitter', 0, false]"
         :en="en">
         <div slot="en">
@@ -87,8 +87,8 @@
         </div>
       </InputText>
       <InputText
-        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('otherPresence') !== -1"
+        v-model="fieldData.other1"
         :inputParams="['other1', 0, false]"
         :en="en">
         <div slot="en">
@@ -99,8 +99,8 @@
         </div>
       </InputText>
       <InputText
-        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('otherPresence') !== -1"
+        v-model="fieldData.other2"
         :inputParams="['other2', 0, false]"
         :en="en">
         <div slot="en">
@@ -111,8 +111,8 @@
         </div>
       </InputText>
       <InputText
-        v-show="getPresenceTypes.indexOf('otherPresence') !== -1"
-        @input="emitFieldData"
+        v-show="fieldData.presenceTypes.indexOf('otherPresence') !== -1"
+        v-model="fieldData.other3"
         :inputParams="['other3', 0, false]"
         :en="en">
         <div slot="en">
@@ -143,10 +143,8 @@ export default {
     ButtonNav
   },
   props: {
-    fieldData: {
-      required: true,
-      type: Object
-    }
+    fieldData: { required: true, type: Object },
+    en: { required: true, type: Boolean }
   },
   data () {
     return {
@@ -154,9 +152,6 @@ export default {
     }
   },
   computed: {
-    en () {
-      return document.documentElement.lang !== 'fr'
-    },
     checkSocialVisibility () {
       const pTypes = this.fieldData.presenceTypes
       return ((pTypes.length === 1 && pTypes.indexOf('currentWebsitePresence') === -1) || pTypes.length >= 2)

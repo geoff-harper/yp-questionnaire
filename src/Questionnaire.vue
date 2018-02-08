@@ -1,6 +1,6 @@
 <template>
   <main id="questionnaire" class="questionnaire">
-    <TabNav :activeTab="activeTab" @navigate="handleNav" />
+    <TabNav :activeTab="activeTab" @navigate="handleNav" :en="en" />
     <form @submit.prevent="handleSubmit" class="questionnaire-form">
       <transition name="slide-fade" mode="out-in">
         <keep-alive>
@@ -11,7 +11,8 @@
             @update="handleData"
             @error="handleError"
             @navigate="handleNav"
-            :errorFields="errorFields"></component>
+            :class="showErrors ? 'show-errors' : null"
+            :en="en"></component>
         </keep-alive>
       </transition>
     </form>
@@ -83,22 +84,58 @@ export default {
         en: true
       },
       submitted: false,
-      errorPresent: false,
-      errorFields: []
+      errorPresent: true,
+      showErrors: false
+    }
+  },
+  mounted () {
+    if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
+      const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
+      if (typeof storedData.primaryContact !== 'undefined') this.formData = storedData
     }
   },
   computed: {
     getProps () {
       return this.activeTab === 'finishQuestionnaire' ? this.formData : this.formData[this.activeTab]
+    },
+    en () {
+      return document.documentElement.lang !== 'fr'
+    },
+    storageAvailable () {
+      try {
+        let storage = window['localStorage']
+        const x = '__storage_test__'
+        storage.setItem(x, x)
+        storage.removeItem(x)
+        return true
+      } catch (e) {
+        return e instanceof DOMException && (
+          // everything except Firefox
+          e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === 'QuotaExceededError' ||
+          // Firefox
+          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+          // acknowledge QuotaExceededError only if there's something already stored
+          window['localStorage'].length !== 0
+      }
     }
   },
   methods: {
     handleNav (tab) {
-      this.checkRequired()
-      if (!this.errorPresent) {
-        this.activeTab = tab
-        window.ga('set', 'page', `/${tab}`)
-        window.ga('send', 'pageview')
+      // if (!this.errorPresent) {
+      this.activeTab = tab
+      window.ga('set', 'page', `/${tab}`)
+      window.ga('send', 'pageview')
+      // } else {
+        // this.showErrors = true
+      // }
+      if (this.storageAvailable) {
+        const storageString = JSON.stringify(this.formData)
+        localStorage.setItem('yp-questionnaire', storageString)
       }
     },
     handleData (section, sectionInput, inputVal) {
@@ -107,18 +144,11 @@ export default {
     },
     handleError (errorPresent) {
       this.errorPresent = errorPresent
-    },
-    checkRequired () {
-      if (this.activeTab === 'businessDetails') {
-        // const reqFields = ['primaryContact', 'displayedName', 'mainPhone', 'email']
-        const reqFields = []
-        this.errorFields = reqFields.filter(field => this.formData.businessDetails[field].length === 0)
-        this.errorPresent = this.errorFields.length > 0
-      }
+      if (this.showErrors && !errorPresent) this.showErrors = false
     },
     handleSubmit () {
       let objToSend = this.formData
-      objToSend.en = document.documentElement.lang !== 'fr'
+      objToSend.en = this.en
       const jsonString = JSON.stringify(objToSend)
 
       fetch('./php/mail.php', {
@@ -134,6 +164,7 @@ export default {
           console.log(res.text())
           this.submitted = true
           window.ga('send', 'event', 'Form submission')
+          if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
         })
         .catch(err => console.log(err))
 
