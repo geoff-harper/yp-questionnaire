@@ -27,15 +27,17 @@
           <p class="form-field__contextual">Par exemple, dans le URL https://business.yellowpages.ca/home/ le nom de domaine est yellowpages.ca</p>
         </div>
       </InputText>
-      <InputText v-model="fieldData.domainNameContinue" :inputParams="['domainNameContinue', 0, false]" :en="en">
+      <InputRadio v-model="fieldData.domainNameContinue" :inputParams="['domainNameContinue', domainContinueOptions, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Would you like to continue using this domain?</p>
+          <p class="form-field__contextual">If you would like us to manage this domain, please have your login credentials to the domain registrar ready for the consultation. We will also ask if you have any email addresses under this domain and how many there are so we can understand your email needs.</p>
         </div>
         <div slot="fr">
           <p class="form-field__question">Souhaitez-vous garder ce domaine?</p>
+          <p class="form-field__contextual">Si vous souhaitez que nous ayons la prise en charge de ce domaine, veuillez avoir vos identifiants de connexion au registraire de domaine prêts pour la consultation. Nous vous demanderons également si vous avez des courriels sur ce domaine et combien il y en a pour nous permettre à comprendre vos besoins en courriel.</p>
         </div>
-      </InputText>
-      <InputText v-model="fieldData.upToDateInfo" :inputParams="['upToDateInfo', 0, false]" :en="en">
+      </InputRadio>
+      <InputText v-model="fieldData.upToDateInfo" :inputParams="['upToDateInfo', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Is the information on your website up to date?</p>
           <p class="form-field__contextual">Are you satisfied with the information that is currently available for your customers? We can revise and update as needed.</p>
@@ -131,8 +133,9 @@
 import IntroSubSection from './IntroSubSection'
 import InputText from './InputText'
 import InputCheckbox from './InputCheckbox'
+import InputRadio from './InputRadio'
 import ButtonNav from './ButtonNav'
-import { presenceTypesOptions } from '../assets/presenceOptions'
+import { presenceTypesOptions, domainContinueOptions } from '../assets/presenceOptions'
 
 export default {
   name: 'ExistingPresence',
@@ -140,6 +143,7 @@ export default {
     IntroSubSection,
     InputText,
     InputCheckbox,
+    InputRadio,
     ButtonNav
   },
   props: {
@@ -148,16 +152,14 @@ export default {
   },
   data () {
     return {
-      presenceTypesOptions: presenceTypesOptions
+      presenceTypesOptions: presenceTypesOptions,
+      domainContinueOptions: domainContinueOptions
     }
   },
   computed: {
     checkSocialVisibility () {
       const pTypes = this.fieldData.presenceTypes
       return ((pTypes.length === 1 && pTypes.indexOf('currentWebsitePresence') === -1) || pTypes.length >= 2)
-    },
-    getPresenceTypes () {
-      return this.fieldData.presenceTypes.map(type => type[0])
     }
   },
   methods: {

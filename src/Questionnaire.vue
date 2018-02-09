@@ -39,7 +39,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'businessDetails',
+      activeTab: 'existingPresence',
       formData: {
         businessDetails: {
           primaryContact: '',
@@ -59,7 +59,9 @@ export default {
           sunday: '',
           otherInfo: ''
         },
-        productsServices: {},
+        productsServices: {
+          otherProductsServices: ''
+        },
         existingPresence: {
           presenceTypes: [],
           domainName: '',
@@ -88,17 +90,17 @@ export default {
       showErrors: false
     }
   },
-  mounted () {
-    if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
-      const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
-      if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
-        this.formData = storedData
-        this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
-                            storedData.businessDetails.displayedName.length === 0 ||
-                            storedData.businessDetails.mainPhone.length === 0
-      }
-    }
-  },
+  // mounted () {
+  //   if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
+  //     const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
+  //     if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
+  //       this.formData = storedData
+  //       this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
+  //                           storedData.businessDetails.displayedName.length === 0 ||
+  //                           storedData.businessDetails.mainPhone.length === 0
+  //     }
+  //   }
+  // },
   computed: {
     getProps () {
       return this.activeTab === 'finishQuestionnaire' ? this.formData : this.formData[this.activeTab]
@@ -131,13 +133,13 @@ export default {
   },
   methods: {
     handleNav (tab) {
-      if (!this.errorPresent) {
-        this.activeTab = tab
-        window.ga('set', 'page', `/${tab}`)
-        window.ga('send', 'pageview')
-      } else {
-        this.showErrors = true
-      }
+      // if (!this.errorPresent) {
+      this.activeTab = tab
+      window.ga('set', 'page', `/${tab}`)
+      window.ga('send', 'pageview')
+      // } else {
+        // this.showErrors = true
+      // }
       if (this.storageAvailable) {
         const storageString = JSON.stringify(this.formData)
         localStorage.setItem('yp-questionnaire', storageString)
@@ -163,9 +165,7 @@ export default {
         method: 'POST',
         body: jsonString
       })
-        // .then(res => res.json())
         .then(res => {
-          console.log(res.text())
           this.submitted = true
           window.ga('send', 'event', 'Form submission')
           if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
@@ -183,19 +183,7 @@ export default {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          // this.submitted = true
         })
-        // .then(data => {
-        //   const sectionKeys = Object.keys(this.formData)
-        //   for (let section of sectionKeys) {
-        //     let formKeys = Object.keys(this.formData[section])
-        //
-        //     for (let field of formKeys) {
-        //       console.log(field)
-        //       window.ga('send', 'event', 'Fields', 'skipped', field)
-        //     }
-        //   }
-        // })
         .catch(err => console.log(err))
     }
   }

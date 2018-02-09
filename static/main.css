@@ -139,7 +139,8 @@ h1, h2, h3, h4, p { margin: 0; }
 
 /*** Field containers ***/
 .form-field__label,
-.form-field__checkbox-container {
+.form-field__checkbox-container,
+.form-field__radio-container {
   display: block;
   margin: 0 0 20px;
 }
@@ -152,6 +153,17 @@ h1, h2, h3, h4, p { margin: 0; }
   }
   .form-field__checkbox-container > div {
     grid-column: 1 / 3;
+  }
+
+  .form-field__radio-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .form-field__radio-container > div {
+    flex: 0 1 100%;
+  }
+  .form-field__radio-container .form-field__label {
+    margin-right: 30px;
   }
 }
 
@@ -225,6 +237,38 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 .form-field__checkbox-container:not(#foo) .form-field__checkbox:checked + .form-field__checkbox-span {
+  background-image: url(./uploads/input__check--selected.png);
+}
+
+/*** Radio ***/
+.form-field__radio-container {
+  align-self: baseline;
+}
+
+.form-field__radio-container > div {
+  margin: 0 0 10px;
+}
+
+.form-field__radio-container .form-field__label {
+  margin-bottom: 5px;
+}
+
+.form-field__radio-container:not(#foo) .form-field__radio {
+  margin-right: 5px;
+  opacity: 0;
+  position: absolute;
+}
+
+.form-field__radio-container:not(#foo) .form-field__radio-span {
+  background-image: url(./uploads/input__check--unselected.png);
+  background-size: auto 1em;
+  background-repeat: no-repeat;
+  background-position: 0 0.25em;
+  display: inline-block;
+  padding-left: 28px;
+}
+
+.form-field__radio-container:not(#foo) .form-field__radio:checked + .form-field__radio-span {
   background-image: url(./uploads/input__check--selected.png);
 }
 

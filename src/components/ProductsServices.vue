@@ -26,7 +26,7 @@
         :en="en"></InputPanel>
     </div>
     <div class="sub-section">
-      <InputText @input="emitFieldData" :inputParams="['otherProductsServices', 1, false]" :en="en">
+      <InputText v-model="fieldData.otherProductsServices" :inputParams="['otherProductsServices', 1, false]" :en="en">
         <div slot="en">
           <p class="form-field__question">Are there any other notes you would like to provide regarding your products or services?</p>
         </div>

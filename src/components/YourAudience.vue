@@ -6,7 +6,7 @@
     </IntroSubSection>
     <div class="sub-section lg">
       <h3 class="sub-section__header">{{ en ? 'The Visuals' : 'Examples du design'}}</h3>
-      <p v-if="en" class="sub-section__intro">It is important to consider the feeling you wish to convey with your new website. Explore <a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP’s website portfolio</a> and select the three sites you like the looks of the most. Record their reference codes (e.g., WEB002) in the fields below. Or, feel free to send along the URLs of any other attractive websites you may have found elsewhere.</p>
+      <p v-if="en" class="sub-section__intro">It is important to consider the feeling you wish to convey with your new website. Explore <a href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP’s website portfolio</a> and select some of the sites you like the looks of the most. Record their reference codes (e.g., WEB002) in the fields below. Or, feel free to send along the URLs of any other attractive websites you may have found elsewhere.</p>
       <p v-if="!en" class="sub-section__intro">Il est important de penser à l’image que vous voulez transmettre à travers votre nouveau site Web. Explorez <a href="http://www.wss.yellowpages.ca/portfolio/index_fr.html" target="_blank">le portfolio des sites Web des PJ</a> et sélectionnez les trois sites que vous préférez visuellement. Entrez leur référence (p. ex. WEB002) dans les champs ci-dessous. N’hésitez pas à nous envoyer également les addresses URL de sites que vous aimez que vous auriez trouvé par vous-mêmes.</p>
       <InputText v-model="fieldData.example1" :inputParams="['example1', 0, false]" :en="en">
         <div slot="en">

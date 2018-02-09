@@ -5,5 +5,9 @@ module.exports = {
     ['instagramPresence', 'Instagram', 'Instagram'],
     ['twitterPresence', 'Twitter', 'Twitter'],
     ['otherPresence', 'Other', 'Autre']
+  ],
+  domainContinueOptions: [
+    ['domainContinueYes', 'Yes I would', 'Oui je voudrais'],
+    ['domainContinueNo', "No I wouldn't", 'Non, je ne le ferais pas']
   ]
 }

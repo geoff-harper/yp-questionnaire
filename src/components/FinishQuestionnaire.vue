@@ -12,27 +12,27 @@
         <h3 class="sub-section__header">{{ en ? 'Thank You' : 'Merci' }}</h3>
         <div v-if="en" class="thank-you__third">
           <p class="sub-section__intro">If you’re looking for more helpful hints on the website design process prior to your next consultation, please review the following YP document. It contains practical information on everything from the visual components to the written copy and more.</p>
-          <a @click="trackPostSubmit('leaveBehind')" class="button" href="/uploads/welcome_to_your_website-en.pdf" target="_blank">Welcome to Your Website</a>
+          <a @click="trackPostSubmit('leaveBehind')" class="button" href="/uploads/welcome_to_your_website-en.pdf" target="_blank" rel="noopener">Welcome to Your Website</a>
         </div>
         <div v-if="!en" class="thank-you__third">
           <p class="sub-section__intro">Si vous souhaitez obtenir plus de conseils pratiques sur le processus de construction d’un site Web avant votre consultation téléphonique, veuillez consulter le document suivant des PJ. Il contient des tonnes d’informations pratiques, que ce soit sur les éléments visuels, la rédaction du texte et bien plus encore.</p>
-          <a @click="trackPostSubmit('leaveBehind')" class="button" href="/uploads/welcome_to_your_website-fr.pdf" target="_blank">Bienvenu sur votre site</a>
+          <a @click="trackPostSubmit('leaveBehind')" class="button" href="/uploads/welcome_to_your_website-fr.pdf" target="_blank" rel="noopener">Bienvenu sur votre site</a>
         </div>
         <div v-if="en" class="thank-you__third">
           <p class="sub-section__intro">Take a look at YP’s online portfolio. Don’t worry about the type of business being featured, just focus on the visual design that appeals to you the most. Each website is numbered (e.g., WEB002) for reference when speaking with your YP representative.</p>
-          <a @click="trackPostSubmit('portfolio')" class="button" href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank">YP Website Portfolio</a>
+          <a @click="trackPostSubmit('portfolio')" class="button" href="http://www.wss.yellowpages.ca/portfolio/index.html" target="_blank" rel="noopener">YP Website Portfolio</a>
         </div>
         <div v-if="!en" class="thank-you__third">
           <p class="sub-section__intro">Consultez le portfolio des PJ en ligne. Ne vous préoccupez pas du type d’entreprise présentée, concentrez-vous sur les éléments visuels que vous aimez le plus. Chaque site est numéroté (p. ex. WEB002) pour référence lors de la discussion avec votre représentant PJ.</p>
-          <a @click="trackPostSubmit('portfolio')" class="button" href="http://www.wss.yellowpages.ca/portfolio/index_fr.html" target="_blank">Portfolio de sites Web PJ</a>
+          <a @click="trackPostSubmit('portfolio')" class="button" href="http://www.wss.yellowpages.ca/portfolio/index_fr.html" target="_blank" rel="noopener">Portfolio de sites Web PJ</a>
         </div>
         <div v-if="en" class="thank-you__third">
           <p class="sub-section__intro">As a YP customer, you have full online access to view your website’s analytics, make updates, pay bills and learn more about the range of products and services we provide. Stay connected and make the most of your purchase with this useful resource.</p>
-          <a @click="trackPostSubmit('yp4B')" class="button" href="https://business.yellowpages.ca/" target="_blank">YP4 Business Centre</a>
+          <a @click="trackPostSubmit('yp4B')" class="button" href="https://business.yellowpages.ca/" target="_blank" rel="noopener">YP4 Business Centre</a>
         </div>
         <div v-if="!en" class="thank-you__third">
           <p class="sub-section__intro">En tant que client des PJ, vous avez un accés en ligne complet pour consulter les analyses Internet, faire des changements, payer vos factures et en apprendre plus sur la gamme des produits et services que nous offrons. Restez connecté et profitez au mieux de votre achat grâce à ces ressources utiles.</p>
-          <a @click="trackPostSubmit('yp4B')" class="button" href="https://business.yellowpages.ca/" target="_blank">YP4 Centre d’affaires</a>
+          <a @click="trackPostSubmit('yp4B')" class="button" href="https://business.yellowpages.ca/" target="_blank" rel="noopener">YP4 Centre d’affaires</a>
         </div>
       </div>
     </transition>

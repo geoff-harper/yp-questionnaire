@@ -8,16 +8,6 @@
       <h3 class="sub-section__header">{{ en ? 'Business Info' : 'Information sur l’entreprise' }}</h3>
       <p v-if="en" class="sub-section__intro">Let's start with some of the basic business details.</p>
       <p v-if="!en" class="sub-section__intro">Commençons par les infos de base de votre entreprise.</p>
-      <InputText v-model="fieldData.primaryContact" @error="handleError" :inputParams="['primaryContact', 0, true]" :en="en">
-        <div slot="en">
-          <p class="form-field__question">Primary point of contact for our website development team</p>
-          <p class="form-field__contextual">Ask yourself, who is best suited to speak about the particulars of the business for the duration of the process?</p>
-        </div>
-        <div slot="fr">
-          <p class="form-field__question">Personne à contacter en priorité par notre équipe de site Web</p>
-          <p class="form-field__contextual">Posez-vous la question suivante : qui est la personne la plus compétente pour parler des spécificités de votre entreprise? Idéalement, cette personne est en mesure de donner des informations détaillées sur vos produits et services. C’est cette personne que nous appellerons  pour discuter du design et du texte du site une fois celui-ci complété ainsi que pour toutes questions que nous pourrions avoir sur les demandes de révision.</p>
-        </div>
-      </InputText>
       <InputText v-model="fieldData.displayedName" @error="handleError" :inputParams="['displayedName', 0, true]" :en="en">
         <div slot="en">
           <p class="form-field__question">Business name to be displayed on site</p>
@@ -26,6 +16,16 @@
         <div slot="fr">
           <p class="form-field__question">Nom de l‘entreprise à apparaitre sur le site</p>
           <p class="form-field__contextual">Quand on parle de branding, la continuité est très importante. Est-ce que le logo que vous avez en ligne est le même que celui qui est sur votre carte d’affaires? Par exemple, si votre compagnie est une société à responsabilité limitée, vous épelez votre nom Ltd. (avec un point), Ltd (sans le point), LTD (tout en majuscules), ou Limited (en toutes lettres)? N’oubliez pas, même une petite différence d’orthographe dans votre nom entre les différentes plateformes peut porter à confusion.</p>
+        </div>
+      </InputText>
+      <InputText v-model="fieldData.primaryContact" @error="handleError" :inputParams="['primaryContact', 0, true]" :en="en">
+        <div slot="en">
+          <p class="form-field__question">Primary point of contact for our website development team</p>
+          <p class="form-field__contextual">Ask yourself, who is best suited to speak about the particulars of the business for the duration of the process?</p>
+        </div>
+        <div slot="fr">
+          <p class="form-field__question">Personne à contacter en priorité par notre équipe de site Web</p>
+          <p class="form-field__contextual">Posez-vous la question suivante : qui est la personne la plus compétente pour parler des spécificités de votre entreprise? Idéalement, cette personne est en mesure de donner des informations détaillées sur vos produits et services. C’est cette personne que nous appellerons  pour discuter du design et du texte du site une fois celui-ci complété ainsi que pour toutes questions que nous pourrions avoir sur les demandes de révision.</p>
         </div>
       </InputText>
       <InputCheckbox v-model="fieldData.displayedInfo" :inputParams="['displayedInfo', displayedContact, false]" :en="en">

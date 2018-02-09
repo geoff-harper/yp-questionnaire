@@ -1,17 +1,17 @@
 <template>
-  <div class="form-field__checkbox-container">
+  <div class="form-field__radio-container">
     <slot v-if="en" name="en"></slot>
     <slot v-if="!en" name="fr"></slot>
-    <label v-for="checkboxText of inputParams[1]" :for="checkboxText[0]" class="form-field__label">
+    <label v-for="radioText of inputParams[1]" :for="radioText[0]" class="form-field__label">
       <input
-        v-model="checkedBoxes"
-        :name="checkboxText[0]"
-        :id="checkboxText[0]"
-        :value="checkboxText[0]"
+        v-model="checkedRadio"
+        :name="radioText[0]"
+        :id="radioText[0]"
+        :value="radioText[0]"
         @change="emitChecked"
-        type="checkbox"
-        class="form-field__checkbox">
-      <span class="form-field__checkbox-span">{{ en ? checkboxText[1] : checkboxText[2] }}</span>
+        type="radio"
+        class="form-field__radio">
+      <span class="form-field__radio-span">{{ en ? radioText[1] : radioText[2] }}</span>
     </label>
     <p v-if="error" class="form-field__error">Please fill in this field.</p>
   </div>
@@ -22,7 +22,7 @@
 // inputArray -> [safeChars, displayCharsEn, displayCharsFr]
 
 export default {
-  name: 'InputCheckbox',
+  name: 'InputRadio',
   props: {
     inputParams: {
       required: true,
@@ -31,7 +31,7 @@ export default {
         return value.length === 3
       }
     },
-    checked: { required: false, type: Array },
+    checked: { required: false, type: String },
     en: { required: true, type: Boolean }
   },
   model: {
@@ -41,15 +41,16 @@ export default {
   data () {
     return {
       error: false,
-      checkedBoxes: this.checked
+      checkedRadio: ''
     }
   },
   methods: {
     emitChecked () {
-      this.$emit('change', this.checkedBoxes, this.inputParams[0])
+      // this.errorCheck()
+      this.$emit('change', this.checkedRadio, this.inputParams[0])
     },
     errorCheck () {
-      if (this.checkedBoxes.length === 0 && this.inputParams[2]) this.error = true
+      if (this.checkedRadio.length === 0 && this.inputParams[2]) this.error = true
       else this.error = false
     }
   }
