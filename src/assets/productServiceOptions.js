@@ -57,7 +57,7 @@ module.exports = {
         "subOptions": []
       }, {
         "en_title": "Automobile Parts & Supplies",
-        "fr_title": " Automobiles – Pièces et accessoires neufs",
+        "fr_title": "Automobiles – Pièces et accessoires neufs",
         "safe": "vertical_0_2",
         "visible": false,
         "subOptions": [{
@@ -4155,7 +4155,7 @@ module.exports = {
           ]
         }, {
           "en_label": "Miscellaneous",
-          "fr_label": "Divers ",
+          "fr_label": "Divers",
           "safe": "vertical_6_3_5",
           "options": [
             ["vertical_6_3_5_0", "Obscenity", "Obscenité"],

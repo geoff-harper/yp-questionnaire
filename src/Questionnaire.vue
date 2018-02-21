@@ -39,7 +39,7 @@ export default {
   },
   data () {
     return {
-      activeTab: 'existingPresence',
+      activeTab: 'businessDetails',
       formData: {
         businessDetails: {
           primaryContact: '',
@@ -90,17 +90,17 @@ export default {
       showErrors: false
     }
   },
-  // mounted () {
-  //   if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
-  //     const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
-  //     if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
-  //       this.formData = storedData
-  //       this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
-  //                           storedData.businessDetails.displayedName.length === 0 ||
-  //                           storedData.businessDetails.mainPhone.length === 0
-  //     }
-  //   }
-  // },
+  mounted () {
+    if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
+      const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
+      if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
+        this.formData = storedData
+        this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
+                            storedData.businessDetails.displayedName.length === 0 ||
+                            storedData.businessDetails.mainPhone.length === 0
+      }
+    }
+  },
   computed: {
     getProps () {
       return this.activeTab === 'finishQuestionnaire' ? this.formData : this.formData[this.activeTab]
@@ -133,13 +133,14 @@ export default {
   },
   methods: {
     handleNav (tab) {
-      // if (!this.errorPresent) {
-      this.activeTab = tab
-      window.ga('set', 'page', `/${tab}`)
-      window.ga('send', 'pageview')
-      // } else {
-        // this.showErrors = true
-      // }
+      if (!this.errorPresent) {
+        this.activeTab = tab
+        window.scroll(0, 0)
+        window.ga('set', 'page', `/${tab}`)
+        window.ga('send', 'pageview')
+      } else {
+        this.showErrors = true
+      }
       if (this.storageAvailable) {
         const storageString = JSON.stringify(this.formData)
         localStorage.setItem('yp-questionnaire', storageString)
@@ -157,20 +158,20 @@ export default {
       objToSend.en = this.en
       const jsonString = JSON.stringify(objToSend)
 
-      fetch('./php/mail.php', {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: jsonString
-      })
-        .then(res => {
-          this.submitted = true
-          window.ga('send', 'event', 'Form submission')
-          if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
-        })
-        .catch(err => console.log(err))
+      // fetch('http://mail.advertiserprofile.ca/php/mail.php', {
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json'
+      //   },
+      //   method: 'POST',
+      //   body: jsonString
+      // })
+      //   .then(res => {
+      //     this.submitted = true
+      //     window.ga('send', 'event', 'Form submission')
+      //     if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
+      //   })
+      //   .catch(err => console.log(err))
 
       fetch('https://httpbin.org/post', {
         headers: {
@@ -182,6 +183,7 @@ export default {
       })
         .then(res => res.json())
         .then(data => {
+          this.submitted = true
           console.log(data)
         })
         .catch(err => console.log(err))
