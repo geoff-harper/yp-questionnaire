@@ -161,10 +161,9 @@ export default {
       objToSend.existingPresence.domainNameContinue = [objToSend.existingPresence.domainNameContinue]
       const jsonString = JSON.stringify(objToSend)
 
-      fetch('http://localhost:8888/yp-questionnaire/', {
+      fetch('http://mail.advertiserprofile.ca/', {
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'text/plain'
         },
         method: 'POST',
         body: jsonString
