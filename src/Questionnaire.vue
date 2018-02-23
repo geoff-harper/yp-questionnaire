@@ -94,7 +94,9 @@ export default {
     if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) {
       const storedData = JSON.parse(localStorage.getItem('yp-questionnaire'))
       if (typeof storedData.businessDetails.primaryContact !== 'undefined') {
-        this.formData = storedData
+        this.formData.businessDetails = storedData.businessDetails
+        this.formData.existingPresence = storedData.existingPresence
+        this.formData.yourAudience = storedData.yourAudience
         this.errorPresent = storedData.businessDetails.primaryContact.length === 0 ||
                             storedData.businessDetails.displayedName.length === 0 ||
                             storedData.businessDetails.mainPhone.length === 0
@@ -154,11 +156,12 @@ export default {
       if (this.showErrors && !errorPresent) this.showErrors = false
     },
     handleSubmit () {
-      let objToSend = this.formData
+      const objToSend = JSON.parse(JSON.stringify(this.formData))
       objToSend.en = this.en
+      objToSend.existingPresence.domainNameContinue = [objToSend.existingPresence.domainNameContinue]
       const jsonString = JSON.stringify(objToSend)
 
-      fetch('http://mail.advertiserprofile.ca/', {
+      fetch('http://localhost:8888/yp-questionnaire/', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -183,7 +186,7 @@ export default {
       // })
       //   .then(res => res.json())
       //   .then(data => {
-      //     this.submitted = true
+      //     // this.submitted = true
       //     console.log(data)
       //   })
       //   .catch(err => console.log(err))

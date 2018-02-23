@@ -40,13 +40,16 @@ export default {
   },
   data () {
     return {
-      error: false,
-      checkedBoxes: this.checked
+      checkedBoxes: this.checked,
+      error: false
     }
   },
   methods: {
     emitChecked () {
       this.$emit('change', this.checkedBoxes, this.inputParams[0])
+    },
+    getChecked () {
+      return this.checked
     },
     errorCheck () {
       if (this.checkedBoxes.length === 0 && this.inputParams[2]) this.error = true
