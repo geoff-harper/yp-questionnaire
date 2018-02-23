@@ -158,35 +158,35 @@ export default {
       objToSend.en = this.en
       const jsonString = JSON.stringify(objToSend)
 
-      // fetch('http://mail.advertiserprofile.ca/php/mail.php', {
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   method: 'POST',
-      //   body: jsonString
-      // })
-      //   .then(res => {
-      //     this.submitted = true
-      //     window.ga('send', 'event', 'Form submission')
-      //     if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
-      //   })
-      //   .catch(err => console.log(err))
-
-      fetch('https://httpbin.org/post', {
+      fetch('http://mail.advertiserprofile.ca/', {
         headers: {
-          'Accept': 'application/json, text/plain, */*',
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         method: 'POST',
         body: jsonString
       })
-        .then(res => res.json())
-        .then(data => {
+        .then(res => {
           this.submitted = true
-          console.log(data)
+          window.ga('send', 'event', 'Form submission')
+          if (this.storageAvailable && localStorage.getItem('yp-questionnaire')) localStorage.removeItem('yp-questionnaire')
         })
         .catch(err => console.log(err))
+
+      // fetch('https://httpbin.org/post', {
+      //   headers: {
+      //     'Accept': 'application/json, text/plain, */*',
+      //     'Content-Type': 'application/json'
+      //   },
+      //   method: 'POST',
+      //   body: jsonString
+      // })
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     this.submitted = true
+      //     console.log(data)
+      //   })
+      //   .catch(err => console.log(err))
     }
   }
 }
